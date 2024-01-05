@@ -1,0 +1,159 @@
+
+
+/*Main Feature*/
+.main-feature {
+	color: #333;
+	padding: 50px 0px;
+    background: #f7f7f7;
+}
+
+.single-icon-feature {
+	display: flex;
+	border: 1px solid #49b14d;
+	padding: 15px;
+    background: #fff;
+}
+.single-icon-feature_icon {
+	font-size: 30px;
+	padding: 0px 20px;
+}
+
+.single-icon-feature_content p {
+	margin-bottom: 0px;
+}
+.feature-title {
+	color: #49b14d;
+}
+
+
+
+
+
+
+/*Shop*/
+.main-shop {
+	color: #000;
+	padding: 50px 0px;
+    background: #f7f7f7;
+}
+.single-book {
+	border: 1px solid #bce4be;
+	margin-bottom:25px;
+    background: #fff;
+}
+.book-image {
+	overflow: hidden;
+    position: relative;
+}
+.book-thumbnail-image {
+	width: 100%;
+	height: 200px;
+}
+
+.book-image img {
+	display:block;
+	position:relative;
+	-webkit-transition:all .4s linear;
+	transition:all .4s linear;
+    width: 100%;
+    height: 200px;
+}
+
+.book-image:hover img {
+	-ms-transform:scale(1.1);
+	-webkit-transform:scale(1.1);
+	transform:scale(1.1);
+}
+
+.book-badge-label {
+	background: #49b14d;
+    border-radius: 3px;
+    color: #fff;
+    left: 0;
+    line-height: 25px;
+    padding: 0 10px;
+    position: absolute;
+    top: 0px;
+}
+
+.book-badge-price {
+	background: #49b14d;
+    border-radius: 3px;
+    color: #fff;
+    right: 0;
+    line-height: 25px;
+    padding: 0 10px;
+    position: absolute;
+    top: 0px;
+}
+
+.book-content {
+	padding: 10px;
+}
+.book-title {
+	color: #49b14d;
+	font-size: 16px;
+	line-height: 18px;
+	display: inline-block;
+}
+.book-title:hover{
+	color: #49b14d;
+	text-decoration: none;
+}
+.book-title2 {
+	font-size: 14px;
+	display: inline-block;
+	line-height: 16px;
+}
+.book-actions {
+	margin-top: 10px;
+	text-align: center;
+}
+
+/*Home Page Book Category*/
+.main-book-category-list {
+  color: #000;
+  padding: 50px 0px;
+  background: #f7f7f7;
+}
+
+.single-book-category {
+  border: 1px solid #bce4be;
+  margin-bottom: 25px;
+  background: #fff;
+}
+.book-category-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.book-category-image img {
+  display:block;
+  position:relative;
+  -webkit-transition:all .4s linear;
+  transition:all .4s linear;
+}
+
+.book-category-image:hover img {
+  -ms-transform:scale(1.1);
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
+}
+
+.book-category-thumbnail-image {
+  width: 100%;
+  height: 80px;
+}
+.book-category-content {
+  padding: 5px;
+}
+.book-category-title {
+  color: #49b14d;
+  font-size: 14px;
+  line-height: 16px;
+  display: inline-block;
+}
+.book-category-title:hover{
+  color: #49b14d;
+  text-decoration: none;
+}
