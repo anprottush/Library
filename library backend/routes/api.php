@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AuthController;
+use Illuminate\Auth\AuthenticationException;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Authentication
+
 Route::controller(AuthController::class)->group(function () {
     Route::post('user/login', 'login');
     Route::post('user/register', 'register');
@@ -36,6 +39,8 @@ Route::controller(AuthController::class)->group(function () {
 //     Route::put('/user/{id}', [UserController::class, 'update']);
 //     Route::delete('/user/{id}', [UserController::class, 'destroy']);
 // });
+
+// Admin
 
 Route::controller(BookController::class)->group(function () {
     Route::get('book', 'getall');

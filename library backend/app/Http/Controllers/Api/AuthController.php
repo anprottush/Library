@@ -21,7 +21,12 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 422);
+            return response()->json([
+                'success'=> false,
+                'status code'=> Response::HTTP_BAD_REQUEST,
+                'error' => $validator->errors(),
+                'payload' => null
+            ], 422);
         }
 
 //         "username":"shakib",
@@ -29,7 +34,7 @@ class AuthController extends Controller
 // "username":"maruf",
 //   "password":"100"
 
-        $credentials = $request->only('name', 'password');
+        $credentials = $request->only('username', 'password');
         $token = Auth::attempt($credentials);
 
         if (!$token) {
@@ -44,7 +49,11 @@ class AuthController extends Controller
         ];
 
         return response()->json([
-            'user' => $user,
+
+            'success'=> true,
+            'status code'=> Response::HTTP_OK,
+            'message'=> 'User login successfully',
+            'payload' => $user,
             'authorization' => [
                 'token' => $token,
                 'type' => 'bearer',
@@ -57,10 +66,10 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'max:100'],
+            'phone' => ['required', 'string'],
+            'photo' => ['nullable', 'string', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'username' => ['required', 'string'],
             'password' => ['required', 'string'],
-            'phone' => ['nullable', 'string', 'max:20'],
-            'address' => ['nullable', 'string'],
-            'usertype' => ['nullable', 'string'],
         ]);
 
         if ($validator->fails()) {
@@ -83,10 +92,10 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
             'phone' => $request->phone,
-            'address' => $request->address,
-            'usertype' => $request->usertype,
+            'photo' => $request->photo,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
         ]);
 
         return response()->json([
