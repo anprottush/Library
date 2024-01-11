@@ -18,6 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfirmDialogComponent } from './layouts/confirm-dialog/confirm-dialog.component';
 import { ConfirmDialogService } from './core/services/confirm-dialog.service';
 import { MainmenuComponent } from './layouts/mainmenu/mainmenu.component';
+import { AuthModuleModule } from './pages/auth-module/auth-module.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PagesLoginComponent } from './pages/auth-module/pages-login/pages-login.component';
+import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages-register.component';
+import { DashboardComponent } from './pages/dashboard-module/admin/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,9 @@ import { MainmenuComponent } from './layouts/mainmenu/mainmenu.component';
     MainmenuComponent,
     SidebarComponent,
     FooterComponent,
-
+    PagesLoginComponent,
+    DashboardComponent,
+    PagesRegisterComponent,
     UsersProfileComponent,
     ConfirmDialogComponent
   ],
@@ -34,6 +41,9 @@ import { MainmenuComponent } from './layouts/mainmenu/mainmenu.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AuthModuleModule,
+    FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot()
   ],
   providers: [

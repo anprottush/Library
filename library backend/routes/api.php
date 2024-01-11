@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\BookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
@@ -27,11 +28,27 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 });
 
-Route::middleware(['auth.api'])->group(function (){
-    Route::get('/user', [UserController::class, 'index']);
+// Route::middleware(['auth.api'])->group(function (){
+//     Route::get('/user', [UserController::class, 'index']);
 
-    Route::get('/user/{id}', [UserController::class, 'show']);
-    Route::post('/user', [UserController::class, 'store']);
-    Route::put('/user/{id}', [UserController::class, 'update']);
-    Route::delete('/user/{id}', [UserController::class, 'destroy']);
+//     Route::get('/user/{id}', [UserController::class, 'show']);
+//     Route::post('/user', [UserController::class, 'store']);
+//     Route::put('/user/{id}', [UserController::class, 'update']);
+//     Route::delete('/user/{id}', [UserController::class, 'destroy']);
+// });
+
+Route::controller(BookController::class)->group(function () {
+    Route::get('book', 'getall');
+    Route::get('book/{id}', 'getbyid');
+    Route::post('book', 'store');
+    Route::put('book/{id}', 'update');
+    Route::delete('book/{id}', 'delete');
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/user', 'index');
+    Route::get('/user/{id}', 'show');
+    Route::post('/user', 'store');
+    Route::put('/user/{id}', 'update');
+    Route::delete('/user/{id}', 'destroy');
 });

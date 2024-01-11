@@ -6,23 +6,26 @@
           <div class="my-login">
             <h2 class="text-center">Login</h2>
             <hr>
-            <form class="row g-3 needs-validation" action="https://library.greensoftbd.net/myaccount/login" method="POST">
-
-
-
-
+            <form class="row g-3 was-validated " [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
               <div class="form-group">
                 <label for="username_or_email">Username Or Email</label> <span class="text-danger">*</span>
-                <input name="username_or_email" type="text" class="form-control " placeholder="Enter email"
-                  id="membername" value="">
+                <input type="text" class="form-control" placeholder="Enter email" id="username_or_email" value="" formControlName="username_or_email" required>
+                <div *ngIf="usernameOrEmail!.invalid && (usernameOrEmail!.dirty || usernameOrEmail!.touched)"
+                class="invalid-feedback">
+                  <div *ngIf="usernameOrEmail!.hasError('required')">Username or Email is required.</div>
+                </div>
               </div>
               <div class="form-group">
                 <label for="password">Password</label> <span class="text-danger">*</span>
-                <input name="password" type="password" class="form-control " placeholder="Enter password" id="password"
-                  value="">
+                <input type="password" class="form-control" placeholder="Enter password" id="password" value="" formControlName="password" required>
+                <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="invalid-feedback">
+                  <div *ngIf="password!.hasError('required')">Password is required.</div>
+                </div>
               </div>
               <button type="submit" class="btn btn-success btn-block">Login</button>
-            </form>
+                </form>
+                <p>Form value: {{ loginForm.value | json }}</p>
+<p>Form status: {{ loginForm.status | json }}</p>
           </div>
         </div>
       </div>
