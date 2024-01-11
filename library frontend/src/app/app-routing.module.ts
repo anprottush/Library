@@ -6,18 +6,18 @@ import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
 const routes: Routes = [
 {
-    // path: 'cart',
-    // loadChildren: () =>
-    //   import('./modules/cart-module/cart-module.module').then(
-    //     (m) => m.CartModuleModule
-    //   ),
+    path: 'cart',
+    loadChildren: () =>
+      import('./modules/cart-module/cart-module.module').then(
+        (m) => m.CartModuleModule
+      ),
   },
   {
-    // path: 'customer',
-    // loadChildren: () =>
-    //   import('./modules/customer-module/customer-module.module').then(
-    //     (m) => m.CustomerModuleModule
-    //   ),
+    path: 'customer',
+    loadChildren: () =>
+      import('./modules/customer-module/customer-module.module').then(
+        (m) => m.CustomerModuleModule
+      ),
   },
 
 // { path: '', component: DashboardComponent },
