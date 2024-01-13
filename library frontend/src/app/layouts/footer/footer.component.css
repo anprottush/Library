@@ -25,6 +25,7 @@
 }
 .footer-bootom-menu ul {
   padding: 5px 0px;
+  padding-top: .5rem;
   text-align: right;
 }
 .footer-bootom-menu li {
