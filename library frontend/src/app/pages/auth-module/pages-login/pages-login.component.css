@@ -1,15 +1,20 @@
 /*Login*/
 .main-login {
   padding: 50px 0px;
-  background:#f7f7f7;
-  margin-bottom: 0px;
+  background: #f7f7f7;
+  margin-bottom: 0;
   color: #495057;
 }
-
-
 .my-login {
-  background:#fff;
+  background: #fff;
   padding: 20px;
   border-radius: 10px;
 }
-
+.well button {
+  margin: 5px;
+  margin-top: 0rem;
+}
+.well strong {
+  margin-top: 1.1rem;
+  display: block;
+}
