@@ -49,6 +49,9 @@ a.header-phone:hover {
   color: #e6e6e6;
   text-decoration: none;
 }
+.header-top-margin {
+  margin-left: .6rem;
+}
 /* Header Top Section End */
 
 
