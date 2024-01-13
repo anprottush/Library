@@ -52,6 +52,9 @@ a.header-phone:hover {
 .header-top-margin {
   margin-left: .6rem;
 }
+.icon-gap::before {
+  margin-right: 10px;
+}
 /* Header Top Section End */
 
 
