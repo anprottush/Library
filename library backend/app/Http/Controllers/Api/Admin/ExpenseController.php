@@ -3,27 +3,27 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\DBEntity\Admin\BookIssue;
+use App\Models\DBEntity\Admin\Expense;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BookIssueController extends Controller
+class ExpenseController extends Controller
 {
     public function getall()
     {
-        $issues = BookIssue::paginate(10);
-        if($issues!=null) {
+        $expenses = Expense::paginate(10);
+        if($expenses!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data retrieve successfully',
-                'payload' => $issues
+                'payload' => $expenses
             ], Response::HTTP_OK);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data not found',
-                'payload' => $issues
+                'payload' => $expenses
             ], Response::HTTP_NOT_FOUND);
         }
 
@@ -33,12 +33,12 @@ class BookIssueController extends Controller
 
     public function getbyid($id)
     {
-        $bookissue = BookIssue::find($id);
-        if($bookissue!=null) {
+        $expense = Expense::find($id);
+        if($expense!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data retrieve successfully',
-                'payload' => $bookissue
+                'payload' => $expense
 
             ], Response::HTTP_OK);
         }
@@ -46,7 +46,7 @@ class BookIssueController extends Controller
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data not found',
-                'payload' => $bookissue
+                'payload' => $expense
             ], Response::HTTP_NOT_FOUND);
         }
 
@@ -54,28 +54,30 @@ class BookIssueController extends Controller
 
     public function store(Request $request)
     {
-        $bookissue = new BookIssue();
-        $bookissue->member = $request->member;
-        $bookissue->book = $request->book;
-        $bookissue->book_no = $request->book_no;
-        $bookissue->issue_date = $request->issue_date;
-        $bookissue->notes = $request->notes;
 
-        $bookissue->save();
+        $expense = new Expense();
 
-        if($bookissue!=null) {
+        $expense->name = $request->name;
+        //$expense->date = $request->date;
+        $expense->amount = $request->amount;
+        //$expense->file = $request->file;
+        $expense->note = $request->note;
+
+        $expense->save();
+
+        if($expense!=null) {
             return response()->json([
                 'success'=> true,
                 'status code'=> Response::HTTP_CREATED,
                 'message'=> 'Data created successfully',
-                'payload' => $bookissue
+                'payload' => $expense
             ]);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data creation failed',
-                'payload' => $bookissue
+                'payload' => $expense
             ], Response::HTTP_NO_CONTENT);
         }
 
@@ -83,28 +85,28 @@ class BookIssueController extends Controller
 
     public function update(Request $request, $id)
     {
-        $bookissue = BookIssue::find($id);
+        $expense = Expense::find($id);
 
-        $bookissue->member = $request->member;
-        $bookissue->book = $request->book;
-        $bookissue->book_no = $request->book_no;
-        $bookissue->issue_date = $request->issue_date;
-        $bookissue->notes = $request->notes;
+        $expense->name = $request->name;
+        //$expense->date = $request->date;
+        $expense->amount = $request->amount;
+        //$expense->file = $request->file;
+        $expense->note = $request->note;
 
-        $bookissue->save();
+        $expense->save();
 
-        if($bookissue!=null) {
+        if($expense!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data updated successfully',
-                'payload' => $bookissue
+                'payload' => $expense
             ], Response::HTTP_OK);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data update failed',
-                'payload' => $bookissue
+                'payload' => $expense
             ], Response::HTTP_BAD_REQUEST);
         }
 
@@ -113,9 +115,9 @@ class BookIssueController extends Controller
 
     public function delete($id)
     {
-        //User::find($id)->delete();
-        BookIssue::destroy($id);
-        //return response()->json(null, 204);
+
+        Expense::destroy($id);
+
         return response()->json([
             'success'=> true,
             'message'=> 'Data deleted successfully'

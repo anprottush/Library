@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ebooks', function (Blueprint $table) {
-
+        Schema::create('book_issues', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('author');
-            $table->string('cover_photo')->nullable();
-            $table->string('file')->nullable();
+            $table->string('member')->nullable();
+            $table->string('book')->nullable();
+            $table->bigInteger('book_no')->nullable();
+            $table->string('issue_date')->nullable();
             $table->string('notes')->nullable();
             $table->timestamps();
             $table->softDeletes();
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ebooks');
+        Schema::dropIfExists('book_issues');
     }
 };

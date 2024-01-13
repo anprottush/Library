@@ -23,5 +23,4 @@ class RequestBook extends Model
         'notes',
     ];
 
-
 }

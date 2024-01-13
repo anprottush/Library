@@ -3,27 +3,27 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\DBEntity\Admin\BookIssue;
+use App\Models\DBEntity\Admin\BookCategory;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BookIssueController extends Controller
+class BookCategoryController extends Controller
 {
     public function getall()
     {
-        $issues = BookIssue::paginate(10);
-        if($issues!=null) {
+        $bookcategories = BookCategory::paginate(10);
+        if($bookcategories!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data retrieve successfully',
-                'payload' => $issues
+                'payload' => $bookcategories
             ], Response::HTTP_OK);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data not found',
-                'payload' => $issues
+                'payload' => $bookcategories
             ], Response::HTTP_NOT_FOUND);
         }
 
@@ -33,12 +33,12 @@ class BookIssueController extends Controller
 
     public function getbyid($id)
     {
-        $bookissue = BookIssue::find($id);
-        if($bookissue!=null) {
+        $bookcategory = BookCategory::find($id);
+        if($bookcategory!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data retrieve successfully',
-                'payload' => $bookissue
+                'payload' => $bookcategory
 
             ], Response::HTTP_OK);
         }
@@ -46,7 +46,7 @@ class BookIssueController extends Controller
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data not found',
-                'payload' => $bookissue
+                'payload' => $bookcategory
             ], Response::HTTP_NOT_FOUND);
         }
 
@@ -54,28 +54,28 @@ class BookIssueController extends Controller
 
     public function store(Request $request)
     {
-        $bookissue = new BookIssue();
-        $bookissue->member = $request->member;
-        $bookissue->book = $request->book;
-        $bookissue->book_no = $request->book_no;
-        $bookissue->issue_date = $request->issue_date;
-        $bookissue->notes = $request->notes;
+        $bookcategory = new BookCategory();
+        $bookcategory->name = $request->name;
+        $bookcategory->description = $request->description;
+        $bookcategory->cover_photo = $request->cover_photo;
+        $bookcategory->status = $request->status;
 
-        $bookissue->save();
 
-        if($bookissue!=null) {
+        $bookcategory->save();
+
+        if($bookcategory!=null) {
             return response()->json([
                 'success'=> true,
                 'status code'=> Response::HTTP_CREATED,
                 'message'=> 'Data created successfully',
-                'payload' => $bookissue
+                'payload' => $bookcategory
             ]);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data creation failed',
-                'payload' => $bookissue
+                'payload' => $bookcategory
             ], Response::HTTP_NO_CONTENT);
         }
 
@@ -83,28 +83,28 @@ class BookIssueController extends Controller
 
     public function update(Request $request, $id)
     {
-        $bookissue = BookIssue::find($id);
+        $bookcategory = BookCategory::find($id);
 
-        $bookissue->member = $request->member;
-        $bookissue->book = $request->book;
-        $bookissue->book_no = $request->book_no;
-        $bookissue->issue_date = $request->issue_date;
-        $bookissue->notes = $request->notes;
+        $bookcategory->name = $request->name;
+        $bookcategory->description = $request->description;
+        $bookcategory->cover_photo = $request->cover_photo;
+        $bookcategory->status = $request->status;
 
-        $bookissue->save();
 
-        if($bookissue!=null) {
+        $bookcategory->save();
+
+        if($bookcategory!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data updated successfully',
-                'payload' => $bookissue
+                'payload' => $bookcategory
             ], Response::HTTP_OK);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data update failed',
-                'payload' => $bookissue
+                'payload' => $bookcategory
             ], Response::HTTP_BAD_REQUEST);
         }
 
@@ -113,9 +113,8 @@ class BookIssueController extends Controller
 
     public function delete($id)
     {
-        //User::find($id)->delete();
-        BookIssue::destroy($id);
-        //return response()->json(null, 204);
+        BookCategory::destroy($id);
+
         return response()->json([
             'success'=> true,
             'message'=> 'Data deleted successfully'

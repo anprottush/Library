@@ -27,4 +27,6 @@ class StoreBook extends Model
         'description',
         'images',
     ];
+
+
 }

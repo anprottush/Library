@@ -3,27 +3,27 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\DBEntity\Admin\BookIssue;
+use App\Models\DBEntity\Admin\EBook;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BookIssueController extends Controller
+class EBookController extends Controller
 {
     public function getall()
     {
-        $issues = BookIssue::paginate(10);
-        if($issues!=null) {
+        $ebooks = EBook::paginate(10);
+        if($ebooks!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data retrieve successfully',
-                'payload' => $issues
+                'payload' => $ebooks
             ], Response::HTTP_OK);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data not found',
-                'payload' => $issues
+                'payload' => $ebooks
             ], Response::HTTP_NOT_FOUND);
         }
 
@@ -33,12 +33,12 @@ class BookIssueController extends Controller
 
     public function getbyid($id)
     {
-        $bookissue = BookIssue::find($id);
-        if($bookissue!=null) {
+        $ebook = EBook::find($id);
+        if($ebook!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data retrieve successfully',
-                'payload' => $bookissue
+                'payload' => $ebook
 
             ], Response::HTTP_OK);
         }
@@ -46,7 +46,7 @@ class BookIssueController extends Controller
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data not found',
-                'payload' => $bookissue
+                'payload' => $ebook
             ], Response::HTTP_NOT_FOUND);
         }
 
@@ -54,28 +54,28 @@ class BookIssueController extends Controller
 
     public function store(Request $request)
     {
-        $bookissue = new BookIssue();
-        $bookissue->member = $request->member;
-        $bookissue->book = $request->book;
-        $bookissue->book_no = $request->book_no;
-        $bookissue->issue_date = $request->issue_date;
-        $bookissue->notes = $request->notes;
+        $ebook = new EBook();
+        $ebook->name = $request->name;
+        $ebook->author = $request->author;
+        //$ebook->cover_photo = $request->cover_photo;
+        //$ebook->file = $request->file;
+        $ebook->notes = $request->notes;
 
-        $bookissue->save();
+        $ebook->save();
 
-        if($bookissue!=null) {
+        if($ebook!=null) {
             return response()->json([
                 'success'=> true,
                 'status code'=> Response::HTTP_CREATED,
                 'message'=> 'Data created successfully',
-                'payload' => $bookissue
+                'payload' => $ebook
             ]);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data creation failed',
-                'payload' => $bookissue
+                'payload' => $ebook
             ], Response::HTTP_NO_CONTENT);
         }
 
@@ -83,28 +83,28 @@ class BookIssueController extends Controller
 
     public function update(Request $request, $id)
     {
-        $bookissue = BookIssue::find($id);
+        $ebook = EBook::find($id);
 
-        $bookissue->member = $request->member;
-        $bookissue->book = $request->book;
-        $bookissue->book_no = $request->book_no;
-        $bookissue->issue_date = $request->issue_date;
-        $bookissue->notes = $request->notes;
+        $ebook->name = $request->name;
+        $ebook->author = $request->author;
+        //$ebook->cover_photo = $request->cover_photo;
+        //$ebook->file = $request->file;
+        $ebook->notes = $request->notes;
 
-        $bookissue->save();
+        $ebook->save();
 
-        if($bookissue!=null) {
+        if($ebook!=null) {
             return response()->json([
                 'success'=> true,
                 'message'=> 'Data updated successfully',
-                'payload' => $bookissue
+                'payload' => $ebook
             ], Response::HTTP_OK);
         }
         else {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data update failed',
-                'payload' => $bookissue
+                'payload' => $ebook
             ], Response::HTTP_BAD_REQUEST);
         }
 
@@ -114,7 +114,7 @@ class BookIssueController extends Controller
     public function delete($id)
     {
         //User::find($id)->delete();
-        BookIssue::destroy($id);
+        EBook::destroy($id);
         //return response()->json(null, 204);
         return response()->json([
             'success'=> true,

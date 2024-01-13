@@ -11,10 +11,10 @@ class BookIssue extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'member',
-        'book',
-        'book_no',
-        'issue_date',
-        'notes',
-    ];
+            'member',
+            'book',
+            'book_no',
+            'issue_date',
+            'notes',
+        ];
 }

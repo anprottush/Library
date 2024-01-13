@@ -16,6 +16,4 @@ class BookCategory extends Model
         'cover_photo',
         'status',
     ];
-
-
 }

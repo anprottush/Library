@@ -16,4 +16,5 @@ class StoreBookCategory extends Model
         'cover_photo',
         'status',
     ];
+
 }

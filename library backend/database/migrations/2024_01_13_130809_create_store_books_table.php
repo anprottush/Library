@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('storebooks', function (Blueprint $table) {
+        Schema::create('store_books', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('author');
@@ -30,7 +30,6 @@ return new class extends Migration
             $table->string('images')->nullable();
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
@@ -39,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('storebooks');
+        Schema::dropIfExists('store_books');
     }
 };
