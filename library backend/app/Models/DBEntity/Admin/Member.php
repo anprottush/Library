@@ -12,19 +12,19 @@ class Member extends Model
 
     protected $fillable = [
         'name',
-        'author',
-        'quantity',
-        'price',
-        'code_no',
-        'cover_photo',
-        'book_category',
-        'isbn_no',
-        'rack',
-        'edition_number',
-        'edition_date',
-        'publisher',
-        'published_date',
-        'notes',
+        'date_of_birth',
+        'gender',
+        'religion',
+        'email',
+        'phone',
+        'blood_group',
+        'address',
+        'joinning_of_date',
+        'photo',
+        'role',
+        'status',
+        'username',
+        'password',
     ];
 
 }

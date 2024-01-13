@@ -16,7 +16,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
+            'username' => 'required|string',
             'password' => 'required|string',
         ]);
 
@@ -44,7 +44,7 @@ class AuthController extends Controller
         }
 
         $user = [
-            'username'=> Auth::user()->name,
+            'username'=> Auth::user()->username,
             'email'=> Auth::user()->email,
         ];
 

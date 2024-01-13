@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\BookController;
+use App\Http\Controllers\Api\Admin\BookIssueController;
+use App\Http\Controllers\Api\Admin\MemberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
@@ -40,6 +42,14 @@ Route::controller(AuthController::class)->group(function () {
 //     Route::delete('/user/{id}', [UserController::class, 'destroy']);
 // });
 
+Route::controller(UserController::class)->group(function () {
+    Route::get('/user', 'index');
+    Route::get('/user/{id}', 'show');
+    Route::post('/user', 'store');
+    Route::put('/user/{id}', 'update');
+    Route::delete('/user/{id}', 'destroy');
+});
+
 // Admin
 
 Route::controller(BookController::class)->group(function () {
@@ -50,10 +60,22 @@ Route::controller(BookController::class)->group(function () {
     Route::delete('book/{id}', 'delete');
 });
 
-Route::controller(UserController::class)->group(function () {
-    Route::get('/user', 'index');
-    Route::get('/user/{id}', 'show');
-    Route::post('/user', 'store');
-    Route::put('/user/{id}', 'update');
-    Route::delete('/user/{id}', 'destroy');
+Route::controller(BookIssueController::class)->group(function () {
+    Route::get('bookissue', 'getall');
+    Route::get('bookissue/{id}', 'getbyid');
+    Route::post('bookissue', 'store');
+    Route::put('bookissue/{id}', 'update');
+    Route::delete('bookissue/{id}', 'delete');
 });
+
+Route::controller(MemberController::class)->group(function () {
+    Route::get('member', 'getall');
+    Route::get('member/{id}', 'getbyid');
+    Route::post('member', 'store');
+    Route::put('member/{id}', 'update');
+    Route::delete('member/{id}', 'delete');
+});
+
+
+
+
