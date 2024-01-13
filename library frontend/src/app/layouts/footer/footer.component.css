@@ -67,4 +67,7 @@ a {
   text-decoration: none;
   background-color: transparent;
 }
+.footer-bootom-menu ul li a span {
+  font-weight: normal;
+}
 /* Footer Bottom Section End */

@@ -54,6 +54,9 @@ a.header-phone:hover {
 .icon-gap::before {
   margin-right: 10px;
 }
+.mainmenu ul li a span {
+  font-weight: normal;
+}
 /* Header Top Section End */
 
 
@@ -134,6 +137,7 @@ a.header-phone:hover {
 }
 .mainmenu ul {
   padding: 5px 0px;
+  padding-left: .5rem;
 }
 .mainmenu li {
   display: inline-block;
