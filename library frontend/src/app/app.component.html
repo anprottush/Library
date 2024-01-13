@@ -1,38 +1,7 @@
-<!-- <app-header></app-header>
-<app-mainmenu
-  *ngIf="!(_router.url === '/pages-register' || _router.url === '/pages-login')">
-</app-mainmenu>
-<router-outlet></router-outlet> -->
-<app-dashboard></app-dashboard>
 <router-outlet></router-outlet>
-<!-- <app-footer></app-footer> -->
-<!-- app.component.html -->
 
-<!-- <div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
-          <h3>Login</h3>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="angForm" novalidate>
-            <div class="form-group">
-              <label class="center-block">Name:
-                <input class="form-control" formControlName="name">
-              </label>
-            </div>
-            <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
-                <div *ngIf="angForm.controls['name'].errors.required">
-                Name is required.
-              </div>
-            </div>
-      </form>
-      <p>Form value: {{ angForm.value | json }}</p>
-<p>Form status: {{ angForm.status | json }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- -->
+<app-header></app-header>
+<!-- <app-mainmenu *ngIf="!(_router.url === '/pages-register' || _router.url === '/pages-login')"></app-mainmenu> -->
+<!-- <app-dashboard></app-dashboard> -->
+<!-- <app-pages-login></app-pages-login> -->
+<!-- <app-footer></app-footer> -->
