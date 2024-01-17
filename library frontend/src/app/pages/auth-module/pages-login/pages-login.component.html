@@ -9,26 +9,28 @@
             <form class="row g-3 was-validated " [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
               <div class="form-group">
                 <label for="username_or_email">Username Or Email</label> <span class="text-danger">*</span>
-                <input type="text" class="form-control" placeholder="Enter email" id="username_or_email" value="" formControlName="username_or_email" required>
+                <input type="text" class="form-control" placeholder="Enter email" id="username_or_email" value=""
+                  formControlName="username_or_email" required>
                 <div *ngIf="usernameOrEmail!.invalid && (usernameOrEmail!.dirty || usernameOrEmail!.touched)"
-                class="invalid-feedback">
+                  class="invalid-feedback">
                   <div *ngIf="usernameOrEmail!.hasError('required')">Username or Email is required.</div>
                 </div>
               </div>
+              
               <div class="form-group">
                 <label for="password">Password</label> <span class="text-danger">*</span>
-                <input type="password" class="form-control" placeholder="Enter password" id="password" value="" formControlName="password" required>
+                <input type="password" class="form-control" placeholder="Enter password" id="password" value=""
+                  formControlName="password" required>
                 <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="invalid-feedback">
                   <div *ngIf="password!.hasError('required')">Password is required.</div>
                 </div>
               </div>
               <button type="submit" class="btn btn-success btn-block">Login</button>
-                </form>
-                <p>Form value: {{ loginForm.value | json }}</p>
-<p>Form status: {{ loginForm.status | json }}</p>
+            </form>
           </div>
         </div>
       </div>
+      
       <div class="row">
         <div class="col-sm-4 offset-md-4">
           <div class="well text-center">
@@ -42,6 +44,4 @@
       </div>
     </div>
   </section>
-  </main>
-
-
+</main>
