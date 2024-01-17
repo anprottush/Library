@@ -6,7 +6,9 @@ use App\Http\Controllers\Api\Admin\BookIssueController;
 use App\Http\Controllers\Api\Admin\EBookController;
 use App\Http\Controllers\Api\Admin\ExpenseController;
 use App\Http\Controllers\Api\Admin\IncomeController;
+use App\Http\Controllers\Api\Admin\MailController;
 use App\Http\Controllers\Api\Admin\MemberController;
+use App\Http\Controllers\Api\Admin\MessageController;
 use App\Http\Controllers\Api\Admin\RackController;
 use App\Http\Controllers\Api\Admin\RequestBookController;
 use App\Http\Controllers\Api\Admin\StoreBookCategoryController;
@@ -15,9 +17,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AuthController;
-use App\Models\DBEntity\Admin\Expense;
-use App\Models\DBEntity\Admin\Income;
-use App\Models\DBEntity\Admin\Rack;
 use Illuminate\Auth\AuthenticationException;
 
 /*
@@ -60,6 +59,7 @@ Route::controller(UserController::class)->group(function () {
     Route::put('/user/{id}', 'update');
     Route::delete('/user/{id}', 'destroy');
 });
+
 
 // Admin
 
@@ -134,6 +134,25 @@ Route::controller(StoreBookCategoryController::class)->group(function () {
     Route::put('storebookcategory/{id}', 'update');
     Route::delete('storebookcategory/{id}', 'delete');
 });
+
+Route::controller(MailController::class)->group(function () {
+    // Route::get('/user', 'index');
+    // Route::get('/user/{id}', 'show');
+    Route::post('/mail', 'store');
+    // Route::put('/user/{id}', 'update');
+    // Route::delete('/user/{id}', 'destroy');
+});
+
+//chat
+Route::controller(MessageController::class)->group(function () {
+    // Route::get('/user', 'index');
+    // Route::get('/user/{id}', 'show');
+    Route::get('/message', 'store');
+    // Route::put('/user/{id}', 'update');
+    // Route::delete('/user/{id}', 'destroy');
+});
+
+
 
 Route::controller(IncomeController::class)->group(function () {
     Route::get('income', 'getall');
