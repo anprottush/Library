@@ -31,7 +31,9 @@
               "node_modules/jvectormap/jquery-jvectormap.css",
               "node_modules/admin-lte/dist/css/AdminLTE.css",
               "node_modules/admin-lte/dist/css/skins/_all-skins.css",
+              "node_modules/admin-lte/bower_components/morris.js/morris.css",
               "src/assets/css/responsive.css",
+              "src/assets/plugins/chartjs/Chart.min.css",
               "src/styles.css"
 
             ],
@@ -40,7 +42,8 @@
               "node_modules/admin-lte/bower_components/bootstrap/dist/js/bootstrap.js",
               "node_modules/fastclick/lib/fastclick.js",
               "node_modules/admin-lte/dist/js/adminlte.js",
-              "node_modules/admin-lte/dist/js/demo.js"
+              "node_modules/admin-lte/dist/js/demo.js",
+              "src/assets/plugins/chartjs/Chart.min.js"
 
             ]
           },
