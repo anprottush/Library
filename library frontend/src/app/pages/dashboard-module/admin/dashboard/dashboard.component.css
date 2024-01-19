@@ -8,4 +8,7 @@
 .img-circle{
   height: 50px;
 }
-
+#chat-box {
+  height: 347px;
+  overflow-y: auto;
+}
