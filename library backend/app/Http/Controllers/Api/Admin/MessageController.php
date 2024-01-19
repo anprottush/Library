@@ -11,37 +11,31 @@ class MessageController extends Controller
 {
     public function store(Request $request)
     {
-        return response()->json([
-            'success'=> true,
-            'status code'=> Response::HTTP_CREATED,
-            'message'=> 'Message sent successfully',
-            'payload' => 'sex'
-        ]);
-        // $chat = new Message();
+        $chat = new Message();
 
 
-        // $chat->name = $request->name;
-        // $chat->message = $request->message;
+        $chat->name = $request->name;
+        $chat->message = $request->message;
 
-        // //Mail::to($mail->email_address)->send(new SendMail($mail));
+        //Mail::to($mail->email_address)->send(new SendMail($mail));
 
-        // //$chat->save();
+        //$chat->save();
 
-        // if($chat!=null) {
-        //     return response()->json([
-        //         'success'=> true,
-        //         'status code'=> Response::HTTP_CREATED,
-        //         'message'=> 'Message sent successfully',
-        //         'payload' => $chat
-        //     ]);
-        // }
-        // else {
-        //     return response()->json([
-        //         'success'=> false,
-        //         'message'=> 'Message sent failed',
-        //         'payload' => $chat
-        //     ], Response::HTTP_NO_CONTENT);
-        // }
+        if($chat!=null) {
+            return response()->json([
+                'success'=> true,
+                'status code'=> Response::HTTP_CREATED,
+                'message'=> 'Message sent successfully',
+                'payload' => $chat
+            ]);
+        }
+        else {
+            return response()->json([
+                'success'=> false,
+                'message'=> 'Message sent failed',
+                'payload' => $chat
+            ], Response::HTTP_NO_CONTENT);
+        }
 
     }
 }

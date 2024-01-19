@@ -14,19 +14,20 @@ class UserController extends Controller
     {
 
         $users = User::all();
-        if($users!=null) {
-            return response()->json([
-                'success'=> true,
-                'message'=> 'Data retrieve successfully',
-                'payload' => $users
-            ], Response::HTTP_OK);
-        }
-        else {
+        if($users->isEmpty()) {
             return response()->json([
                 'success'=> false,
                 'message'=> 'Data not found',
                 'payload' => $users
             ], Response::HTTP_NOT_FOUND);
+
+        }
+        else {
+            return response()->json([
+                'success'=> true,
+                'message'=> 'Data retrieve successfully',
+                'payload' => $users
+            ], Response::HTTP_OK);
         }
 
 

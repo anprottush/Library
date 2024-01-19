@@ -3,7 +3,7 @@ export interface ApiResponse {
     request_time: string;
     response_time: string;
     request_url: string;
-    message: Array<string>;
+    message: any;
     payload: any;
     operation_type: string;
 }

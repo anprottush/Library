@@ -39,47 +39,45 @@ export class PagesLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  adminClick(): void {
+
+  }
+
+  librarianClick(): void {
+
+  }
+
 
   onSubmit(): void {
 
     var logindata = {
-      username_or_email: this.loginForm.value.username_or_email,
+      username: this.loginForm.value.username_or_email,
       password: this.loginForm.value.password,
     };
 
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
-
+      this.toastr.error('Error!', 'Invalid Data!');
     }
     else {
-      //this.toastr.success('Form submitted successfully', 'Success');
-      //this.router.navigate('');
-      //console.log(logindata);
+
+      this.baseService.post(this.endpoint, logindata).subscribe((res: ApiResponse) => {
+            if (res.success) {
+              //this.loading = true;
+              this.toastr.success('You login successfully', res.message);
+              localStorage.setItem('token',res.payload.authorization.token);
+              //this.router.navigate(['./product/brand']);
+            } else {
+              this.toastr.warning('Warning!', res.message);
+            }
+          }, (error: HttpErrorResponse) => {
+            //this.loading = false;
+            console.error('Http Error:', error);
+            this.toastr.error('Error!', 'Server not found!');
+          });
+
     }
-    // if(this.loginForm.valid)
-    // {
-    //   this.baseService.post(this.endpoint, logindata).subscribe((res: ApiResponse) => {
-    //     if (res.success) {
-    //       //this.loading = true;
-    //       this.toastr.success('You login successfully', res.message[0]);
-    //       //this.router.navigate(['./product/brand']);
-    //     } else {
-    //       this.toastr.warning('Warning!', res.message[0]);
-    //     }
-    //   }, (error: HttpErrorResponse) => {
-    //     //this.loading = false;
-    //     console.error('Http Error:', error);
-    //     this.toastr.error('Error!', 'Server not found!');
-    //   });
 
-
-
-    // }
-    // else
-    // {
-    //   //this.loading = false;
-    //   this.toastr.error('Error!', 'Invalid Data!');
-    // }
 
   }
 

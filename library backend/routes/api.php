@@ -147,7 +147,7 @@ Route::controller(MailController::class)->group(function () {
 Route::controller(MessageController::class)->group(function () {
     // Route::get('/user', 'index');
     // Route::get('/user/{id}', 'show');
-    Route::get('/message', 'store');
+    Route::post('/message', 'store');
     // Route::put('/user/{id}', 'update');
     // Route::delete('/user/{id}', 'destroy');
 });

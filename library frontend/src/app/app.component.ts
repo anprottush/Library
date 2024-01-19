@@ -15,13 +15,4 @@ ngOnInit() {
 
   }
 
-// angForm: any;
-// constructor(private fb: FormBuilder) {
-//  this.createForm();
-// }
-// createForm() {
-//  this.angForm = this.fb.group({
-//     name: ['', Validators.required ]
-//  });
-// }
 }

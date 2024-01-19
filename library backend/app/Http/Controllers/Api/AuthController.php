@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -53,11 +54,14 @@ class AuthController extends Controller
             'success'=> true,
             'status code'=> Response::HTTP_OK,
             'message'=> 'User login successfully',
-            'payload' => $user,
-            'authorization' => [
-                'token' => $token,
-                'type' => 'bearer',
-            ]
+            'payload' => [
+                'data' => $user,
+                'authorization' => [
+                    'token' => $token,
+                    'type' => 'bearer',
+                ],
+            ],
+
         ]);
     }
 
@@ -67,7 +71,7 @@ class AuthController extends Controller
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'max:100'],
             'phone' => ['required', 'string'],
-            'photo' => ['nullable', 'string', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'photo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'username' => ['required', 'string'],
             'password' => ['required', 'string'],
         ]);
@@ -82,6 +86,11 @@ class AuthController extends Controller
         }
 
         $user = User::where('email', $request->email)->first();
+        $photo = $request->file('photo');
+        $photoName = Str::random(32) . '.' . $photo->getClientOriginalExtension();
+        $photo->storeAs('photos', $photoName, 'public');
+        $photoPath = storage_path('app/public/photos/' . $photoName);
+
 
         if ($user) {
 
@@ -89,11 +98,13 @@ class AuthController extends Controller
         }
 
 
+
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'photo' => $request->photo,
+            'photo' => $photoPath,
             'username' => $request->username,
             'password' => Hash::make($request->password),
         ]);
@@ -101,7 +112,8 @@ class AuthController extends Controller
         return response()->json([
             'success'=> true,
             'status code'=> Response::HTTP_CREATED,
-            'message'=> 'User register successfully',
+            'message'=> 'User register successfully
+                         Photo upload successfully',
             'payload' => $user
         ]);
     }
