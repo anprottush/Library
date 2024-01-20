@@ -1,25 +1,5 @@
-
-.languageimage{
-  height: 15px;
-  width: 25px;
-}
-.img-circle{
-  height: 50px;
-
-
-}
-
-.user-image{
-  vertical-align: middle;
-}
-
-#chat-box {
-    overflow-y: hidden;
-    width: auto;
-    height: 350px;
-}
-#chat-box:hover {
-  overflow-y: auto;
+.content-wrapper{
+  padding-bottom: 100px;
 }
 
 

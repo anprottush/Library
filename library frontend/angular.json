@@ -26,12 +26,13 @@
             ],
             "styles": [
               "node_modules/admin-lte/bower_components/bootstrap/dist/css/bootstrap.css",
-              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/admin-lte/bower_components/font-awesome/css/font-awesome.css",
               "node_modules/ionicons/dist/css/ionicons.css",
               "node_modules/jvectormap/jquery-jvectormap.css",
               "node_modules/admin-lte/dist/css/AdminLTE.css",
               "node_modules/admin-lte/dist/css/skins/_all-skins.css",
               "node_modules/admin-lte/bower_components/morris.js/morris.css",
+              "node_modules/admin-lte/bower_components/datatables.net-bs/css/dataTables.bootstrap.css",
               "src/assets/css/responsive.css",
               "src/assets/plugins/chartjs/Chart.min.css",
               "src/styles.css"
@@ -40,6 +41,8 @@
             "scripts": [
               "node_modules/admin-lte/bower_components/jquery/dist/jquery.js",
               "node_modules/admin-lte/bower_components/bootstrap/dist/js/bootstrap.js",
+              "node_modules/admin-lte/bower_components/datatables.net/js/jquery.dataTables.js",
+              "node_modules/admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.js",
               "node_modules/fastclick/lib/fastclick.js",
               "node_modules/admin-lte/dist/js/adminlte.js",
               "node_modules/admin-lte/dist/js/demo.js",

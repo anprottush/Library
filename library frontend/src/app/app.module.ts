@@ -23,6 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesLoginComponent } from './pages/auth-module/pages-login/pages-login.component';
 import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages-register.component';
 import { DashboardComponent } from './pages/dashboard-module/admin/dashboard/dashboard.component';
+
+import { DashboardModuleModule } from './pages/dashboard-module/dashboard-module.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,7 @@ import { DashboardComponent } from './pages/dashboard-module/admin/dashboard/das
     DashboardComponent,
     PagesRegisterComponent,
     UsersProfileComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { DashboardComponent } from './pages/dashboard-module/admin/dashboard/das
     HttpClientModule,
     BrowserAnimationsModule,
     AuthModuleModule,
+    DashboardModuleModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot()

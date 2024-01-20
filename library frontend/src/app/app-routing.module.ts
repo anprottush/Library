@@ -4,12 +4,13 @@ import { DashboardComponent } from './pages/dashboard-module/dashboard/dashboard
 import { PagesLoginComponent } from './pages/auth-module/pages-login/pages-login.component';
 import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages-register.component';
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
+
 const routes: Routes = [
 {
-    path: 'cart',
+    path: 'book-issue',
     loadChildren: () =>
-      import('./modules/cart-module/cart-module.module').then(
-        (m) => m.CartModuleModule
+      import('./modules/bookissue-module/bookissue-module.module').then(
+        (m) => m.BookIssueModuleModule
       ),
   },
   {
@@ -20,11 +21,14 @@ const routes: Routes = [
       ),
   },
 
-// { path: '', component: DashboardComponent },
-//{ path: 'dashboard', component: DashboardComponent },
+ { path: '', component: DashboardComponent },
+{ path: 'dashboard', component: DashboardComponent },
 { path: 'pages-login', component: PagesLoginComponent },
 { path: 'pages-register', component: PagesRegisterComponent },
 { path: 'user-profile', component: UsersProfileComponent },
+// { path: 'book-issue', component: BookIssueComponent },
+// { path: 'create', component: BookIssueComponent },
+
 ];
 
 @NgModule({

@@ -1,0 +1,1369 @@
+<main id="main" class="main">
+  <section class="content-header">
+    <h1>Book Issue</h1>
+    <ol class="breadcrumb">
+      <li><a href="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li class="active">Book Issue</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="row">
+        <div class="bookissuesearchbox">
+          <div class="col-sm-2 col-sm-offset-3">
+            <div class="box-header">
+              <a routerLink="/book-issue/create" class="btn btn-inline btn-mytheme btn-md"><i
+                  class="fa fa-plus"></i> Add Book Issue</a>
+            </div>
+          </div>
+          <div class="col-sm-4 ">
+            <div class="box-body">
+              <form method="POST" action="https://library.greensoftbd.net/bookissue/index">
+                <div class="input-group">
+                  <input type="text" class="form-control" value="" name="memberID" placeholder="Filter By Member ID">
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search-plus" aria-hidden="true"></i>
+                      Search</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box box-mytheme">
+      <div class="box-body">
+        <div id="hide-table">
+          <table #dataTable class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Member ID</th>
+                <th>Member</th>
+                <th>Category</th>
+                <th>Book</th>
+                <th>Book No</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-title="#">1</td>
+                <td data-title="Member ID">1</td>
+                <td data-title="Member">Admin</td>
+                <td data-title="Category">Tamil</td>
+                <td data-title="Book">Kavithai</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/54" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">2</td>
+                <td data-title="Member ID">7</td>
+                <td data-title="Member">Tapos Islam</td>
+                <td data-title="Category">Tamil</td>
+                <td data-title="Book">Kavithai</td>
+                <td data-title="Book No">8</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/53" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="53" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">3</td>
+                <td data-title="Member ID">3</td>
+                <td data-title="Member">Md Aflatun Kawser</td>
+                <td data-title="Category">Hindi Sahitya</td>
+                <td data-title="Book">praqbhu hi mera rakshak hai</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/52" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/52"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/52"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/52" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">4</td>
+                <td data-title="Member ID">19</td>
+                <td data-title="Member">dhirendra singh</td>
+                <td data-title="Category">Hindi Sahitya</td>
+                <td data-title="Book">main mahatma nhi hu</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/51" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/51"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/51"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/51" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">5</td>
+                <td data-title="Member ID">14</td>
+                <td data-title="Member">Wali Khan</td>
+                <td data-title="Category">Hindi Sahitya</td>
+                <td data-title="Book">main mahatma nhi hu</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/50" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">6</td>
+                <td data-title="Member ID">7</td>
+                <td data-title="Member">Tapos Islam</td>
+                <td data-title="Category">Hindi Sahitya</td>
+                <td data-title="Book">mera dharm seva karna hai</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/49" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/49"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/49"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/49" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">7</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">Muni Sadhvi ji</td>
+                <td data-title="Book">chandni chintan ki</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/48" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/48"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/48"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/48" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">8</td>
+                <td data-title="Member ID">12</td>
+                <td data-title="Member">deneme</td>
+                <td data-title="Category">History</td>
+                <td data-title="Book">tyaag</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/47" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">9</td>
+                <td data-title="Member ID">22</td>
+                <td data-title="Member">jeniffer</td>
+                <td data-title="Category">Muni Sadhvi ji</td>
+                <td data-title="Book">mahapragya ki kathaye</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/46" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">10</td>
+                <td data-title="Member ID">20</td>
+                <td data-title="Member">Harindra Yadav</td>
+                <td data-title="Category">Acharya Tulsi</td>
+                <td data-title="Book">rajpath ki khoj</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/45" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="45" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">11</td>
+                <td data-title="Member ID">20</td>
+                <td data-title="Member">Harindra Yadav</td>
+                <td data-title="Category">Acharya Mahapragya</td>
+                <td data-title="Book">abha mandal</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/44" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/44"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/44"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/44" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">12</td>
+                <td data-title="Member ID">15</td>
+                <td data-title="Member">Tolu Idaya</td>
+                <td data-title="Category">Muni Sadhvi ji</td>
+                <td data-title="Book">patheyam</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/43" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/43"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/43"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/43" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">13</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">Hindi Sahitya</td>
+                <td data-title="Book">hum kabhi dambhi na bane</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/42" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/42"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/42"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/42" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">14</td>
+                <td data-title="Member ID">21</td>
+                <td data-title="Member">kajal Gupta</td>
+                <td data-title="Category">Music And Movie</td>
+                <td data-title="Book">The Book Theif</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/41" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/41"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/41"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/41" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">15</td>
+                <td data-title="Member ID">19</td>
+                <td data-title="Member">dhirendra singh</td>
+                <td data-title="Category">History</td>
+                <td data-title="Book">korea kranti aur pragati</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/40" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">16</td>
+                <td data-title="Member ID">20</td>
+                <td data-title="Member">Harindra Yadav</td>
+                <td data-title="Category">History</td>
+                <td data-title="Book">six illuminates of modern india</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/39" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="39" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">17</td>
+                <td data-title="Member ID">16</td>
+                <td data-title="Member">Toe Ad</td>
+                <td data-title="Category">History</td>
+                <td data-title="Book">tyaag</td>
+                <td data-title="Book No">5</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/38" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/38"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/38"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/38" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">18</td>
+                <td data-title="Member ID">15</td>
+                <td data-title="Member">Tolu Idaya</td>
+                <td data-title="Category">History</td>
+                <td data-title="Book">Bharat ke jain paratatva</td>
+                <td data-title="Book No">3</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/37" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/37"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/37"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/37" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">19</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">History</td>
+                <td data-title="Book">agrasen agroha aggarwal</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/36" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/36"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/36"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/36" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">20</td>
+                <td data-title="Member ID">16</td>
+                <td data-title="Member">Toe Ad</td>
+                <td data-title="Category">Music And Movie</td>
+                <td data-title="Book">The Book Theif</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/35" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="35" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">21</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">Test Book 17</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/34" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="34" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">22</td>
+                <td data-title="Member ID">16</td>
+                <td data-title="Member">Toe Ad</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">Test Book 14</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/33" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">23</td>
+                <td data-title="Member ID">3</td>
+                <td data-title="Member">Md Aflatun Kawser</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">Test Book 16</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/32" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">24</td>
+                <td data-title="Member ID">16</td>
+                <td data-title="Member">Toe Ad</td>
+                <td data-title="Category">MANAGEMENT</td>
+                <td data-title="Book">Marketing Management 101</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/31" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">25</td>
+                <td data-title="Member ID">15</td>
+                <td data-title="Member">Tolu Idaya</td>
+                <td data-title="Category">MANAGEMENT</td>
+                <td data-title="Book">Marketing Management 101</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/30" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="30" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">26</td>
+                <td data-title="Member ID">14</td>
+                <td data-title="Member">Wali Khan</td>
+                <td data-title="Category">Kids</td>
+                <td data-title="Book">Test Book 12</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/29" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">27</td>
+                <td data-title="Member ID">2</td>
+                <td data-title="Member">Librarian</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">Test Book 17</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/28" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">28</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">Science</td>
+                <td data-title="Book">Test Book 1</td>
+                <td data-title="Book No">4</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/27" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">29</td>
+                <td data-title="Member ID">6</td>
+                <td data-title="Member">Customer</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">The Chronicles of Narnia</td>
+                <td data-title="Book No">5</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/26" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/26" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">30</td>
+                <td data-title="Member ID">3</td>
+                <td data-title="Member">Md Aflatun Kawser</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">The Giving Tree</td>
+                <td data-title="Book No">14</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/25" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/25" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">31</td>
+                <td data-title="Member ID">3</td>
+                <td data-title="Member">Md Aflatun Kawser</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">The Chronicles of Narnia</td>
+                <td data-title="Book No">10</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/24" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="24" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">32</td>
+                <td data-title="Member ID">4</td>
+                <td data-title="Member">Member</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">Twilight</td>
+                <td data-title="Book No">6</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/23" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="23" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">33</td>
+                <td data-title="Member ID">1</td>
+                <td data-title="Member">Admin</td>
+                <td data-title="Category">Science</td>
+                <td data-title="Book">test</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/22" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/22" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">34</td>
+                <td data-title="Member ID">12</td>
+                <td data-title="Member">deneme</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">Pride and Prejudice</td>
+                <td data-title="Book No">18</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/21" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">35</td>
+                <td data-title="Member ID">2</td>
+                <td data-title="Member">Librarian</td>
+                <td data-title="Category">Music And Movie</td>
+                <td data-title="Book">The Book Theif</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/20" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">36</td>
+                <td data-title="Member ID">1</td>
+                <td data-title="Member">Admin</td>
+                <td data-title="Category">Science</td>
+                <td data-title="Book">test</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/19" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">37</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">Science</td>
+                <td data-title="Book">Physical Chemistry</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/18" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/18"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/18"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/18" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">38</td>
+                <td data-title="Member ID">4</td>
+                <td data-title="Member">Member</td>
+                <td data-title="Category">Science</td>
+                <td data-title="Book">Physical Chemistry</td>
+                <td data-title="Book No">2</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/17" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="17" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">39</td>
+                <td data-title="Member ID">1</td>
+                <td data-title="Member">Admin</td>
+                <td data-title="Category">Science</td>
+                <td data-title="Book">Physical Chemistry</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/16" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/16"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/16"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/16" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">40</td>
+                <td data-title="Member ID">4</td>
+                <td data-title="Member">Member</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">The Giving Tree</td>
+                <td data-title="Book No">13</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/15" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="15" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">41</td>
+                <td data-title="Member ID">4</td>
+                <td data-title="Member">Member</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">Twilight</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/14" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">42</td>
+                <td data-title="Member ID">4</td>
+                <td data-title="Member">Member</td>
+                <td data-title="Category">Music And Movie</td>
+                <td data-title="Book">The Book Theif</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/13" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">43</td>
+                <td data-title="Member ID">1</td>
+                <td data-title="Member">Admin</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">Twilight</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/12" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">44</td>
+                <td data-title="Member ID">6</td>
+                <td data-title="Member">Customer</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">The Chronicles of Narnia</td>
+                <td data-title="Book No">12</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/11" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/11"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/11"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/11" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">45</td>
+                <td data-title="Member ID">3</td>
+                <td data-title="Member">Md Aflatun Kawser</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">Twilight</td>
+                <td data-title="Book No">3</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/10" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/10"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/10"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/10" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">46</td>
+                <td data-title="Member ID">3</td>
+                <td data-title="Member">Md Aflatun Kawser</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">Twilight</td>
+                <td data-title="Book No">11</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/9" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/9"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/9"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/9" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">47</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">Music And Movie</td>
+                <td data-title="Book">The Book Theif</td>
+                <td data-title="Book No">7</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/8" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/8" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">48</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">Pride and Prejudice</td>
+                <td data-title="Book No">17</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/7" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/7"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/7"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/7" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">49</td>
+                <td data-title="Member ID">3</td>
+                <td data-title="Member">Md Aflatun Kawser</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">The Chronicles of Narnia</td>
+                <td data-title="Book No">5</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/6" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="6" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">50</td>
+                <td data-title="Member ID">2</td>
+                <td data-title="Member">Librarian</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">Pride and Prejudice</td>
+                <td data-title="Book No">5</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/5" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="5" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">51</td>
+                <td data-title="Member ID">6</td>
+                <td data-title="Member">Customer</td>
+                <td data-title="Category">Business Book</td>
+                <td data-title="Book">The Chronicles of Narnia</td>
+                <td data-title="Book No">7</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Lost </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/4" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="4" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">52</td>
+                <td data-title="Member ID">6</td>
+                <td data-title="Member">Customer</td>
+                <td data-title="Category">Music And Movie</td>
+                <td data-title="Book">The Book Theif</td>
+                <td data-title="Book No">14</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/3" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="3" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">53</td>
+                <td data-title="Member ID">5</td>
+                <td data-title="Member">Galib Mia</td>
+                <td data-title="Category">General Knowledge</td>
+                <td data-title="Book">Twilight</td>
+                <td data-title="Book No">5</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Issued </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/2" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/bookissue/edit/2"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/bookissue/delete/2"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                  <a href="https://library.greensoftbd.net/bookissue/renewandreturn/2" class="btn btn-info btn-xs mrg"
+                    data-placement="auto" data-toggle="tooltip" data-original-title="Renew Or Return"><i
+                      class="fa fa-retweet"></i></a>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td data-title="#">54</td>
+                <td data-title="Member ID">4</td>
+                <td data-title="Member">Member</td>
+                <td data-title="Category">Science</td>
+                <td data-title="Book">The Fault in Our Stars</td>
+                <td data-title="Book No">1</td>
+                <td data-title="Status">
+                  <span class="text-bold text-success">
+                    Return </span>
+                </td>
+
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/bookissue/view/1" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a>
+
+                  <span data-toggle="tooltip" data-original-title="Payment"><button
+                      class="btn btn-mytheme btn-xs mrg paymentamount" data-bookissueid="1" data-placement="auto"
+                      data-toggle="modal" data-target="#paymentmodal"><i class="fa fa-money"></i></button></span>
+
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>#</th>
+                <th>Member ID</th>
+                <th>Member</th>
+                <th>Category</th>
+                <th>Book</th>
+                <th>Book No</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
