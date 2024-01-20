@@ -14,6 +14,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'member',
+    loadChildren: () =>
+      import('./modules/member-module/member-module.module').then(
+        (m) => m.MemberModuleModule
+      ),
+  },
+  {
     path: 'customer',
     loadChildren: () =>
       import('./modules/customer-module/customer-module.module').then(
