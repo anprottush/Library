@@ -4,7 +4,7 @@ import { BookIssueComponent } from './bookissue/bookissue.component';
 import { BookIssueCreateComponent } from './bookissue/bookissuecreate.component';
 
 const routes: Routes = [
-  { path: 'book-issue', component: BookIssueComponent },
+  { path: 'index', component: BookIssueComponent },
   { path: 'create', component: BookIssueCreateComponent },
 
 ];
