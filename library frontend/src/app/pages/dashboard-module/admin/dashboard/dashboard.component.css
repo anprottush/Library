@@ -210,4 +210,7 @@ iframe {
   width: 60px;
   height: 40px;
 }
-
+#chat-box {
+  height: 347px;
+  overflow-y: auto;
+}
