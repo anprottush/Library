@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-member',
+  selector: 'app-email',
   templateUrl: './emailcreate.component.html',
   styleUrls: ['./email.component.css'],
 })

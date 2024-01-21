@@ -6,10 +6,10 @@ declare var $: any;
   styleUrls: ['./bookissue.component.css']
 })
 export class BookIssueComponent implements AfterViewInit {
-  @ViewChild('dataTable', { static: false }) dataTable!: ElementRef;
+  @ViewChild('dataTable', { static: false }) elementRef!: ElementRef;
 
   ngAfterViewInit(): void {
-    $(this.dataTable.nativeElement).DataTable({
+    $(this.elementRef.nativeElement).DataTable({
       paging: true,
       lengthChange: true,
       searching: true,

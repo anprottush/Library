@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 declare var $: any;
 @Component({
-  selector: 'app-member',
+  selector: 'app-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css'],
 })

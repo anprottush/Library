@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-member',
+  selector: 'app-requestbook',
   templateUrl: './requestbookcreate.component.html',
   styleUrls: ['./requestbook.component.css'],
 })
-export class RequestbookCreateComponent {}
+export class RequestBookCreateComponent {}

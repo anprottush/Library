@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-member',
+  selector: 'app-rack',
   templateUrl: './rackcreate.component.html',
   styleUrls: ['./rack.component.css'],
 })

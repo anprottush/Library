@@ -1,0 +1,114 @@
+<main>
+  <section class="content-header">
+    <h1>Income</h1>
+    <ol class="breadcrumb">
+      <li><a routerLink="/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li class="active">Income</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="box-header">
+        <a routerLink="/income/create" class="btn btn-inline btn-mytheme btn-md"><i
+            class="fa fa-plus"></i> Add Income</a>
+      </div>
+      <div class="box-body">
+        <div id="hide-table">
+          <table #dataTable class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>File</th>
+                <th>Note</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-title="#">1</td>
+                <td data-title="Name">Donation</td>
+                <td data-title="Date">09 Oct 2020</td>
+                <td data-title="Amount">25,000.00</td>
+                <td data-title="File">
+                </td>
+                <td data-title="Note"></td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/income/edit/4" class='btn btn-warning btn-xs'
+                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
+                  <a href="https://library.greensoftbd.net/income/delete/4"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">2</td>
+                <td data-title="Name">Book Sale Auguest</td>
+                <td data-title="Date">16 Sep 2020</td>
+                <td data-title="Amount">50,000.00</td>
+                <td data-title="File">
+                </td>
+                <td data-title="Note"></td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/income/edit/3" class='btn btn-warning btn-xs'
+                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
+                  <a href="https://library.greensoftbd.net/income/delete/3"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">3</td>
+                <td data-title="Name">Book Fine</td>
+                <td data-title="Date">16 Jul 2020</td>
+                <td data-title="Amount">70,000.00</td>
+                <td data-title="File">
+                </td>
+                <td data-title="Note"></td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/income/edit/2" class='btn btn-warning btn-xs'
+                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
+                  <a href="https://library.greensoftbd.net/income/delete/2"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">4</td>
+                <td data-title="Name">Book Sale</td>
+                <td data-title="Date">11 May 2020</td>
+                <td data-title="Amount">50,000.00</td>
+                <td data-title="File">
+                  <a href="https://library.greensoftbd.net/income/download/1" class='btn btn-success btn-xs'
+                    data-placement='top' data-toggle='tooltip'
+                    data-original-title='d1327a0e4e569592af883e97b0b2bbb7eebb85b1201553558ebdfae43540ea69760da05e73ba342e95eac055e1c18bc60801bf0f7161ab109b5c2f1d8c3cc693.jpg'><i
+                      class='fa fa-download'></i></a> </td>
+                <td data-title="Note">Selling Book</td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/income/edit/1" class='btn btn-warning btn-xs'
+                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
+                  <a href="https://library.greensoftbd.net/income/delete/1"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>File</th>
+                <th>Note</th>
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

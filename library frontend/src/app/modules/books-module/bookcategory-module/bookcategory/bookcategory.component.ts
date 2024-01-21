@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 declare var $: any;
 @Component({
-  selector: 'app-member',
+  selector: 'app-bookcategory',
   templateUrl: './bookcategory.component.html',
   styleUrls: ['./bookcategory.component.css'],
 })
-export class BookcategoryComponent implements AfterViewInit {
+export class BookCategoryComponent implements AfterViewInit {
   @ViewChild('dataTable', { static: false }) dataTable!: ElementRef;
 
   ngAfterViewInit(): void {

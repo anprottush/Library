@@ -7,7 +7,7 @@ import { UsersProfileComponent } from './pages/users-profile/users-profile.compo
 
 const routes: Routes = [
   {
-    path: 'book-issue',
+    path: 'bookissue',
     loadChildren: () =>
       import('./modules/bookissue-module/bookissue-module.module').then(
         (m) => m.BookIssueModuleModule
@@ -28,10 +28,59 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'book',
+    loadChildren: () =>
+      import('./modules/books-module/book-module/book-module.module').then(
+        (m) => m.BookModuleModule
+      ),
+  },
+  {
+    path: 'rack',
+    loadChildren: () =>
+      import('./modules/books-module/rack-module/rack-module.module').then(
+        (m) => m.RackModuleModule
+      ),
+  },
+  {
+    path: 'bookcategory',
+    loadChildren: () =>
+      import('./modules/books-module/bookcategory-module/bookcategory-module.module').then(
+        (m) => m.BookCategoryModuleModule
+      ),
+  },
+  {
+    path: 'bookbarcode',
+    loadChildren: () =>
+    import('./modules/books-module/bookbarcode-module/bookbarcode-module.module').then(
+      (m) => m.BookBarcodeModuleModule
+      ),
+  },
+  {
     path: 'requestbook',
     loadChildren: () =>
       import('./modules/requestbook-module/requestbook-module.module').then(
         (m) => m.RequestBookModuleModule
+      ),
+  },
+  {
+    path: 'order',
+    loadChildren: () =>
+    import('./modules/storemanagement-module/order-module/order-module.module').then(
+      (m) => m.OrderModuleModule
+      ),
+  },
+  {
+    path: 'storebook',
+    loadChildren: () =>
+    import('./modules/storemanagement-module/storebook-module/storebook-module.module').then(
+      (m) => m.StoreBookModuleModule
+      ),
+  },
+  {
+    path: 'storebookcategory',
+    loadChildren: () =>
+    import('./modules/storemanagement-module/storebookcategory-module/storebookcategory-module.module').then(
+      (m) => m.StoreBookCategoryModuleModule
       ),
   },
   {
@@ -42,33 +91,26 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'book',
+    path: 'income',
     loadChildren: () =>
-      import('./modules/books-module/book-module/book-module.module').then(
-        (m) => m.BookModuleModule
+      import('./modules/account-module/income-module/income-module.module').then(
+        (m) => m.IncomeModuleModule
       ),
   },
   {
-    path: 'bookcategory',
+    path: 'expense',
     loadChildren: () =>
-      import('./modules/books-module/bookcategory-module/bookcategory-module.module').then(
-        (m) => m.BookcategoryModuleModule
+      import('./modules/account-module/expense-module/expense-module.module').then(
+        (m) => m.ExpenseModuleModule
       ),
   },
-  {
-    path: 'bookbarcode',
-    loadChildren: () =>
-    import('./modules/books-module/bookbarcode-module/bookbarcode-module.module').then(
-      (m) => m.BookbarcodeModuleModule
-      ),
-  },
-  {
-    path: 'rack',
-    loadChildren: () =>
-      import('./modules/books-module/rack-module/rack-module.module').then(
-        (m) => m.RackModuleModule
-      ),
-  },
+
+
+
+
+
+
+
   {
     path: 'customer',
     loadChildren: () =>

@@ -1,0 +1,126 @@
+<main>
+  <section class="content-header">
+    <h1>Store Book</h1>
+    <ol class="breadcrumb">
+      <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li><a href="https://library.greensoftbd.net/storebook/index">Store Book</a></li>
+      <li class="active">Add</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="row">
+        <div class="col-md-6">
+          <form role="form" method="post" enctype="multipart/form-data">
+            <div class="box-body">
+              <div class="form-group ">
+                <label for="name">Name</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="name" name="name" value="" placeholder="Enter name">
+              </div>
+
+              <div class="form-group ">
+                <label for="author">Author</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="author" name="author" value="" placeholder="Enter Author">
+              </div>
+
+              <div class="form-group ">
+                <label for="quantity">Quantity</label> <span class="text-red">*</span>
+                <input type="number" class="form-control" id="quantity" name="quantity" value=""
+                  placeholder="Enter Quantity">
+              </div>
+
+              <div class="form-group ">
+                <label for="price">Price</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="price" name="price" value="" placeholder="Enter Price">
+              </div>
+
+              <div class="form-group ">
+                <label for="codeno">Code No</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="codeno" name="codeno" value="" placeholder="Enter Code No">
+              </div>
+
+              <div class="form-group ">
+                <label for="coverphoto">Cover Photo</label> <span class="text-red">*</span>
+                <div class="input-group image-preview">
+                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                      <span class="fa fa-remove"></span>Clear </button>
+                    <div class="btn btn-success image-preview-input">
+                      <span class="fa fa-repeat"></span>
+                      <span class="image-preview-input-title">File Browse</span>
+                      <input type="file" accept="image/png, image/jpeg, image/gif" name="coverphoto" />
+                    </div>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="storebookcategoryID">Category</label> <span class="text-red">*</span>
+                <select name="storebookcategoryID" id="storebookcategoryID" class="form-control">
+                  <option value="0">Please Select</option>
+                  <option value="6">Mystery</option>
+                  <option value="5">Thriller</option>
+                  <option value="4">Horror</option>
+                  <option value="3">Science Fiction</option>
+                  <option value="2">Adventure</option>
+                </select>
+              </div>
+
+              <div class="form-group ">
+                <label for="isbnno">Isbn No</label>
+                <input type="text" class="form-control" id="isbnno" name="isbnno" value="" placeholder="Enter isbnno">
+              </div>
+
+              <div class="form-group ">
+                <label for="editionnumber">Edition Number</label>
+                <input type="text" class="form-control" id="editionnumber" name="editionnumber" value=""
+                  placeholder="Enter Edition Number">
+              </div>
+
+              <div class="form-group ">
+                <label for="editiondate">Edition Date</label>
+                <input type="text" class="form-control datepicker" id="editiondate" name="editiondate" value=""
+                  placeholder="Enter Edition Date">
+              </div>
+
+              <div class="form-group ">
+                <label for="publisher">Publisher</label>
+                <input type="text" class="form-control" id="publisher" name="publisher" value=""
+                  placeholder="Enter Publisher">
+              </div>
+
+              <div class="form-group ">
+                <label for="publisheddate">Published date</label>
+                <input type="text" class="form-control datepicker" id="publisheddate" name="publisheddate" value=""
+                  placeholder="Enter Published Date">
+              </div>
+
+              <div class="form-group ">
+                <label for="notes">Notes</label>
+                <textarea name="notes" id="notes" cols="30" rows="5" class="form-control"
+                  placeholder="Enter Notes"></textarea>
+              </div>
+
+              <div class="form-group ">
+                <label for="description">Description</label> <span class="text-red">*</span>
+                <textarea name="description" id="description" cols="30" rows="5" class="form-control"
+                  placeholder="Enter description"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="images">Images(Multiple)</label>
+                <input type="file" class="form-control" name="images[]" multiple id="images" />
+              </div>
+              <div id="image_preview"></div>
+
+            </div>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-mytheme">Add Store Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

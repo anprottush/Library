@@ -1,0 +1,162 @@
+<main>
+  <section class="content-header">
+    <h1>Store Book</h1>
+    <ol class="breadcrumb">
+      <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li class="active">Store Book</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="box-header">
+        <a routerLink="/storebook/create" class="btn btn-inline btn-mytheme btn-md"><i
+            class="fa fa-plus"></i> Add Store Book</a>
+      </div>
+      <div class="box-body">
+        <div id="hide-table">
+          <table #dataTable class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Cover Photo</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Quantity</th>
+                <th>Code No</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-title="#">1</td>
+                <td data-title="Cover Photo"><img src="https://library.greensoftbd.net/uploads/default/storebook.jpg"
+                    class="profile_img" alt=""></td>
+                <td data-title="Name">Cartoon Animation</td>
+                <td data-title="Author">Suzanne Collins</td>
+                <td data-title="Quantity">400</td>
+                <td data-title="Code No">66666</td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/storebook/view/6" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/storebook/edit/6"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/storebook/delete/6"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">2</td>
+                <td data-title="Cover Photo"><img src="https://library.greensoftbd.net/uploads/default/storebook.jpg"
+                    class="profile_img" alt=""></td>
+                <td data-title="Name">Disney Animation</td>
+                <td data-title="Author">Suzanne Collins</td>
+                <td data-title="Quantity">400</td>
+                <td data-title="Code No">55555</td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/storebook/view/5" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/storebook/edit/5"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/storebook/delete/5"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">3</td>
+                <td data-title="Cover Photo"><img src="https://library.greensoftbd.net/uploads/default/storebook.jpg"
+                    class="profile_img" alt=""></td>
+                <td data-title="Name">The Lion, the Witch and the Wardrobe</td>
+                <td data-title="Author">C. S. Lewis</td>
+                <td data-title="Quantity">1500</td>
+                <td data-title="Code No">44444</td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/storebook/view/4" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/storebook/edit/4"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/storebook/delete/4"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">4</td>
+                <td data-title="Cover Photo"><img src="https://library.greensoftbd.net/uploads/default/storebook.jpg"
+                    class="profile_img" alt=""></td>
+                <td data-title="Name">The Little Prince</td>
+                <td data-title="Author">Suzanne Collins</td>
+                <td data-title="Quantity">550</td>
+                <td data-title="Code No">33333</td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/storebook/view/3" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/storebook/edit/3"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/storebook/delete/3"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">5</td>
+                <td data-title="Cover Photo"><img src="https://library.greensoftbd.net/uploads/default/storebook.jpg"
+                    class="profile_img" alt=""></td>
+                <td data-title="Name">The Da Vinci Code</td>
+                <td data-title="Author">Dan Brown</td>
+                <td data-title="Quantity">1000</td>
+                <td data-title="Code No">22222</td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/storebook/view/2" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/storebook/edit/2"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/storebook/delete/2"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+              <tr>
+                <td data-title="#">6</td>
+                <td data-title="Cover Photo"><img src="https://library.greensoftbd.net/uploads/default/storebook.jpg"
+                    class="profile_img" alt=""></td>
+                <td data-title="Name">A Tale of Two Cities</td>
+                <td data-title="Author">Charles Dickens</td>
+                <td data-title="Quantity">1000</td>
+                <td data-title="Code No">11111</td>
+                <td data-title="Action">
+                  <a href="https://library.greensoftbd.net/storebook/view/1" class='btn btn-success btn-xs'
+                    data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                      class='fa fa-check-square-o'></i></a> <a href="https://library.greensoftbd.net/storebook/edit/1"
+                    class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                    data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                    href="https://library.greensoftbd.net/storebook/delete/1"
+                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>#</th>
+                <th>Cover Photo</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Quantity</th>
+                <th>Code No</th>
+
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

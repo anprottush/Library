@@ -11,10 +11,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "../assets/js/main.js";
-    this.elementRef.nativeElement.appendChild(s);
+    // var s = document.createElement("script");
+    // s.type = "text/javascript";
+    // s.src = "../assets/js/main.js";
+    // this.elementRef.nativeElement.appendChild(s);
   }
 
 }

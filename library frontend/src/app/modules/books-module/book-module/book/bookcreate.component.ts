@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-member',
+  selector: 'app-book',
   templateUrl: './bookcreate.component.html',
   styleUrls: ['./book.component.css'],
 })

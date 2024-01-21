@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './bookbarcode.component.html',
   styleUrls: ['./bookbarcode.component.css'],
 })
-export class BookbarcodeComponent {}
+export class BookBarcodeComponent {}

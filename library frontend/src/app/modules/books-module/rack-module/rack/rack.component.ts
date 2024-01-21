@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 declare var $: any;
 @Component({
-  selector: 'app-member',
+  selector: 'app-rack',
   templateUrl: './rack.component.html',
   styleUrls: ['./rack.component.css'],
 })

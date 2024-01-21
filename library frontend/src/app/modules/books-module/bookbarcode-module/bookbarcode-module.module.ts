@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BookBarcodeModuleRoutingModule } from './bookbarcode-module-routing.module';
+import { BookBarcodeComponent } from './bookbarcode/bookbarcode.component';
 
-import { BookbarcodeModuleRoutingModule } from './bookbarcode-module-routing.module';
-import { BookbarcodeComponent } from './bookbarcode/bookbarcode.component';
 
 @NgModule({
-  declarations: [BookbarcodeComponent],
-  imports: [CommonModule, BookbarcodeModuleRoutingModule],
+  declarations: [BookBarcodeComponent],
+  imports: [CommonModule, BookBarcodeModuleRoutingModule],
 })
-export class BookbarcodeModuleModule {}
+export class BookBarcodeModuleModule {}
