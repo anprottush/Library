@@ -28,6 +28,48 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'requestbook',
+    loadChildren: () =>
+      import('./modules/requestbook-module/requestbook-module.module').then(
+        (m) => m.RequestBookModuleModule
+      ),
+  },
+  {
+    path: 'email',
+    loadChildren: () =>
+      import('./modules/email-module/email-module.module').then(
+        (m) => m.EmailModuleModule
+      ),
+  },
+  {
+    path: 'book',
+    loadChildren: () =>
+      import('./modules/books-module/book-module/book-module.module').then(
+        (m) => m.BookModuleModule
+      ),
+  },
+  {
+    path: 'bookcategory',
+    loadChildren: () =>
+      import('./modules/books-module/bookcategory-module/bookcategory-module.module').then(
+        (m) => m.BookcategoryModuleModule
+      ),
+  },
+  {
+    path: 'bookbarcode',
+    loadChildren: () =>
+    import('./modules/books-module/bookbarcode-module/bookbarcode-module.module').then(
+      (m) => m.BookbarcodeModuleModule
+      ),
+  },
+  {
+    path: 'rack',
+    loadChildren: () =>
+      import('./modules/books-module/rack-module/rack-module.module').then(
+        (m) => m.RackModuleModule
+      ),
+  },
+  {
     path: 'customer',
     loadChildren: () =>
       import('./modules/customer-module/customer-module.module').then(
