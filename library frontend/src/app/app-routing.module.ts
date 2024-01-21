@@ -49,6 +49,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'bookcategory',
+    loadChildren: () =>
+      import('./modules/books-module/bookcategory-module/bookcategory-module.module').then(
+        (m) => m.BookcategoryModuleModule
+      ),
+  },
+  {
     path: 'rack',
     loadChildren: () =>
       import('./modules/books-module/rack-module/rack-module.module').then(
