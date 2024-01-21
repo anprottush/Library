@@ -56,6 +56,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'bookbarcode',
+    loadChildren: () =>
+    import('./modules/books-module/bookbarcode-module/bookbarcode-module.module').then(
+      (m) => m.BookbarcodeModuleModule
+      ),
+  },
+  {
     path: 'rack',
     loadChildren: () =>
       import('./modules/books-module/rack-module/rack-module.module').then(
