@@ -35,6 +35,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'email',
+    loadChildren: () =>
+      import('./modules/email-module/email-module.module').then(
+        (m) => m.EmailModuleModule
+      ),
+  },
+  {
     path: 'customer',
     loadChildren: () =>
       import('./modules/customer-module/customer-module.module').then(

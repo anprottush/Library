@@ -1,0 +1,56 @@
+<main>
+    <section class="content-header">
+        <h1>Email Send</h1>
+        <ol class="breadcrumb">
+            <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a>
+            </li>
+            <li class="active">Email Send</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="box box-mytheme">
+            <div class="box-header">
+                <a routerLink="/email/create" class="btn btn-inline btn-mytheme btn-md"><i class="fa fa-plus"></i> Add
+                    Email Send</a>
+            </div>
+            <div class="box-body">
+                <div id="hide-table">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Subject</th>
+                                <th>Member Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="#">1</td>
+                                <td data-title="Subject">Book Fine</td>
+                                <td data-title="Member Role">Admin</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/emailsend/view/1"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/emailsend/delete/1"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Subject</th>
+                                <th>Member Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
