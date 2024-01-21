@@ -28,6 +28,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'requestbook',
+    loadChildren: () =>
+      import('./modules/requestbook-module/requestbook-module.module').then(
+        (m) => m.RequestBookModuleModule
+      ),
+  },
+  {
     path: 'customer',
     loadChildren: () =>
       import('./modules/customer-module/customer-module.module').then(
