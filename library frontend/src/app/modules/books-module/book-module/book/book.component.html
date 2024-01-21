@@ -1,0 +1,1083 @@
+<main>
+    <section class="content-header">
+        <h1>Book</h1>
+        <ol class="breadcrumb">
+            <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a>
+            </li>
+            <li class="active">Book</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="box box-mytheme">
+            <div class="box-header">
+                <a routerLink="/book/create" class="btn btn-inline btn-mytheme btn-md"><i class="fa fa-plus"></i> Add
+                    Book</a>
+            </div>
+            <div class="box-body">
+                <div id="hide-table">
+                    <table #dataTable class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Cover Photo</th>
+                                <th>Name</th>
+                                <th>Author</th>
+                                <th>Quantity</th>
+                                <th>Code No</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="#">1</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/08cfbc50aa83bb35da5456e4a3a4e4ce6388574206cbc0e2184a3c7856fe37ef61e2f2c7450abf49ccdb66e2cb721f3cedf1b0686ad22931d304b9c26e426ebe.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Kavithai</td>
+                                <td data-title="Author">Barathiyar</td>
+                                <td data-title="Quantity">15</td>
+                                <td data-title="Code No">5675</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/49"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/49"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/49"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">2</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/4f6cc9d9e330e47f7b661d5f5786ab204a9e9025b115cc9f3447a90b68f997ec458a73254d06844c8e89094670fbca8f67d5a3206723637476994f4afbda81f0.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">chandni chintan ki</td>
+                                <td data-title="Author">muni vatsraj</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2122</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/48"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/48"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/48"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">3</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/e08c6a5a30a34ee67486cd1ab8c9f933e6cab1d5bf4d883d234af54864db08aff0d9061fd09f5bd549002a440e06579da51627846c0fe3869cb5404abc33ce15.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">patheyam</td>
+                                <td data-title="Author">muni rakesh kumar</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">3233</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/47"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/47"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/47"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">4</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/da2f1c0dd35af4c4639f87206daed656407857dc9389a6e7c20b60967503a50edf837ce6f576a836a7facbd6e8d1c55bbc69a7db5c937158c9b612c74d59216f.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">mahapragya ki kathaye</td>
+                                <td data-title="Author">muni dulahraj</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">7777</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/46"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/46"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/46"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">5</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/f820fdd7f1f2779895e7f12d773cd42221f23f9ac562f04fbd379e3de9b3f785c80977027297dcf60e9aabb656b4b6cff7252a26ec1dc28bb80c1ed0122c88eb.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">zindagi ki talash</td>
+                                <td data-title="Author">sadhvi nagina</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">3333</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/45"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/45"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/45"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">6</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/cfe6dc6c8c0f72cfa5daa24bf5cd737519666b9385181868f2d72cc1400eb871694398ce8e5a7c13db58d45cf62717d1b0dd760ab19638db13957566f026d316.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">aakhiri shart</td>
+                                <td data-title="Author">muni prashantkumar</td>
+                                <td data-title="Quantity">2</td>
+                                <td data-title="Code No">7678</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/44"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/44"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/44"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">7</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/3683242ef13a4ec49fbdadc7662d5dec9ddef56f190ecc4dbe079ad35984cb0d2daca610a1b2416c5955a9a97b8aad94bcf365e264533fc72a571dc7cbccd869.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">praqbhu hi mera rakshak hai</td>
+                                <td data-title="Author">vishnu prabhakar</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2595</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/43"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/43"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/43"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">8</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/a6c3f01c44012b905156bb6560131ca9e5db6b94e6dd50ebca68557c5b01edae59c79e0e39b92ea49b41e4f7a4ca5f2e8d56cf375825e00a19023f6170ba4464.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">mera dharm seva karna hai</td>
+                                <td data-title="Author">vishnu prabhakar</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2596</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/42"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/42"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/42"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">9</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/23afdaf357c6b784cd9294108f4e594a8d636f06f00e3b162bb78963277b08f8009e005a9e243b21c6cb8eadecd530bfecb15b27a9438e034f01ef42aa4a3336.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">yeh toh sarvajanik paisa hai</td>
+                                <td data-title="Author">vishnu prabhakar</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2594</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/41"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/41"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/41"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">10</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/7a0e80fe6af6b80edd909965b393ea31d29c13297df4774490ad4c46795490aa4dd1c1ff76b856501491db011ffa390ca48614ae87dc50caeec9d594b356b673.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">hum kabhi dambhi na bane</td>
+                                <td data-title="Author">vishnu prabhakar</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2593</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/40"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/40"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/40"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">11</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/2ad5919c441ab6899066665e98768ea90d1d1445766dab3f336b8c2976f8644dd629f564ed4cf537f2984747f634409be5ba09caf68b1bda90481c8af44ed859.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">main mahatma nhi hu</td>
+                                <td data-title="Author">vishnu prabhakar</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2592</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/39"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/39"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/39"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">12</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/647a73b571e42489e6dbf573f6ceaa4c9e73ad10c6b01b04fffe14e0e066abe41891ae9c8cd12cb5701fe0417b30ee7fb5d66fad8602ceacb018ad348e8626ef.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">hastakshar</td>
+                                <td data-title="Author">acharya tulsi</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2990</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/38"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/38"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/38"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">13</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/13835c690237774316b3e29e110ab89b266a4fef4aa531d33f5b135f40fb51ae88013c642087d9a8ee55a264b4878c6b4e78298518aa87ee632f25c9defa869c.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">jaintatvavidhya</td>
+                                <td data-title="Author">acharya tulsi</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">8762</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/37"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/37"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/37"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">14</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/fbfdfaeb2032c4f8a856b599e3421e81b1044e3ab3bf46d760cd61936e1de27c13558983eb9c4abe47147a8dff4b81a245c5106241c2ee16f4c3c52de902202d.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">manzil ki aur</td>
+                                <td data-title="Author">acharya tulsi</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">3805</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/36"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/36"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/36"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">15</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/0d4944032f6a7739220353d4c82d2b7fbfbc0424457e4cc994bec9af26066b8ebdb22f9f5539c3c5090e3de8b0f2c38598c99646ec73d9a1ea84645586184f00.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">rajpath ki khoj</td>
+                                <td data-title="Author">acharya tulsi</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2995</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/35"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/35"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/35"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">16</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/3051780b56571c445737f62a8a8c8df48dcea6addcdce90d14ec299704069a72bae12462b5cc1df1930a1574ae795149b398bd9d023b665b21d9fef6e636255b.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">aadivachan</td>
+                                <td data-title="Author">acharya tulsi</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2986</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/34"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/34"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/34"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">17</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/4cd5859129cb3725791b0218340eb6a1f299d77367d384e91eddaf5e378290055b43115a937a5fc4f260d211087083eed926706dbcffb7c974336fc54e3ed0b2.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">abha mandal</td>
+                                <td data-title="Author">acharya mahapragya</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2322</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/33"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/33"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/33"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">18</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/7922c6ab53efe6eaf5c7a4daf121346f9328c718e74dc3c2982722d20c168f10022d05494d997686ac73c1ea7e2548d0acae93b712f647990f5701f5bb661066.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">avchetan man se sampark</td>
+                                <td data-title="Author">acharya mahapragya</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">6788</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/32"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/32"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/32"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">19</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/85048a4a13b7d0703b2a78475a5d74ea58448ea88712dbb5887a45f60daba2aaf0b8de9aa32d4f094b302e45cfdc166b71e259344beff8550b17e857f7be706a.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">ahimsa tatva darshan</td>
+                                <td data-title="Author">acharya mahapragya</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2989</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/31"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/31"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/31"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">20</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/cd4fddf9a091037d0a4c94c982816fd881d2fc2207cb2e079a6d31c2c0bed48fd626f10b201e971337d2a255d7aa00ff024db60709572143c1da4165ceb4b306.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">chitta aur man</td>
+                                <td data-title="Author">acharya mahapragya</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">3946</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/30"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/30"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/30"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">21</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/2891206e2c90d21e747d5424e55270106ae4dfd08ab0b7453404592a6e4e93ec352dc676ba05368704c5ae55473ae5c6e58b76114ae08f92fe7ccd1a5a12124f.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">bhikshu vichar darshan</td>
+                                <td data-title="Author">yuvachrya mahapragya</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">67767</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/29"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/29"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/29"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">22</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/beda257541454fba6eb6870756b7aeb8eb8b7f3ab89730a22a32e75b15a9b1fd856663942c3de148e8698edae5b83fe4efcd695c672ede4ff0795379e1855421.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">agrasen agroha aggarwal</td>
+                                <td data-title="Author">swarajyemani agarwal</td>
+                                <td data-title="Quantity">3</td>
+                                <td data-title="Code No">56756</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/28"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/28"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/28"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">23</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/e9c8993bfcdd90a7d83b7ea30752b24049ed39385db0b1e6bee684af6b19f81f8f77ab0eea0e35fa6c4ab51de88d9a9b1c36a2b01b37d60110be99d4f347c7f4.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">tyaag</td>
+                                <td data-title="Author">dharmveer arya</td>
+                                <td data-title="Quantity">5</td>
+                                <td data-title="Code No">56756</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/27"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/27"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/27"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">24</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/361dcf709b2d4ba075e45902a5f9af031654b933be140c33ba4a28806ab7b9b05ee5637fc105da2b5132fbdb1e7036b44877e27abeab73ac3acd4b4511cf720e.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">six illuminates of modern india</td>
+                                <td data-title="Author">dilip kumar roy</td>
+                                <td data-title="Quantity">2</td>
+                                <td data-title="Code No">43534</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/26"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/26"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/26"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">25</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/498388d20a2d544c692745e3ebce5c2ec10e671662e3896f6da518fb4e1b4f7a1897ed815f2fdafbf8ac38817abafe5221846183774afb4f5cfd3025b2fabd45.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Bharat ke jain paratatva</td>
+                                <td data-title="Author">dr. jineshwar das jain</td>
+                                <td data-title="Quantity">5</td>
+                                <td data-title="Code No">6276</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/25"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/25"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/25"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">26</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/61cd05084d40d12943aa92b51b5c88aca4840fba080f9a91d978bc970f17d223b28cd25e4e546ee237cfe2461a4a31f7fd44ec360324e3d049837238aa580596.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">korea kranti aur pragati</td>
+                                <td data-title="Author">harsh dev malviya</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">2431</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/24"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/24"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/24"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">27</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/adcb32abc7056df5580cb8153876314371717f283eb6b74f70de25a4964e3f9ddee5f3b6906f696095cda3caa99f8175862ac24b5bffb154524cabd1de00b41f.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Apna darpan apna Bimb</td>
+                                <td data-title="Author">Acharya Mahapragya</td>
+                                <td data-title="Quantity">6</td>
+                                <td data-title="Code No">c</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/23"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/23"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/23"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">28</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 18</td>
+                                <td data-title="Author">Shoaib</td>
+                                <td data-title="Quantity">4</td>
+                                <td data-title="Code No">abcd118</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/20"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/20"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/20"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">29</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 17</td>
+                                <td data-title="Author">Jazib</td>
+                                <td data-title="Quantity">6</td>
+                                <td data-title="Code No">abcd117</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/19"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/19"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/19"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">30</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 16</td>
+                                <td data-title="Author">Sameer</td>
+                                <td data-title="Quantity">3</td>
+                                <td data-title="Code No">abcd116</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/18"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/18"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/18"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">31</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 15</td>
+                                <td data-title="Author">Wasif</td>
+                                <td data-title="Quantity">9</td>
+                                <td data-title="Code No">abcd115</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/17"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/17"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/17"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">32</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 14</td>
+                                <td data-title="Author">Ali</td>
+                                <td data-title="Quantity">7</td>
+                                <td data-title="Code No">abcd114</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/16"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/16"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/16"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">33</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 13</td>
+                                <td data-title="Author">Junaid</td>
+                                <td data-title="Quantity">2</td>
+                                <td data-title="Code No">abcd113</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/15"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/15"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/15"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">34</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 12</td>
+                                <td data-title="Author">Waris</td>
+                                <td data-title="Quantity">3</td>
+                                <td data-title="Code No">abcd112</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/14"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/14"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/14"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">35</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 11</td>
+                                <td data-title="Author">Flip John</td>
+                                <td data-title="Quantity">10</td>
+                                <td data-title="Code No">abcd111</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/13"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/13"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/13"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">36</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 11</td>
+                                <td data-title="Author">Flip John</td>
+                                <td data-title="Quantity">5</td>
+                                <td data-title="Code No">abcd111</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/12"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/12"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/12"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">37</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 2</td>
+                                <td data-title="Author">Junaid</td>
+                                <td data-title="Quantity">2</td>
+                                <td data-title="Code No">555</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/11"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/11"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/11"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">38</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Test Book 1</td>
+                                <td data-title="Author">Khalid Jameel</td>
+                                <td data-title="Quantity">4</td>
+                                <td data-title="Code No">555</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/10"
+                                        class='btn btn-success btn-xs' data-placement='auto' data-toggle='tooltip'
+                                        data-original-title='View'><i class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/10"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/10"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">39</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/4b3b785e75c1e8910369f19ca51874bacecfd75f708f680cb62888695ff80dce55e5a544931a861bfec3b0899e10484e2287843a17fcb9d0842586a970015198.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">test</td>
+                                <td data-title="Author">test</td>
+                                <td data-title="Quantity">20</td>
+                                <td data-title="Code No">B001</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/9" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/9"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/9"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">40</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/5173e64f4ebdac5afb43d4a80aba03c7b7abfa76b57b2ade5e3b273ef4c149e304c426b1d72dd0327fec9f58dad6104d8c6c8806dce79ae61630a98c17a28e61.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">test</td>
+                                <td data-title="Author">test1</td>
+                                <td data-title="Quantity">5</td>
+                                <td data-title="Code No">B1001</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/8" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/8"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/8"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">41</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/book/19354d446a6e1fee7ea30c39122e4816f084650c231378ec1e91f4784aa2543fa08f140217cce452587847bdda7c805da1166753a7ce57d4e6aa4ba030e7b0f8.png"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Physical Chemistry</td>
+                                <td data-title="Author">Atkins</td>
+                                <td data-title="Quantity">2</td>
+                                <td data-title="Code No">B1001</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/7" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/7"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/7"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">42</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">The Book Theif</td>
+                                <td data-title="Author">Suzanne Collins</td>
+                                <td data-title="Quantity">1</td>
+                                <td data-title="Code No">AEI-KIDS-0001</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/6" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/6"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/6"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">43</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Twilight</td>
+                                <td data-title="Author">Stephenie Meyer</td>
+                                <td data-title="Quantity">90</td>
+                                <td data-title="Code No">44444</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/5" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/5"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/5"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">44</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">Pride and Prejudice</td>
+                                <td data-title="Author">Jon Henry</td>
+                                <td data-title="Quantity">40</td>
+                                <td data-title="Code No">33333</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/4" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/4"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/4"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">45</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">The Chronicles of Narnia</td>
+                                <td data-title="Author">Jon Henry</td>
+                                <td data-title="Quantity">40</td>
+                                <td data-title="Code No">33333</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/3" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/3"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/3"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">46</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">The Giving Tree</td>
+                                <td data-title="Author">Shel Silverstein</td>
+                                <td data-title="Quantity">50</td>
+                                <td data-title="Code No">22222</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/2" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/2"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/2"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-title="#">47</td>
+                                <td data-title="Cover Photo"><img
+                                        src="https://library.greensoftbd.net/uploads/default/book.jpg"
+                                        class="profile_img" alt=""></td>
+                                <td data-title="Name">The Fault in Our Stars</td>
+                                <td data-title="Author">John Green</td>
+                                <td data-title="Quantity">50</td>
+                                <td data-title="Code No">11111</td>
+                                <td data-title="Action">
+                                    <a href="https://library.greensoftbd.net/book/view/1" class='btn btn-success btn-xs'
+                                        data-placement='auto' data-toggle='tooltip' data-original-title='View'><i
+                                            class='fa fa-check-square-o'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/edit/1"
+                                        class='btn btn-warning btn-xs' data-placement='top' data-toggle='tooltip'
+                                        data-original-title='Edit'><i class='fa fa-edit'></i></a> <a
+                                        href="https://library.greensoftbd.net/book/delete/1"
+                                        onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
+                                        class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
+                                        data-original-title="Delete"><i class='fa fa-trash-o'></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Cover Photo</th>
+                                <th>Name</th>
+                                <th>Author</th>
+                                <th>Quantity</th>
+                                <th>Code No</th>
+
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
