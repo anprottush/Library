@@ -4,10 +4,14 @@
   margin-bottom: 0px;
   color: #495057;
 }
-
-
 .my-registration {
   background:#fff;
   padding: 20px;
   border-radius: 10px;
+}
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

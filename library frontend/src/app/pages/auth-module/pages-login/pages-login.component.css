@@ -3,12 +3,14 @@
   padding: 50px 0px;
   background: #f7f7f7;
   margin-bottom: 0;
-  color: #495057;
 }
 .my-login {
   background: #fff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
+}
+.well {
+  border:none;
 }
 .well button {
   margin: 5px;
@@ -17,4 +19,10 @@
 .well strong {
   margin-top: 1.1rem;
   display: block;
+}
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

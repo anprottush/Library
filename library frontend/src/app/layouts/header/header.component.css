@@ -57,6 +57,16 @@ a.header-phone:hover {
 .mainmenu ul li a span {
   font-weight: normal;
 }
+.move-up {
+  margin-top: -30px;
+}
+.add-gap-login a {
+  padding-right: 20px;
+}
+
+.add-gap-register a {
+  padding-left: 20px;
+}
 /* Header Top Section End */
 
 
@@ -71,6 +81,7 @@ a.header-phone:hover {
   margin-top: 8px;
 }
 .input-group-search-form {
+  display: flex;
 }
 .input-group-append {
   margin-left: -1px;
@@ -136,7 +147,7 @@ a.header-phone:hover {
   height: 54px;
 }
 .mainmenu ul {
-  padding: 5px 0px;
+  padding: 10px 0px;
   padding-left: .5rem;
 }
 .mainmenu li {

@@ -19,6 +19,7 @@ export class CommonHttpService {
     this.httpOptions.headers = new HttpHeaders(
       {
          'Content-Type': 'application/json', 
+         'enctype': 'multipart/form-data',
         'Accept': 'application/json', 
         'Access-Control-Allow-Headers': 'Content-Type' 
       }
