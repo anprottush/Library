@@ -6,48 +6,83 @@
           <div class="my-registration">
             <h2 class="text-center">Register</h2>
             <hr>
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data" novalidate>
+            <form class="row g-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
               <div class="form-group">
-                <label>Name</label> <span class="text-danger">*</span>
+                <label for="name">Name</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control" formControlName="name" required>
-                <div *ngIf="name!.invalid && (name!.dirty || name!.touched)" class="invalid-feedback">
-                  <div *ngIf="name!.hasError('required')">Name is required.</div>
+                <div *ngIf="name!.invalid && (name!.dirty || name!.touched)" class="text-danger">
+                  <div *ngIf="name!.hasError('required')">The Name field is required.</div>
                 </div>
               </div>
               <div class="form-group">
-                <label>Email</label> <span class="text-danger">*</span>
+                <label for="email">Email</label> <span class="text-danger">*</span>
                 <input type="email" class="form-control" formControlName="email" required>
-                <div *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="invalid-feedback">
-                  <div *ngIf="email!.hasError('required')">Email is required.</div>
+                <div *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="text-danger">
+                  <div *ngIf="email!.hasError('required')">The Email field is required.</div>
                   <div *ngIf="email!.hasError('email')">Invalid email address.</div>
                 </div>
               </div>
               <div class="form-group">
                 <label>Phone</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control" formControlName="phone" required>
-                <div *ngIf="phone!.invalid && (phone!.dirty || phone!.touched)" class="invalid-feedback">
-                  <div *ngIf="phone!.hasError('required')">Phone is required.</div>
+                <div *ngIf="phone!.invalid && (phone!.dirty || phone!.touched)" class="text-danger">
+                  <div *ngIf="phone!.hasError('required')">The Phone field is required.</div>
                 </div>
               </div>
+
+
+
+
               <div class="form-group">
-                <label>Photo</label>
+                <label for="photo" class="form-label">Photo</label> <span class="text-danger">*</span>
                 <div class="custom-file">
-                  <input type="file" accept="image/*" class="custom-file-input" id="photo">
-                  <label class="custom-file-label" for="photo">Choose File...</label>
+                  <input class="form-control" type="file" formControlName="photo" accept="image/*" (change)="onChange($event)" required>
+                  <div *ngIf="photo!.invalid && (photo!.dirty || photo!.touched)" class="text-danger">
+                    <div *ngIf="photo!.hasError('required')">Please upload any supported format file.</div>
+                  </div>
+                  <!-- <label class="custom-file-label" for="photo">Choose File...</label> -->
                 </div>
               </div>
+
+
+              <!-- <div class="form-group ">
+                <label for="photo" class="form-label">Photo</label> <span class="text-danger">*</span>
+                <div class="input-group image-preview">
+
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default image-preview-clear"
+                            style="display:none;">
+                            <span class="fa fa-remove"></span>Clear </button>
+                        <div class="btn btn-success image-preview-input">
+                            <span class="fa fa-repeat"></span>
+                            <span class="image-preview-input-title">File Browse</span>
+                            <input class="from-group" type="file" formControlName="photo" accept="image/*" (change)="onChange($event)" required>
+                        </div>
+                        <div *ngIf="photo!.invalid && (photo!.dirty || photo!.touched)" class="text-danger">
+                          <div *ngIf="photo!.hasError('required')">Please upload any supported format file.</div>
+                        </div>
+                    </span>
+                </div>
+            </div>-->
+
+
+
+
+
+
+
               <div class="form-group">
                 <label>Username</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control" formControlName="username" required>
-                <div *ngIf="username!.invalid && (username!.dirty || username!.touched)" class="invalid-feedback">
-                  <div *ngIf="username!.hasError('required')">Username is required.</div>
+                <div *ngIf="username!.invalid && (username!.dirty || username!.touched)" class="text-danger">
+                  <div *ngIf="username!.hasError('required')">The Username field is required.</div>
                 </div>
               </div>
               <div class="form-group">
                 <label>Password</label> <span class="text-danger">*</span>
                 <input type="password" class="form-control" formControlName="password" required>
-                <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="invalid-feedback">
-                  <div *ngIf="password!.hasError('required')">Password is required.</div>
+                <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="text-danger">
+                  <div *ngIf="password!.hasError('required')">The Password field is required.</div>
                 </div>
               </div>
               <div class="form-group">

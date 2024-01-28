@@ -1,102 +1,96 @@
-<section class="header-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 header-top-margin">
-          <a href="mailto:dummyadmin@gmail.com" class="header-email">
-            <i class="fa fa-envelope"></i> dummyadmin@gmail.com
-          </a>
-          <a href="" class="header-phone"> <i class="fa fa-phone"></i> 123456 </a>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-end">
-          <ul class="header-items move-up">
-            <li class="add-gap-login">
-              <a routerLink="/pages-login"><i class="fa fa-user"></i> Login</a>
-            </li>
-            <li class="add-gap-register">
-              <a routerLink="/pages-register"><i class="fa fa-user-plus"></i>Register</a>
-            </li>
-          </ul>
+<main>
+  <section class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 header-top-margin">
+            <a href="mailto:dummyadmin@gmail.com" class="header-email">
+              <i class="fa fa-envelope"></i> dummyadmin@gmail.com
+            </a>
+            <a href="" class="header-phone"> <i class="fa fa-phone"></i> 123456 </a>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-end">
+            <ul class="header-items move-up">
+              <li class="add-gap-login">
+                <a routerLink="/pages-login"><i class="fa fa-user"></i> Login</a>
+              </li>
+              <li class="add-gap-register">
+                <a routerLink="/pages-register"><i class="fa fa-user-plus"></i>Register</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="header">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <a href="#">
-          <img
-            class="header-logo"
-            src="assets/img/dummy-library.png"
-            alt=""
-          />
-        </a>
-      </div>
-
-      <div class="col-sm-6">
-        <div class="header-search">
-          <form
-            action="https://library.greensoftbd.net/frontend/shop"
-            method="GET"
-          >
-            <div class="input-group input-group-search-form">
-              <input
-                type="text"
-                placeholder="Search...."
-                class="form-control form-control-lg input-group-search"
-                name="search"
-                value=""
-              />
-              <div class="input-group-append search-btn">
-                <input type="submit" class="input-group-text" value="Search" />
-              </div>
-            </div>
-          </form>
+  <section class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="#">
+            <img class="header-logo" src="assets/img/dummy-library.png" alt="" />
+          </a>
         </div>
-      </div>
 
-      <div class="col-sm-3 margin-top">
-        <div class="carts float-right">
-          <button
-            class="btn btn-success btn btn-lg cart-item-badge center-content"
-            type="button"
-            data-toggle="dropdown">
-            <i class="fa fa-shopping-bag"></i>
-            <b class="badge-gap">0.00</b>
-            <span class="badge bg-danger cart-item-badge-count">0</span>
-          </button>
-          <div class="dropdown-menu dropdown-menu-right">
-            <div class="mini-cart">
-              <h6 class="p-3">Currently you cart item are empty.</h6>
+        <div class="col-sm-6">
+          <div class="header-search">
+            <form action="https://library.greensoftbd.net/frontend/shop" method="GET">
+              <div class="input-group input-group-search-form">
+                <input type="text" placeholder="Search...." class="form-control form-control-lg input-group-search"
+                  name="search" value="" />
+                <div class="input-group-append search-btn">
+                  <input type="submit" class="input-group-text" value="Search" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-sm-3 margin-top">
+
+
+          <div class="cart">
+            <button class="btn btn-success btn btn-lg cart-item" type="button"
+              data-toggle="dropdown">
+              <i class="fa fa-shopping-bag"></i>
+              <b class="badge-gap">0.00</b>
+              <span class="label label-danger cart-item-badge-count">0</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="mini-cart">
+                <h6 class="p-3">Currently you cart item are empty.</h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="mainmenu">
-  <div class="container">
-    <ul>
-      <li>
-        <a class="fa fa-home icon-gap" href="https://library.greensoftbd.net/frontend/index"><span>Home</span></a>
-      </li>
-      <li>
-        <a class="fa fa-file-text icon-gap" href="https://library.greensoftbd.net/frontend/ebook"><span>Ebook</span></a>
-      </li>
-      <li>
-        <a class="fa fa-book icon-gap" href="https://library.greensoftbd.net/frontend/book"><span>Book</span></a>
-      </li>
-      <li>
-        <a class="fa fa-shopping-bag icon-gap" href="https://library.greensoftbd.net/frontend/shop"><span>Shop</span></a>
-      </li>
-      <li>
-        <a class="fa fa-phone icon-gap" href="https://library.greensoftbd.net/frontend/contact"><span>Contact</span></a>
-      </li>
-    </ul>
-  </div>
-</section>
+  <section class="mainmenu">
+    <div class="container">
+      <ul>
+        <li>
+          <a class="fa fa-home icon-gap" href="https://library.greensoftbd.net/frontend/index"><span>Home</span></a>
+        </li>
+        <li>
+          <a class="fa fa-file-text icon-gap"
+            href="https://library.greensoftbd.net/frontend/ebook"><span>Ebook</span></a>
+        </li>
+        <li>
+          <a class="fa fa-book icon-gap" href="https://library.greensoftbd.net/frontend/book"><span>Book</span></a>
+        </li>
+        <li>
+          <a class="fa fa-shopping-bag icon-gap"
+            href="https://library.greensoftbd.net/frontend/shop"><span>Shop</span></a>
+        </li>
+        <li>
+          <a class="fa fa-phone icon-gap"
+            href="https://library.greensoftbd.net/frontend/contact"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+

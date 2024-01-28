@@ -14,26 +14,28 @@ export class CommonHttpService {
     headers: new HttpHeaders(),
     params: new HttpParams()
   };
-  
+
   constructor(private http: HttpClient) {
-    this.httpOptions.headers = new HttpHeaders(
-      {
-         'Content-Type': 'application/json', 
-         'enctype': 'multipart/form-data',
-        'Accept': 'application/json', 
-        'Access-Control-Allow-Headers': 'Content-Type' 
-      }
-    )
-    this.httpOptions.params = new HttpParams()
-      .set('pageNumber', this.pageNo)
-      .set('pageSize', this.pageSize);
+    //  this.httpOptions.headers = new HttpHeaders(
+    //    {
+    // 'enctype':'multipart/form-data'
+    // //     'Content-Type': '*/*',
+    // //     'Accept': '*/*',
+    // //     'Access-Control-Allow-Headers': '*',
+    // //     'Access-Control-Allow-Origin': '*',
+    // //     'Access-Control-Allow-Methods': '*'
+    //    }
+    // )
+    // this.httpOptions.params = new HttpParams()
+    //   .set('pageNumber', this.pageNo)
+    //   .set('pageSize', this.pageSize);
    }
 
   // GET request
   get(endpoint: string, id: number): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(`${this.apiUrl}${endpoint}/${id}`, this.httpOptions);
   }
-  
+
   // GET request
   getWithPagination(endpoint: string): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(`${this.apiUrl}${endpoint}`, this.httpOptions);
@@ -45,8 +47,8 @@ export class CommonHttpService {
   }
 
   // PUT request
-  put(endpoint: string, body: any): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>(`${this.apiUrl}${endpoint}/${body.Id}`, body, this.httpOptions);
+  put(endpoint: string, id: number, body: any): Observable<ApiResponse> {
+    return this.http.put<ApiResponse>(`${this.apiUrl}${endpoint}/${id}`, body, this.httpOptions);
   }
 
   // DELETE request

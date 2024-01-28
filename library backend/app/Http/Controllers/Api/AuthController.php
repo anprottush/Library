@@ -67,11 +67,13 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $data = $request->only('name','email','phone','username','password','photo');
+
+        $validator = Validator::make($data, [
             'name' => ['required', 'string', 'max:100'],
             'email' => ['required', 'string', 'max:100'],
             'phone' => ['required', 'string'],
-            'photo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'photo' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:102400'],
             'username' => ['required', 'string'],
             'password' => ['required', 'string'],
         ]);
@@ -79,24 +81,25 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'success'=> false,
-                'status code'=> Response::HTTP_UNPROCESSABLE_ENTITY,
+                'status code'=> Response::HTTP_BAD_REQUEST,
                 'error' => $validator->errors(),
                 'payload' => null
-            ], 422);
+            ], 400);
         }
 
-        $user = User::where('email', $request->email)->first();
+
+        //$user = User::where('email', $request->email)->first();
         $photo = $request->file('photo');
         $photoName = Str::random(32) . '.' . $photo->getClientOriginalExtension();
         $photo->storeAs('photos', $photoName, 'public');
+        $photo->move(public_path('img'), $photoName);
         $photoPath = storage_path('app/public/photos/' . $photoName);
 
 
-        if ($user) {
+        // if ($user) {
 
-            return response()->json(['message' => 'User already exists. Please sign in'], 409);
-        }
-
+        //     return response()->json(['message' => 'User already exists. Please sign in'], 409);
+        // }
 
 
 
@@ -116,6 +119,8 @@ class AuthController extends Controller
                          Photo upload successfully',
             'payload' => $user
         ]);
+
+
     }
 
     public function logout()

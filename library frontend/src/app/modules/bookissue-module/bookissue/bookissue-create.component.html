@@ -1,0 +1,81 @@
+<main>
+  <section class="content-header">
+    <h1>Book Issue</h1>
+    <ol class="breadcrumb">
+      <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li><a routerLink="/bookissue/index">Book Issue</a></li>
+      <li class="active">Add</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="row">
+        <div class="col-md-6">
+
+          <form [formGroup]="bookissueForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="box-body">
+
+              <div class="form-group ">
+                <label for="memberid">Member</label> <span class="text-red">*</span>
+                <select formControlName="member" id="memberid" class="form-control">
+                  <option value="" selected>Please Select</option>
+                  <option *ngFor="let member of memberlist" [value]="member">{{ member }}</option>
+                </select>
+                <div *ngIf="member!.invalid && (member!.dirty || member!.touched)"
+                  class="text-danger">
+                  <div *ngIf="member!.hasError('required')">The Member field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="bookid">Book</label> <span class="text-red">*</span>
+                <select formControlName="book" id="bookid" class="form-control">
+                  <option value="" selected>Please Select</option>
+                  <option *ngFor="let book of booklist" [value]="book">{{ book }}</option>
+                </select>
+                <div *ngIf="book!.invalid && (book!.dirty || book!.touched)"
+                class="text-danger">
+                <div *ngIf="book!.hasError('required')">The Book field is required.</div>
+              </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="bookno">Book No</label> <span class="text-red">*</span>
+                <select formControlName="book_no" id="bookno" class="form-control">
+                  <option value="" selected>Please Select</option>
+                  <option >0</option>
+                </select>
+                <div *ngIf="bookNo!.invalid && (bookNo!.dirty || bookNo!.touched)"
+                class="text-danger">
+                <div *ngIf="bookNo!.hasError('required')">The Book No field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="issue_date">Issue Date</label> <span class="text-red">*</span>
+                <input type="date" class="form-control datepicker" id="issue_date" formControlName="issue_date" value=""
+                  placeholder="Enter issue date">
+                  <div *ngIf="issueDate!.invalid && (issueDate!.dirty || issueDate!.touched)"
+                class="text-danger">
+                <div *ngIf="issueDate!.hasError('required')">The Issue Date field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="notes">Notes</label>
+                <textarea formControlName="notes" id="notes" cols="30" rows="5" class="form-control"
+                  placeholder="Enter Notes"></textarea>
+              </div>
+
+            </div>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-mytheme">{{ id==0 || id==null ? 'Add Book Issue' : 'Update Book Issue' }}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {{ bookissueForm.value | json }}
+    </div>
+  </section>
+</main>

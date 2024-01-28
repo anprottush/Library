@@ -1,0 +1,85 @@
+.main-slider {
+	padding: 50px 0px;
+	color: #000;
+  background: #f7f7f7;
+}
+
+.main-slider-menu {
+    background: #fff;
+    border:1px solid #49b14d;
+    width: 210px;
+    height: 125px;
+}
+.sidebar-title {
+	color: #fff;
+    background: #49b14d;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.slider-menu ul li {
+	list-style: none;
+	display: block;
+	border-bottom: 1px solid #97d093;
+}
+
+.slider-menu ul li:last-child {
+	border-bottom: 0px solid #97d093;
+}
+
+.slider-menu ul li a {
+	color: #49b14d;
+	padding: 5px 10px;
+	display: block;
+}
+
+.slider-menu ul li a:hover{
+	color: #08800c;
+	text-decoration: none;
+}
+
+.sliders {
+    height: 400px;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 400px;
+}
+
+.sliders .owl-prev {position: absolute;left: -42px;top: 45%;background:none!important}
+.sliders .owl-next {position: absolute;right: -42px;top: 45%;background:none!important}
+.sliders .owl-nav i {color: #49b14d;font-size:35px;padding: 10px 5px;}
+.sliders .owl-nav i {color: #49b14d;font-size:35px;padding: 10px 5px;}
+
+
+
+
+/*My Account*/
+
+.user-profile {
+  background: #fff;
+  padding: 14px;
+  border: 1px solid #ddd;
+}
+
+.user-profile-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-profile-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+.checkoutimage {
+  width: 60px;
+  height: 40px;
+}
+
+

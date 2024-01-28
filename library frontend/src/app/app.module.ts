@@ -12,7 +12,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './core/auth/AuthInterceptor ';
+import { AuthInterceptor } from './core/auth/auth-interceptor';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ConfirmDialogComponent } from './layouts/confirm-dialog/confirm-dialog.component';

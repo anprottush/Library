@@ -119,8 +119,8 @@ const routes: Routes = [
       ),
   },
 
-  { path: '', component: DashboardComponent },
-  { path: 'dashboard', component: DashboardComponent },
+   //{ path: '', component: DashboardComponent },
+   { path: 'dashboard', component: DashboardComponent },
   { path: 'pages-login', component: PagesLoginComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },

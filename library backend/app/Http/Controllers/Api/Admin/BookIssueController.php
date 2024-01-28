@@ -85,6 +85,8 @@ class BookIssueController extends Controller
     {
         $bookissue = BookIssue::find($id);
 
+       // $bookissue->update($request->all());
+
         $bookissue->member = $request->member;
         $bookissue->book = $request->book;
         $bookissue->book_no = $request->book_no;

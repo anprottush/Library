@@ -17,7 +17,7 @@ export class PagesLoginComponent implements OnInit {
   private endpoint = 'user/login';
   public loginForm: FormGroup;
 
-  constructor(private baseService: BaseService<Login>,
+  constructor(private baseService: BaseService,
     private toastr: ToastrService,
     private router: Router
   ) {
@@ -50,7 +50,7 @@ export class PagesLoginComponent implements OnInit {
 
   onSubmit(): void {
 
-    var logindata = {
+    var logindata: Login = {
       username: this.loginForm.value.username_or_email,
       password: this.loginForm.value.password,
     };
@@ -61,12 +61,13 @@ export class PagesLoginComponent implements OnInit {
     }
     else {
 
-      this.baseService.post(this.endpoint, logindata).subscribe((res: ApiResponse) => {
+      this.baseService.post(this.endpoint, logindata)
+      .subscribe((res: ApiResponse) => {
             if (res.success) {
               //this.loading = true;
               this.toastr.success('You login successfully', res.message);
               localStorage.setItem('token',res.payload.authorization.token);
-              //this.router.navigate(['./product/brand']);
+              //this.router.navigate(['./dashboard']);
             } else {
               this.toastr.warning('Warning!', res.message);
             }

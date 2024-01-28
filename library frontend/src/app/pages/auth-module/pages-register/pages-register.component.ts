@@ -13,9 +13,10 @@ import { ApiResponse } from 'src/app/shared/models/ApiResponse';
 export class PagesRegisterComponent implements OnInit {
   private endpoint = 'user/register';
   public registerForm: FormGroup;
+  public imagefile: any;
 
   constructor(
-    private baseService: BaseService<any>,
+    private baseService: BaseService,
     private toastr: ToastrService,
     private formBuilder: FormBuilder
   ) {
@@ -23,7 +24,7 @@ export class PagesRegisterComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
-      photo: ['', Validators.required],
+      photo: [null, Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
@@ -41,6 +42,10 @@ export class PagesRegisterComponent implements OnInit {
     return this.registerForm.get('phone');
   }
 
+  get photo() {
+    return this.registerForm.get('photo');
+  }
+
   get username() {
     return this.registerForm.get('username');
   }
@@ -51,38 +56,45 @@ export class PagesRegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onChange(event: Event): void {
+
+    this.imagefile = (event.target as HTMLInputElement).files?.[0];
+
+  }
+
   onSubmit(): void {
-    var registerdata = {
-      username: this.registerForm.value.username,
-      password: this.registerForm.value.password,
-      email: this.registerForm.value.email,
-      name: this.registerForm.value.name,
-      phone: this.registerForm.value.phone,
-      photo: this.registerForm.value.photo,
-    };
-    debugger;
+    const formData = new FormData();
+    formData.append('name', this.registerForm.value.name);
+    formData.append('email', this.registerForm.value.email);
+    formData.append('phone', this.registerForm.value.phone);
+    formData.append('photo', this.imagefile);
+    formData.append('username', this.registerForm.value.username);
+    formData.append('password', this.registerForm.value.password);
+
+
+
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
       this.toastr.error('Error!', 'Invalid Data!');
     } else {
-      debugger;
-      // this.baseService.post(this.endpoint, registerdata).subscribe(
-      //   (res: ApiResponse) => {
-      //     if (res.success) {
-      //       //this.loading = true;
-      //       this.toastr.success('Register successfully', res.message);
-      //       localStorage.setItem('token', res.payload.authorization.token);
-      //       //this.router.navigate(['./product/brand']);
-      //     } else {
-      //       this.toastr.warning('Warning!', res.message);
-      //     }
-      //   },
-      //   (error: HttpErrorResponse) => {
-      //     //this.loading = false;
-      //     console.error('Http Error:', error);
-      //     this.toastr.error('Error!', 'Server not found!');
-      //   }
-      // );
+      this.baseService.post(this.endpoint, formData).subscribe(
+        (res: ApiResponse) => {
+          if (res.success) {
+            //this.loading = true;
+            this.toastr.success('Register successfully', res.message);
+            console.log(res)
+            // localStorage.setItem('token', res.payload.authorization.token);
+            //this.router.navigate(['./product/brand']);
+          } else {
+            this.toastr.warning('Warning!', res.message);
+          }
+        },
+        (error: HttpErrorResponse) => {
+          //this.loading = false;
+          console.error('Http Error:', error);
+          this.toastr.error('Error!', 'Server not found!');
+        }
+      );
     }
   }
 }

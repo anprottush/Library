@@ -7,7 +7,7 @@ import { ApiResponse } from './../../shared/models/ApiResponse';
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService<T> {
+export class BaseService {
   public loader = false;
 
   constructor(private commonHttp: CommonHttpService) { }
@@ -28,8 +28,8 @@ export class BaseService<T> {
   }
 
   // PUT request
-  put(endpoint: string, body: any): Observable<ApiResponse> {
-    return this.commonHttp.put(endpoint, body);
+  put(endpoint: string, id: number, body: any): Observable<ApiResponse> {
+    return this.commonHttp.put(endpoint, id, body);
   }
 
   // DELETE request

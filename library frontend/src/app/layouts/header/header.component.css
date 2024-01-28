@@ -101,10 +101,17 @@ a.header-phone:hover {
   border: 1px solid #28a745;
   border-radius: 0px 25px 25px 0px;
 }
-.float-right {
-  float: right !important;
+
+
+
+
+
+.cart {
+  float: right;
+
+
 }
-.cart-item-badge {
+.cart-item {
   padding-top: 8px;
 }
 .btn-group-lg > .btn,
