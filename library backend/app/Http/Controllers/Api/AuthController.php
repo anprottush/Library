@@ -115,8 +115,7 @@ class AuthController extends Controller
         return response()->json([
             'success'=> true,
             'status code'=> Response::HTTP_CREATED,
-            'message'=> 'User register successfully
-                         Photo upload successfully',
+            'message'=> 'User register successfully',
             'payload' => $user
         ]);
 

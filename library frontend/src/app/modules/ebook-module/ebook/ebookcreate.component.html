@@ -2,32 +2,38 @@
     <section class="content-header">
         <h1>Ebook</h1>
         <ol class="breadcrumb">
-            <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a>
-            </li>
-            <li><a href="https://library.greensoftbd.net/ebook/index">Ebook</a></li>
-            <li class="active">Add</li>
+            <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
         </ol>
     </section>
     <section class="content">
         <div class="box box-mytheme">
             <div class="row">
                 <div class="col-md-6">
-                    <form role="form" method="post" enctype="multipart/form-data">
+                    <form [formGroup]="ebookForm" (ngSubmit)="id ? onUpdate(ebookForm.value) : onSubmit()" novalidate>
                         <div class="box-body">
-                            <div class="form-group ">
-                                <label for="name">Name</label> <span class="text-red">*</span>
-                                <input type="text" class="form-control" id="name" name="name" value=""
+                            <div class="form-group">
+                                <label for="name">Name</label> <span class="text-red" *ngIf="!id">*</span>
+                                <input type="text" class="form-control" id="name" formControlName="name"
                                     placeholder="Enter Name">
+                                <div *ngIf="name!.invalid && submitted" class="text-danger">
+                                    <div *ngIf="name!.hasError('required')">The Name field is required.</div>
+                                </div>
                             </div>
-                            <div class="form-group ">
-                                <label for="author">Author</label> <span class="text-red">*</span>
-                                <input type="text" class="form-control" id="author" name="author" value=""
+
+                            <div class="form-group">
+                                <label for="author">Author</label> <span class="text-red" *ngIf="!id">*</span>
+                                <input type="text" class="form-control" id="author" formControlName="author"
                                     placeholder="Enter Author">
+                                <div *ngIf="author!.invalid && submitted" class="text-danger">
+                                    <div *ngIf="author!.hasError('required')">The Author field is required.</div>
+                                </div>
                             </div>
-                            <div class="form-group ">
+
+                            <!-- <div class="form-group">
                                 <label for="coverphoto">Cover Photo</label> <span class="text-red">*</span>
                                 <div class="input-group image-preview">
-                                    <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                    <input type="text" class="form-control image-preview-filename" disabled="disabled"
+                                        [value]="selectedPhotoName">
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default image-preview-clear"
                                             style="display:none;">
@@ -36,23 +42,46 @@
                                             <span class="fa fa-repeat"></span>
                                             <span class="image-preview-input-title">File Browse</span>
                                             <input type="file" accept="image/png, image/jpeg, image/gif"
-                                                name="coverphoto" />
+                                                formControlName="coverphoto" (change)="onPhotoChange($event)"
+                                                required />
                                         </div>
                                     </span>
                                 </div>
+                                <div *ngIf="coverphoto!.invalid && submitted" class="text-danger">
+                                    <div *ngIf="coverphoto!.hasError('required')">The Cover Photo field is required.
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="form-group">
+                                <label for="coverphoto">Cover Photo</label> <span class="text-red" *ngIf="!id">*</span>
+                                <input type="file" class="form-control" formControlName="coverphoto"
+                                    (change)="onPhotoChange($event)" accept="image/*" required />
+                                <div *ngIf="ebookForm.get('coverphoto')?.invalid && submitted" class="text-danger">
+                                    <div *ngIf="ebookForm.get('coverphoto')?.hasError('required')">The Cover Photo field
+                                        is required.</div>
+                                </div>
                             </div>
-                            <div class="form-group ">
-                                <label for="file">File</label> <span class="text-red">*</span>
-                                <input type="file" class="form-control" name="file" accept="application/pdf" />
+
+                            <div class="form-group">
+                                <label for="file">File</label> <span class="text-red" *ngIf="!id">*</span>
+                                <input type="file" class="form-control" formControlName="file" accept="application/pdf"
+                                    (change)="onFileChange($event)" required />
+                                <div *ngIf="file!.invalid && submitted" class="text-danger">
+                                    <div *ngIf="file!.hasError('required')">The File field is required.</div>
+                                </div>
                             </div>
-                            <div class="form-group ">
+
+                            <div class="form-group">
                                 <label for="notes">Notes</label>
-                                <textarea name="notes" value="" cols="30" rows="5" class="form-control"
+                                <textarea formControlName="notes" cols="30" rows="5" class="form-control"
                                     placeholder="Enter notes"></textarea>
                             </div>
                         </div>
+
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-mytheme">Add Ebook</button>
+                            <button type="submit" class="btn btn-mytheme">{{ id ? 'Update Ebook' : 'Add Ebook'
+                                }}</button>
                         </div>
                     </form>
                 </div>
