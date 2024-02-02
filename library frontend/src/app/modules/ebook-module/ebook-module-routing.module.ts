@@ -6,6 +6,7 @@ import { EbookCreateComponent } from './ebook/ebookcreate.component';
 const routes: Routes = [
   { path: 'index', component: EbookComponent },
   { path: 'create', component: EbookCreateComponent },
+  { path: 'edit/:id', component: EbookCreateComponent },
 ];
 
 @NgModule({

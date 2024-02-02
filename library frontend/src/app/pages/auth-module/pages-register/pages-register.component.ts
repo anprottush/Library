@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BaseService } from 'src/app/core/services/base.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ApiResponse } from 'src/app/shared/models/ApiResponse';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-pages-register',
@@ -18,7 +19,8 @@ export class PagesRegisterComponent implements OnInit {
   constructor(
     private baseService: BaseService,
     private toastr: ToastrService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -80,17 +82,16 @@ export class PagesRegisterComponent implements OnInit {
       this.baseService.post(this.endpoint, formData).subscribe(
         (res: ApiResponse) => {
           if (res.success) {
-            //this.loading = true;
             this.toastr.success('Register successfully', res.message);
             console.log(res)
-            // localStorage.setItem('token', res.payload.authorization.token);
-            //this.router.navigate(['./product/brand']);
+            setTimeout(() => {
+              this.router.navigate(['/pages-login']);
+            }, 3000);
           } else {
             this.toastr.warning('Warning!', res.message);
           }
         },
         (error: HttpErrorResponse) => {
-          //this.loading = false;
           console.error('Http Error:', error);
           this.toastr.error('Error!', 'Server not found!');
         }
