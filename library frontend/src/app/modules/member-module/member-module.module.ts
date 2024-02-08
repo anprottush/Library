@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MemberModuleRoutingModule } from './member-module-routing.module';
 import { MemberComponent } from './member/member.component';
-import { MemberCreateComponent } from './member/membercreate.component';
+import { MemberCreateComponent } from './member/member-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { MemberCreateComponent } from './member/membercreate.component';
   ],
   imports: [
     CommonModule,
-    MemberModuleRoutingModule
+    MemberModuleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class MemberModuleModule { }

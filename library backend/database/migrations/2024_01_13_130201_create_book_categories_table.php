@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('cover_photo')->nullable();
+            $table->string('photo')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();

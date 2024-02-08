@@ -15,7 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class BookIssueCreateComponent implements OnInit {
 
   private endpoint = 'bookissue';
-  public bookissueForm: FormGroup;
+  public form: FormGroup;
   public id: number = 0;
   public editData: any;
   public isEdit: boolean = true;
@@ -86,7 +86,7 @@ export class BookIssueCreateComponent implements OnInit {
     private bookissueService: BookIssueService,
     private formBuilder: FormBuilder
   ) {
-    this.bookissueForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       member: ['', Validators.required],
       book: ['', [Validators.required]],
       book_no: ['', Validators.required],
@@ -98,43 +98,42 @@ export class BookIssueCreateComponent implements OnInit {
   }
 
   get member() {
-    return this.bookissueForm.get('member');
+    return this.form.get('member');
   }
 
   get book() {
-    return this.bookissueForm.get('book');
+    return this.form.get('book');
   }
 
   get bookNo() {
-    return this.bookissueForm.get('book_no');
+    return this.form.get('book_no');
   }
 
   get issueDate() {
-    return this.bookissueForm.get('issue_date');
+    return this.form.get('issue_date');
   }
 
   get notes() {
-    return this.bookissueForm.get('notes');
+    return this.form.get('notes');
   }
 
 
 
   ngOnInit(): void {
-    this.route.params.subscribe((params:any)=>{
+    this.route.params.subscribe((params: any) => {
       this.id = params['id'];
       if (params['id'] != null) {
         const data = this.bookissueService.getData();
 
-        var bookIssueData = {
-          member: data.member,
-          book: data.book,
-          book_no: data.book_no,
-          issue_date: data.issue_date,
-          notes: data.notes
-        };
-        console.log(bookIssueData);
+        console.log(data);
         if (data) {
-          this.bookissueForm.setValue(bookIssueData);
+          this.form.setValue({
+            member: data.member,
+            book: data.book,
+            book_no: data.book_no,
+            issue_date: data.issue_date,
+            notes: data.notes
+          });
         }
 
 
@@ -143,21 +142,21 @@ export class BookIssueCreateComponent implements OnInit {
     })
 
 
-   }
+  }
 
 
   onSubmit(): void {
 
     var bookIssueData = {
-      member: this.bookissueForm.value.member,
-      book: this.bookissueForm.value.book,
-      book_no: this.bookissueForm.value.book_no,
-      issue_date: this.bookissueForm.value.issue_date,
-      notes: this.bookissueForm.value.notes
+      member: this.form.value.member,
+      book: this.form.value.book,
+      book_no: this.form.value.book_no,
+      issue_date: this.form.value.issue_date,
+      notes: this.form.value.notes
     };
 
-    if (this.bookissueForm.invalid) {
-      this.bookissueForm.markAllAsTouched();
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
       this.toastr.error('Error!', 'Invalid Data!');
       return
     } else {
@@ -183,8 +182,6 @@ export class BookIssueCreateComponent implements OnInit {
         );
 
       } else {
-
-
 
         this.baseService.post(this.endpoint, bookIssueData).subscribe(
           (res: ApiResponse) => {

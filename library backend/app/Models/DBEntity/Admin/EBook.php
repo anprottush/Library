@@ -13,7 +13,7 @@ class EBook extends Model
     protected $fillable = [
         'name',
         'author',
-        'cover_photo',
+        'photo',
         'file',
         'notes',
     ];

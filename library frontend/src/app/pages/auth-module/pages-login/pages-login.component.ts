@@ -67,7 +67,7 @@ export class PagesLoginComponent implements OnInit {
               //this.loading = true;
               this.toastr.success('You login successfully', res.message);
               localStorage.setItem('token',res.payload.authorization.token);
-              //this.router.navigate(['./dashboard']);
+              this.router.navigate(['./admin-dashboard']);
             } else {
               this.toastr.warning('Warning!', res.message);
             }

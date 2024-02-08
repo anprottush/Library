@@ -3,13 +3,15 @@
         <h1>Ebook</h1>
         <ol class="breadcrumb">
             <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a routerLink="/ebook">Ebook</a></li>
+            <li class="active">Add</li>
         </ol>
     </section>
     <section class="content">
         <div class="box box-mytheme">
             <div class="row">
                 <div class="col-md-6">
-                    <form [formGroup]="ebookForm" (ngSubmit)="id ? onUpdate(ebookForm.value) : onSubmit()" novalidate>
+                    <form [formGroup]="form" (ngSubmit)="id ? onUpdate(form.value) : onSubmit()" novalidate>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">Name</label> <span class="text-red" *ngIf="!id">*</span>
@@ -57,8 +59,8 @@
                                 <label for="coverphoto">Cover Photo</label> <span class="text-red" *ngIf="!id">*</span>
                                 <input type="file" class="form-control" formControlName="coverphoto"
                                     (change)="onPhotoChange($event)" accept="image/*" required />
-                                <div *ngIf="ebookForm.get('coverphoto')?.invalid && submitted" class="text-danger">
-                                    <div *ngIf="ebookForm.get('coverphoto')?.hasError('required')">The Cover Photo field
+                                <div *ngIf="form.get('coverphoto')?.invalid && submitted" class="text-danger">
+                                    <div *ngIf="form.get('coverphoto')?.hasError('required')">The Cover Photo field
                                         is required.</div>
                                 </div>
                             </div>

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\DBEntity\Admin\Income;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
 
 class IncomeController extends Controller
 {
@@ -55,31 +57,45 @@ class IncomeController extends Controller
     public function store(Request $request)
     {
 
-        $income = new Income();
+        $data = $request->only('name','date','amount','file','note');
 
-        $income->name = $request->name;
-        //$income->date = $request->date;
-        $income->amount = $request->amount;
-        //$income->file = $request->file;
-        $income->note = $request->note;
+        $validator = Validator::make($data, [
+            'name' => ['required', 'string', 'max:100'],
+            'date' => ['required', 'string', 'max:100'],
+            'amount' => ['required', 'numeric'],
+            'file' => ['required', 'mimes:pdf,doc,docx,xls,xlsx,pptx,jpg,jpeg,png,gif,svg', 'max:1048576'],
+            'note' => ['nullable', 'string'],
+        ]);
 
-        $income->save();
-
-        if($income!=null) {
-            return response()->json([
-                'success'=> true,
-                'status code'=> Response::HTTP_CREATED,
-                'message'=> 'Data created successfully',
-                'payload' => $income
-            ]);
-        }
-        else {
+        if ($validator->fails()) {
             return response()->json([
                 'success'=> false,
-                'message'=> 'Data creation failed',
-                'payload' => $income
-            ], Response::HTTP_NO_CONTENT);
+                'status code'=> Response::HTTP_BAD_REQUEST,
+                'message'=> 'Data creation failed because some error occured. please try to solve the error',
+                'error' => $validator->errors(),
+            ], 400);
         }
+
+        $file = $request->file('file');
+        $fileName = Str::random(32) . '.' . $file->getClientOriginalExtension();
+        $file->storeAs('files', $fileName, 'public');
+        $file->move(public_path('file'), $fileName);
+        $filePath = url('/file/' . $fileName);
+
+        $income = Income::create([
+            'name' => $request->name,
+            'date' => $request->date,
+            'amount' => $request->amount,
+            'file' => $filePath,
+            'note' => $request->note,
+        ]);
+
+        return response()->json([
+            'success'=> true,
+            'status code'=> Response::HTTP_CREATED,
+            'message'=> 'Data created successfully',
+            'payload' => $income
+        ], 201);
 
     }
 
@@ -88,9 +104,8 @@ class IncomeController extends Controller
         $income = Income::find($id);
 
         $income->name = $request->name;
-        //$income->date = $request->date;
+        $income->date = $request->date;
         $income->amount = $request->amount;
-        //$income->file = $request->file;
         $income->note = $request->note;
 
         $income->save();

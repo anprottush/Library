@@ -1,34 +1,139 @@
 <main>
-    <section class="content-header">
-        <h1>Request Book</h1>
-        <ol class="breadcrumb">
-            <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a>
-            </li>
-            <li class="active">Request Book</li>
-        </ol>
-    </section>
-    <section class="content">
-        <div class="box box-mytheme">
-            <div class="box-header">
-                <a routerLink="/requestbook/create" class="btn btn-inline btn-mytheme btn-md"><i class="fa fa-plus"></i>
-                    Add Request Book</a>
-            </div>
-            <div class="box-body">
-                <div id="hide-table">
-                    <table #dataTable class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Cover Photo</th>
-                                <th>Name</th>
-                                <th>Author</th>
-                                <th>Book Bategory</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
+  <section class="content-header">
+    <h1>Request Book</h1>
+    <ol class="breadcrumb">
+      <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a>
+      </li>
+      <li class="active">Request Book</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="box-header">
+        <a routerLink="/requestbook/add" class="btn btn-inline btn-mytheme btn-md"><i class="fa fa-plus"></i>
+          Add Request Book</a>
+      </div>
+      <div class="box-body">
+        <div id="hide-table">
+          <table #dataTable class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Cover Photo</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Book Category</th>
+                <!-- <th>Status</th> -->
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let element of list let i = index">
+                <td>{{ i+1 }}</td>
+                <td>
+
+                  <img [src]="element.photo" class="profile_img" alt="">
+
+                </td>
+                <td>{{ element.name }}</td>
+                <td>{{ element.author }}</td>
+                <td>
+                  {{ element.book_category}}
+                </td>
+
+                <td>
+
+                  <!-- <button class='btn btn-success btn-xs' type="button" (click)="detailesClick()">                  view
+                                  <i class='fa fa-check-square-o'></i>
+                                </button> -->
+
+                  <button class='btn btn-warning btn-xs custom-btn' title="Edit" type="button"
+                    (click)="editClick(element)">
+                    <!--   edit -->
+                    <i class='fa fa-edit'></i>
+                  </button>
+
+                  <button class="btn btn-danger btn-xs custom-btn" title="Delete" type="button"
+                    (click)="deleteClick(element)">
+                    <!--   delete -->
+                    <i class='fa fa-trash-o'></i>
+                  </button>
+
+                  <!-- <button  class="btn btn-mytheme btn-xs mrg custom-btn" title="Edit" type="button" (click)="addClick(element)">                 edit
+                                  <i class="fa fa-external-link"></i>
+                                </button>
+
+                                <button  class="btn btn-info btn-xs mrg" title="Delete" type="button" (click)="rejectClick(element)">                 delete
+                                  <i class="fa fa-ban"></i>
+                                </button> -->
+
+                </td>
+              </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <!-- <tr>
                                 <td data-title="#">1</td>
                                 <td data-title="Cover Photo"><img
                                         src="https://library.greensoftbd.net/uploads/book/f167c4a070d60e6c6f3c6376c5e375b13d52983a19a87da60942223d322694fffd1435861199dea768d31f518356a51698c95cb39cc2a417ef25bda555da12a5.png"
@@ -143,22 +248,35 @@
                                         class="btn btn-info btn-xs mrg" data-placement="auto" data-toggle="tooltip"
                                         data-original-title="Rejected"><i class="fa fa-ban"></i></a>
                                 </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>#</th>
-                                <th>Cover Photo</th>
-                                <th>Name</th>
-                                <th>Author</th>
-                                <th>Book Bategory</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
+                            </tr> -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>#</th>
+                <th>Cover Photo</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Book Bategory</th>
+                <!-- <th>Status</th> -->
+                <th>Action</th>
+              </tr>
+            </tfoot>
+          </table>
         </div>
-    </section>
+
+        <div class="loading" *ngIf="!loading">
+          <div>
+            <h5>Please wait...</h5>
+            <div class="loader"></div>
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+  </section>
 </main>

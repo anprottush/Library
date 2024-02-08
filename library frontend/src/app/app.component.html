@@ -1,9 +1,12 @@
-<!-- <app-header></app-header>
-<app-mainmenu *ngIf="!(_router.url === '/pages-register' || _router.url === '/pages-login')">
-</app-mainmenu> -->
+<app-header
+*ngIf="!(_router.url === '/admin-dashboard' || _router.url === '/bookissue' || _router.url === '/member')"></app-header>
+<app-mainmenu
+*ngIf="!(_router.url === '/pages-register' || _router.url === '/pages-login' || _router.url === '/admin-dashboard' || _router.url === '/bookissue' || _router.url === '/member')">
+</app-mainmenu>
 
-<app-dashboard></app-dashboard>
+<!-- <app-dashboard></app-dashboard> -->
 <app-confirm-dialog></app-confirm-dialog>
-<!-- <router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 
-<app-footer></app-footer> -->
+<app-footer
+*ngIf="!(_router.url === '/admin-dashboard' || _router.url === '/bookissue' || _router.url === '/member')"></app-footer>

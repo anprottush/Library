@@ -1,0 +1,126 @@
+<main>
+    <section class="content-header">
+        <h1>Request Book</h1>
+        <ol class="breadcrumb">
+            <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a>
+            </li>
+            <li><a routerLink="/requestbook">Request Book</a></li>
+            <li class="active">Add</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="box box-mytheme">
+            <div class="row">
+                <div class="col-md-6">
+
+
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+                        <div class="box-body">
+
+                          <div class="form-group ">
+                            <label for="name">Name</label> <span class="text-red">*</span>
+                            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter name">
+                            <div *ngIf="name!.invalid && (name!.dirty || name!.touched)"
+                              class="text-danger">
+                              <div *ngIf="name!.hasError('required')">The Name field is required.</div>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group ">
+                            <label for="author">Author</label> <span class="text-red">*</span>
+                            <input type="text" class="form-control" id="author" formControlName="author" placeholder="Enter Author">
+                            <div *ngIf="author!.invalid && (author!.dirty || author!.touched)"
+                              class="text-danger">
+                              <div *ngIf="author!.hasError('required')">The Author field is required.</div>
+                            </div>
+                          </div>
+
+                            <!-- <div class="form-group ">
+                                <label for="coverphoto">Cover Photo</label> <span class="text-red">*</span>
+                                <div class="input-group image-preview">
+                                    <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default image-preview-clear"
+                                            style="display:none;">
+                                            <span class="fa fa-remove"></span>Clear </button>
+                                        <div class="btn btn-success image-preview-input">
+                                            <span class="fa fa-repeat"></span>
+                                            <span class="image-preview-input-title">File Browse</span>
+                                            <input type="file" accept="image/png, image/jpeg, image/gif"
+                                                name="coverphoto" />
+                                        </div>
+                                    </span>
+                                </div>
+                            </div> -->
+
+                            <div class="form-group">
+                              <label for="coverphoto">Cover Photo</label> <span class="text-red">*</span>
+                              <input type="file" class="form-control" formControlName="photo"
+                                  (change)="onChange($event)" accept="image/*" required/>
+                                  <div *ngIf="photo!.invalid && (photo!.dirty || photo!.touched)" class="text-danger">
+                                    <div *ngIf="photo!.hasError('required')">The Cover Photo field is required.</div>
+                                  </div>
+                            </div>
+
+
+                            <div class="form-group ">
+                              <label for="bookcategoryID">Book Category</label>
+                              <select formControlName="bookcategory" id="bookcategoryID" class="form-control">
+                                <option value="" selected>Please Select</option>
+                                <option *ngFor="let bookcategory of bookcategorylist" [value]="bookcategory">{{ bookcategory }}</option>
+                              </select>
+
+                            </div>
+
+
+                            <div class="form-group ">
+                              <label for="isbnno">Isbn No</label>
+                              <input type="text" class="form-control" id="isbnno" formControlName="isbnno" placeholder="Enter isbnno">
+
+                            </div>
+
+
+                            <div class="form-group ">
+                              <label for="editionnumber">Edition Number</label>
+                              <input type="text" class="form-control" id="editionnumber" formControlName="editionnumber" placeholder="Enter Edition Number">
+                            </div>
+
+
+                            <div class="form-group ">
+                              <label for="editiondate">Edition Date</label>
+                              <input type="date" class="form-control" id="editiondate" formControlName="editiondate" placeholder="Enter Edition Date">
+                            </div>
+
+                            <div class="form-group ">
+                              <label for="publisher">Publisher</label>
+                              <input type="text" class="form-control" id="publisher" formControlName="publisher" placeholder="Enter Publisher">
+                            </div>
+
+                            <div class="form-group ">
+                              <label for="publisheddate">Published date</label>
+                              <input type="date" class="form-control" id="publisheddate" formControlName="publisheddate" placeholder="Enter Published Date">
+                            </div>
+
+                            <div class="form-group ">
+                              <label for="notes">Notes</label>
+                              <textarea id="notes" cols="30" rows="5" class="form-control"
+                              placeholder="Enter Notes" formControlName="notes"></textarea>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-mytheme">{{ id==0 || id==null ? 'Add Request Book' : 'Update Request Book' }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -11,8 +11,12 @@
     <div class="box box-mytheme">
       <div class="row">
         <div class="col-md-6">
+
+
+
           <form role="form" method="post" enctype="multipart/form-data">
             <div class="box-body">
+
               <div class="form-group ">
                 <label for="name">Name</label> <span class="text-red">*</span>
                 <input type="text" class="form-control" id="name" name="name" value="" placeholder="Enter name">
@@ -115,9 +119,11 @@
               <div id="image_preview"></div>
 
             </div>
-            <div class="box-footer">
-              <button type="submit" class="btn btn-mytheme">Add Store Book</button>
-            </div>
+
+            <!-- <div class="box-footer">
+              <button type="submit" class="btn btn-mytheme">{{ id==0 || id==null ? 'Add Store Book' : 'Update Store Book' }}</button>
+            </div> -->
+
           </form>
         </div>
       </div>

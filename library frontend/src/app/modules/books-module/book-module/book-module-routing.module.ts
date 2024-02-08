@@ -1,11 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BookComponent } from './book/book.component';
-import { BookCreateComponent } from './book/bookcreate.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { BookCreateComponent } from "./book/book-create.component";
+import { BookComponent } from "./book/book.component";
+
+
 
 const routes: Routes = [
-  { path: 'index', component: BookComponent },
-  { path: 'create', component: BookCreateComponent },
+  { path: '', component: BookComponent },
+  { path: 'add', component: BookCreateComponent },
 ];
 
 @NgModule({

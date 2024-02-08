@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BaseService } from 'src/app/core/services/base.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ApiResponse } from 'src/app/shared/models/ApiResponse';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pages-register',
@@ -83,10 +83,11 @@ export class PagesRegisterComponent implements OnInit {
         (res: ApiResponse) => {
           if (res.success) {
             this.toastr.success('Register successfully', res.message);
-            console.log(res)
-            setTimeout(() => {
+            console.log(res);
+
+            // setTimeout(() => {
               this.router.navigate(['/pages-login']);
-            }, 3000);
+            // }, 3000);
           } else {
             this.toastr.warning('Warning!', res.message);
           }

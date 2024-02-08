@@ -1,0 +1,188 @@
+<main>
+  <section class="content-header">
+    <h1>Member</h1>
+    <ol class="breadcrumb">
+      <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li><a routerLink="/member">Member</a></li>
+      <li class="active">Add</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="row">
+        <div class="col-md-6">
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <div class="box-body">
+
+              <div class="form-group ">
+                <label for="name">Name</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter name">
+                <div *ngIf="name!.invalid && (name!.dirty || name!.touched)"
+                  class="text-danger">
+                  <div *ngIf="name!.hasError('required')">The Name field is required.</div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="dateofbirth">Date of birth</label> <span class="text-red">*</span>
+                <input type="date" class="form-control datepicker" id="dateofbirth" formControlName="dateofbirth"
+                  placeholder="Enter date of birth">
+                  <div *ngIf="date!.invalid && (date!.dirty || date!.touched)"
+                  class="text-danger">
+                  <div *ngIf="date!.hasError('required')">The Date of birth field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Gender</label> <span class="text-red">*</span>
+                <select formControlName="gender" id="gender" class="form-control">
+                  <option value="" selected>Please Select</option>
+                  <option *ngFor="let gender of genderlist" [value]="gender">{{ gender }}</option>
+                </select>
+                <div *ngIf="gender!.invalid && (gender!.dirty || gender!.touched)" class="text-danger">
+                  <div *ngIf="gender!.hasError('required')">The Gender field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="religion">Religion</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="religion" formControlName="religion"
+                  placeholder="Enter religion">
+                  <div *ngIf="religion!.invalid && (religion!.dirty || religion!.touched)" class="text-danger">
+                    <div *ngIf="religion!.hasError('required')">The Religion field is required.</div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label> <span class="text-danger">*</span>
+                <input type="email" class="form-control" formControlName="email" required>
+                <div *ngIf="email!.invalid && (email!.dirty || email!.touched)" class="text-danger">
+                  <div *ngIf="email!.hasError('required')">The Email field is required.</div>
+                  <div *ngIf="email!.hasError('email')">Invalid email address.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="phone">Phone</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Enter phone">
+                <div *ngIf="phone!.invalid && (phone!.dirty || phone!.touched)" class="text-danger">
+                  <div *ngIf="phone!.hasError('required')">The Phone field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="bloodgroup">Blood Group</label> <span class="text-red">*</span>
+                <select formControlName="bloodgroup" id="bloodgroup" class="form-control">
+                  <option value="">Please Select</option>
+                  <option *ngFor="let bloodgroup of bloodgrouplist" [value]="bloodgroup">{{ bloodgroup }}</option>
+                </select>
+                <div *ngIf="bloodgroup!.invalid && (bloodgroup!.dirty || bloodgroup!.touched)" class="text-danger">
+                  <div *ngIf="bloodgroup!.hasError('required')">The Blood Group field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="address">Address</label> <span class="text-red">*</span>
+                <textarea formControlName="address" cols="30" rows="5" class="form-control"
+                  placeholder="Enter address"></textarea>
+                  <div *ngIf="address!.invalid && (address!.dirty || address!.touched)" class="text-danger">
+                    <div *ngIf="address!.hasError('required')">The Address field is required.</div>
+                  </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="joinningdate">Joinning of date</label> <span class="text-red">*</span>
+                <input type="date" class="form-control datepicker" id="joinningdate" formControlName="joinningdate"
+                  placeholder="Enter joinning of date">
+                  <div *ngIf="joinningdate!.invalid && (joinningdate!.dirty || joinningdate!.touched)" class="text-danger">
+                    <div *ngIf="joinningdate!.hasError('required')">The Joinning of date field is required.</div>
+                  </div>
+              </div>
+
+              <!-- <div class="form-group ">
+                <label for="photo">Photo</label>
+                <div class="input-group image-preview">
+                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                      <span class="fa fa-remove"></span>Clear </button>
+                    <div class="btn btn-success image-preview-input">
+                      <span class="fa fa-repeat"></span>
+                      <span class="image-preview-input-title">File Browse</span>
+                      <input type="file" accept="image/png, image/jpeg, image/gif" name="photo" />
+                    </div>
+                  </span>
+                </div>
+              </div> -->
+
+              <div class="form-group">
+                <label for="photo">Photo</label> <span class="text-red">*</span>
+                <input type="file" class="form-control" formControlName="photo"
+                    (change)="onChange($event)" accept="image/*" required/>
+                    <!-- <div *ngIf="photo!.invalid && (photo!.dirty || photo!.touched)" class="text-danger">
+                      <div *ngIf="photo!.hasError('required')">The Cover Photo field is required.</div>
+                    </div> -->
+              </div>
+
+
+              <div class="form-group ">
+                <label for="roleID">Role</label> <span class="text-red">*</span>
+                <select formControlName="role" id="roleID" class="form-control">
+                  <option value="" selected>Please Select</option>
+                  <option *ngFor="let role of rolelist" [value]="role">{{ role }}</option>
+                </select>
+                <div *ngIf="role!.invalid && (role!.dirty || role!.touched)" class="text-danger">
+                  <div *ngIf="role!.hasError('required')">The Role field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="status">Status</label> <span class="text-red">*</span>
+                <select formControlName="status" id="status" class="form-control">
+                  <option value="" selected>Please Select</option>
+                  <option *ngFor="let status of statuslist" [value]="status">{{ status }}</option>
+                </select>
+                <div *ngIf="status!.invalid && (status!.dirty || status!.touched)" class="text-danger">
+                  <div *ngIf="status!.hasError('required')">The Status field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="username">Username</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="username" formControlName="username"
+                  placeholder="Enter username">
+                  <div *ngIf="username!.invalid && (username!.dirty || username!.touched)" class="text-danger">
+                    <div *ngIf="username!.hasError('required')">The Username field is required.</div>
+                  </div>
+              </div>
+
+              <div class="form-group ">
+                <label for="password">Password</label> <span class="text-red">*</span>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" formControlName="password"
+                    placeholder="Enter Password">
+                  <span style="cursor: pointer;" class="input-group-addon" id="generate_password"><i
+                      class="fa fa-repeat"></i></span>
+                  <span style="cursor: pointer;" class="input-group-addon" id="showpassword"><i class="fa fa-eye"
+                      id="eyeicon"></i></span>
+                      <div *ngIf="password!.invalid && (password!.dirty || password!.touched)" class="text-danger">
+                        <div *ngIf="password!.hasError('required')">The Password field is required.</div>
+                      </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="box-footer">
+              <button type="submit" class="btn btn-mytheme">{{ id==0 || id==null ? 'Add Member' : 'Update Member' }}</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+      {{ form.value | json }}
+    </div>
+  </section>
+</main>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->double('quantity');
             $table->double('price');
             $table->bigInteger('code_no');
-            $table->string('cover_photo')->nullable();
+            $table->string('photo')->nullable();
             $table->string('category')->nullable();
             $table->bigInteger('isbn_no')->nullable();
             $table->bigInteger('edition_number');

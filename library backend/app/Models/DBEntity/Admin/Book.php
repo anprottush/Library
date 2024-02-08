@@ -16,7 +16,7 @@ class Book extends Model
         'quantity',
         'price',
         'code_no',
-        'cover_photo',
+        'photo',
         'book_category',
         'isbn_no',
         'rack',

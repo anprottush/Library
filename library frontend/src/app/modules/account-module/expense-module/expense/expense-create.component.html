@@ -1,0 +1,90 @@
+<main>
+  <section class="content-header">
+    <h1>Expense</h1>
+    <ol class="breadcrumb">
+      <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li><a routerLink="/expense">Expense</a></li>
+      <li class="active">Add</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="box box-mytheme">
+      <div class="row">
+        <div class="col-md-6">
+
+
+
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <div class="box-body">
+
+               <div class="form-group ">
+                <label for="name">Name</label> <span class="text-red">*</span>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter name">
+                <div *ngIf="name!.invalid && (name!.dirty || name!.touched)"
+                  class="text-danger">
+                  <div *ngIf="name!.hasError('required')">The Name field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="date">Date</label> <span class="text-red">*</span>
+                <input type="date" class="form-control datepicker" id="date" formControlName="date"
+                  placeholder="Enter date">
+                  <div *ngIf="date!.invalid && (date!.dirty || date!.touched)"
+                  class="text-danger">
+                  <div *ngIf="date!.hasError('required')">The Date field is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="amount">Amount</label> <span class="text-red">*</span>
+                <input type="text" class="form-control datepicker" id="amount" formControlName="amount"
+                placeholder="Enter Amount">
+                  <div *ngIf="amount!.invalid && (amount!.dirty || amount!.touched)"
+                  class="text-danger">
+                  <div *ngIf="amount!.hasError('required')">The Amount field is required.</div>
+                </div>
+              </div>
+
+              <!-- <div class="form-group ">
+                <label for="file">File</label>
+                <div class="input-group image-preview">
+                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                      <span class="fa fa-remove"></span>Clear </button>
+                    <div class="btn btn-success image-preview-input">
+                      <span class="fa fa-repeat"></span>
+                      <span class="image-preview-input-title">File Browse</span>
+                      <input type="file" accept="image/png, image/jpeg, image/gif" name="file" />
+                    </div>
+                  </span>
+                </div>
+              </div> -->
+
+              <div class="form-group">
+                <label for="file">File</label>
+                <input type="file" class="form-control" formControlName="file"
+                    (change)="onChange($event)" accept="*" required/>
+              </div>
+
+              <div class="form-group ">
+                <label for="note">Note</label>
+                <textarea id="note" cols="30" rows="5" class="form-control"
+                 formControlName="note"></textarea>
+              </div>
+
+            </div>
+
+            <div class="box-footer">
+              <button type="submit" class="btn btn-mytheme">{{ id==0 || id==null ? 'Add Expense' : 'Update Expense' }}</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

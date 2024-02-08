@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RequestBookComponent } from './requestbook/requestbook.component';
-import { RequestBookCreateComponent } from './requestbook/requestbookcreate.component';
+import { RequestBookCreateComponent } from './requestbook/requestbook-create.component';
 
 const routes: Routes = [
-  { path: 'index', component: RequestBookComponent },
-  { path: 'create', component: RequestBookCreateComponent },
+  { path: '', component: RequestBookComponent },
+  { path: 'add', component: RequestBookCreateComponent },
+  { path: 'edit/:id', component: RequestBookCreateComponent },
 ];
 
 @NgModule({

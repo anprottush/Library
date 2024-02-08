@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EbookModuleRoutingModule } from './ebook-module-routing.module';
 import { EbookComponent } from './ebook/ebook.component';
-import { EbookCreateComponent } from './ebook/ebookcreate.component';
+import { EbookCreateComponent } from './ebook/ebook-create.component';
 
 @NgModule({
   declarations: [EbookComponent, EbookCreateComponent],

@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\DBEntity\Admin\RequestBook;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
 
 class RequestBookController extends Controller
 {
@@ -54,36 +56,61 @@ class RequestBookController extends Controller
 
     public function store(Request $request)
     {
-        $requestbook = new RequestBook();
+        $data = $request->only('name','author','photo','book_category','isbn_no','edition_number','edition_date',
+        'publisher','published_date','notes');
 
-        $requestbook->name = $request->name;
-        $requestbook->author = $request->author;
-        $requestbook->cover_photo = $request->cover_photo;
-        $requestbook->book_category = $request->book_category;
-        $requestbook->isbn_no = $request->isbn_no;
-        $requestbook->edition_number = $request->edition_number;
-        $requestbook->edition_date = $request->edition_date;
-        $requestbook->publisher = $request->publisher;
-        $requestbook->published_date = $request->published_date;
-        $requestbook->notes = $request->notes;
+        $validator = Validator::make($data, [
+            'name' => ['required', 'string', 'max:100'],
+            'author' => ['required', 'string'],
+            'photo' => ['required', 'image', 'mimes:pdf,doc,docx,xls,xlsx,pptx,jpg,jpeg,png,gif,svg', 'max:102400'],
+            'book_category' => ['required', 'string'],
+            'isbn_no' => ['nullable', 'numeric', 'integer'],
+            'edition_number' => ['required', 'numeric', 'integer'],
+            'edition_date' => ['nullable', 'string'],
+            'publisher' => ['nullable', 'string'],
+            'published_date' => ['nullable', 'string'],
+            'notes' => ['nullable', 'string'],
 
-        $requestbook->save();
 
-        if($requestbook!=null) {
-            return response()->json([
-                'success'=> true,
-                'status code'=> Response::HTTP_CREATED,
-                'message'=> 'Data created successfully',
-                'payload' => $requestbook
-            ]);
-        }
-        else {
+
+        ]);
+
+        if ($validator->fails()) {
             return response()->json([
                 'success'=> false,
-                'message'=> 'Data creation failed',
-                'payload' => $requestbook
-            ], Response::HTTP_NO_CONTENT);
+                'status code'=> Response::HTTP_BAD_REQUEST,
+                'message'=> 'Data creation failed because some error occured. please try to solve the error',
+                'error' => $validator->errors(),
+            ], 400);
         }
+
+        $photo = $request->file('photo');
+        $photoName = Str::random(32) . '.' . $photo->getClientOriginalExtension();
+        $photo->storeAs('photos', $photoName, 'public');
+        $photo->move(public_path('img'), $photoName);
+        $photoPath = url('/img/' . $photoName);
+
+
+        $requestbook = RequestBook::create([
+            'name' => $request->name,
+            'author' => $request->author,
+            'photo' => $photoPath,
+            'book_category' => $request->book_category,
+            'isbn_no' => $request->isbn_no,
+            'edition_number' => $request->edition_number,
+            'edition_date' => $request->edition_date,
+            'publisher' => $request->publisher,
+            'published_date' => $request->published_date,
+            'notes' => $request->notes,
+
+        ]);
+
+        return response()->json([
+            'success'=> true,
+            'status code'=> Response::HTTP_CREATED,
+            'message'=> 'Data created successfully',
+            'payload' => $requestbook
+        ], 201);
 
     }
 
@@ -93,7 +120,6 @@ class RequestBookController extends Controller
 
         $requestbook->name = $request->name;
         $requestbook->author = $request->author;
-        $requestbook->cover_photo = $request->cover_photo;
         $requestbook->book_category = $request->book_category;
         $requestbook->isbn_no = $request->isbn_no;
         $requestbook->edition_number = $request->edition_number;

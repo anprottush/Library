@@ -9,12 +9,12 @@ import { EbookService } from './ebook-service';
 
 @Component({
   selector: 'app-ebook-create',
-  templateUrl: './ebookcreate.component.html',
+  templateUrl: './ebook-create.component.html',
   styleUrls: ['./ebook.component.css'],
 })
 export class EbookCreateComponent implements OnInit {
   private endpoint = 'ebook';
-  public ebookForm: FormGroup;
+  public form: FormGroup;
   public submitted = false;
   public selectedPhotoName: any;
   public selectedFileName: any;
@@ -28,33 +28,33 @@ export class EbookCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private EbookService: EbookService
   ) {
-    this.ebookForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       name: ['', Validators.required],
       author: ['', Validators.required],
       coverphoto: [null, Validators.required],
       file: [null, Validators.required],
-      notes: [''],
+      notes: ['', Validators.required],
     });
   }
 
   get name() {
-    return this.ebookForm.get('name');
+    return this.form.get('name');
   }
 
   get author() {
-    return this.ebookForm.get('author');
+    return this.form.get('author');
   }
 
   get coverphoto() {
-    return this.ebookForm.get('coverphoto');
+    return this.form.get('coverphoto');
   }
 
   get file() {
-    return this.ebookForm.get('file');
+    return this.form.get('file');
   }
 
   get notes() {
-    return this.ebookForm.get('notes');
+    return this.form.get('notes');
   }
 
   ngOnInit(): void {
@@ -62,17 +62,15 @@ export class EbookCreateComponent implements OnInit {
       this.id = params['id'];
       if (params['id'] != null) {
         const data = this.EbookService.getData();
-        console.log(data);
+
         var ebookData = {
           name: data.name,
           author: data.author,
-          coverphoto: data.cover_photo,
-          file: data.file,
           notes: data.notes,
         };
         console.log(ebookData);
         if (data) {
-          this.ebookForm.setValue(ebookData);
+          this.form.setValue(ebookData);
         }
       }
     });
@@ -81,20 +79,20 @@ export class EbookCreateComponent implements OnInit {
     this.submitted = true;
 
     const formData = new FormData();
-    formData.append('name', this.ebookForm.value.name);
-    formData.append('author', this.ebookForm.value.author);
+    formData.append('name', this.form.value.name);
+    formData.append('author', this.form.value.author);
     formData.append('photo', this.selectedPhotoName);
     formData.append('file', this.selectedFileName);
-    formData.append('notes', this.ebookForm.value.notes);
+    formData.append('notes', this.form.value.notes);
 
-    if (this.ebookForm.invalid) {
-      this.ebookForm.markAllAsTouched();
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
       this.toastr.error('Invalid Form Data!', 'Error');
       return;
     }
 
     if (this.id) {
-      this.onUpdate(this.ebookForm.value);
+      this.onUpdate(this.form.value);
     } else {
       this.baseService.post(this.endpoint, formData).subscribe(
         (response: any) => {

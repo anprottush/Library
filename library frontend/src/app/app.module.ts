@@ -22,7 +22,7 @@ import { AuthModuleModule } from './pages/auth-module/auth-module.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesLoginComponent } from './pages/auth-module/pages-login/pages-login.component';
 import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages-register.component';
-import { DashboardComponent } from './pages/dashboard-module/admin/dashboard/dashboard.component';
+import { AdminDashboardComponent } from './pages/dashboard-module/admin/dashboard/dashboard.component';
 
 import { DashboardModuleModule } from './pages/dashboard-module/dashboard-module.module';
 
@@ -34,7 +34,7 @@ import { DashboardModuleModule } from './pages/dashboard-module/dashboard-module
     SidebarComponent,
     FooterComponent,
     PagesLoginComponent,
-    DashboardComponent,
+    AdminDashboardComponent,
     PagesRegisterComponent,
     UsersProfileComponent,
     ConfirmDialogComponent,

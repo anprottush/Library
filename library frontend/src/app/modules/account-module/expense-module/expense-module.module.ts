@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExpenseModuleRoutingModule } from './expense-module-routing.module';
 import { ExpenseComponent } from './expense/expense.component';
-import { ExpenseCreateComponent } from './expense/expensecreate.component';
+import { ExpenseCreateComponent } from './expense/expense-create.component';
 
 @NgModule({
   declarations: [

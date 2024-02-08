@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\DBEntity\Admin\Expense;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
 
 class ExpenseController extends Controller
 {
@@ -55,31 +57,45 @@ class ExpenseController extends Controller
     public function store(Request $request)
     {
 
-        $expense = new Expense();
+        $data = $request->only('name','date','amount','file','note');
 
-        $expense->name = $request->name;
-        //$expense->date = $request->date;
-        $expense->amount = $request->amount;
-        //$expense->file = $request->file;
-        $expense->note = $request->note;
+        $validator = Validator::make($data, [
+            'name' => ['required', 'string', 'max:100'],
+            'date' => ['required', 'string'],
+            'amount' => ['required', 'numeric'],
+            'file' => ['required', 'mimes:pdf,doc,docx,xls,xlsx,pptx,jpg,jpeg,png,gif,svg', 'max:1048576'],
+            'note' => ['nullable', 'string'],
+        ]);
 
-        $expense->save();
-
-        if($expense!=null) {
-            return response()->json([
-                'success'=> true,
-                'status code'=> Response::HTTP_CREATED,
-                'message'=> 'Data created successfully',
-                'payload' => $expense
-            ]);
-        }
-        else {
+        if ($validator->fails()) {
             return response()->json([
                 'success'=> false,
-                'message'=> 'Data creation failed',
-                'payload' => $expense
-            ], Response::HTTP_NO_CONTENT);
+                'status code'=> Response::HTTP_BAD_REQUEST,
+                'message'=> 'Data creation failed because some error occured. please try to solve the error',
+                'error' => $validator->errors(),
+            ], 400);
         }
+
+        $file = $request->file('file');
+        $fileName = Str::random(32) . '.' . $file->getClientOriginalExtension();
+        $file->storeAs('files', $fileName, 'public');
+        $file->move(public_path('file'), $fileName);
+        $filePath = url('/file/' . $fileName);
+
+        $expense = Expense::create([
+            'name' => $request->name,
+            'date' => $request->date,
+            'amount' => $request->amount,
+            'file' => $filePath,
+            'note' => $request->note,
+        ]);
+
+        return response()->json([
+            'success'=> true,
+            'status code'=> Response::HTTP_CREATED,
+            'message'=> 'Data created successfully',
+            'payload' => $expense
+        ], 201);
 
     }
 
@@ -88,9 +104,8 @@ class ExpenseController extends Controller
         $expense = Expense::find($id);
 
         $expense->name = $request->name;
-        //$expense->date = $request->date;
+        $expense->date = $request->date;
         $expense->amount = $request->amount;
-        //$expense->file = $request->file;
         $expense->note = $request->note;
 
         $expense->save();

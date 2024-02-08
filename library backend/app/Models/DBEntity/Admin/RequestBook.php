@@ -13,7 +13,7 @@ class RequestBook extends Model
     protected $fillable = [
         'name',
         'author',
-        'cover_photo',
+        'photo',
         'book_category',
         'isbn_no',
         'edition_number',

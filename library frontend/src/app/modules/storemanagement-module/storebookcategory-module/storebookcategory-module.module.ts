@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StoreBookCategoryModuleRoutingModule } from './storebookcategory-module-routing.module';
 import { StoreBookCategoryComponent } from './storebookcategory/storebookcategory.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { StoreBookCategoryComponent } from './storebookcategory/storebookcategor
   ],
   imports: [
     CommonModule,
-    StoreBookCategoryModuleRoutingModule
+    StoreBookCategoryModuleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class StoreBookCategoryModuleModule { }

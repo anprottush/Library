@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreBookModuleRoutingModule } from './storebook-module-routing.module';
 import { StoreBookComponent } from './storebook/storebook.component';
-import { StoreBookCreateComponent } from './storebook/storebookcreate.component';
+import { StoreBookCreateComponent } from './storebook/storebook-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,9 @@ import { StoreBookCreateComponent } from './storebook/storebookcreate.component'
   ],
   imports: [
     CommonModule,
-    StoreBookModuleRoutingModule
+    StoreBookModuleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class StoreBookModuleModule { }

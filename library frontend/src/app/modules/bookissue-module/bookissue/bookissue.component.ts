@@ -25,7 +25,7 @@ export class BookIssueComponent implements OnInit, AfterViewInit {
   public list: BookIssue[] = [];
 
   private endpoint = 'bookissue';
-  public loading = false;
+  public loading: boolean = false;
   constructor(
     private baseService: BaseService,
     private toastr: ToastrService,
@@ -51,10 +51,12 @@ export class BookIssueComponent implements OnInit, AfterViewInit {
     this.loading = true;
     this.baseService.getWithPagination(this.endpoint).subscribe(
       (res: ApiResponse) => {
-        this.loading = false;
-        console.log(res);
         if (res.success) {
-          this.list = res.payload.data;
+
+          setTimeout(()=>{
+            this.list = res.payload.data;
+          },2000)
+
           this.toastr.success('Success!  data retrive', res.message);
         } else {
           this.list = [];

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RackModuleRoutingModule } from './rack-module-routing.module';
 import { RackComponent } from './rack/rack.component';
-import { RackCreateComponent } from './rack/rackcreate.component';
+import { RackCreateComponent } from './rack/rack-create.component';
 
 @NgModule({
   declarations: [RackComponent, RackCreateComponent],

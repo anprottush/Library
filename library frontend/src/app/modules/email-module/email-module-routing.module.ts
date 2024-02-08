@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmailComponent } from './email/email.component';
-import { EmailCreateComponent } from './email/emailcreate.component';
+import { EmailCreateComponent } from './email/email-create.component';
 
 const routes: Routes = [
-  { path: 'index', component: EmailComponent },
-  { path: 'create', component: EmailCreateComponent },
+  { path: '', component: EmailComponent },
+  { path: 'add', component: EmailCreateComponent },
 ];
 
 @NgModule({

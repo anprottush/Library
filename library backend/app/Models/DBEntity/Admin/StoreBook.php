@@ -16,7 +16,7 @@ class StoreBook extends Model
         'quantity',
         'price',
         'code_no',
-        'cover_photo',
+        'photo',
         'category',
         'isbn_no',
         'edition_number',

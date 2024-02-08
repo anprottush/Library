@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookCategoryComponent } from './bookcategory/bookcategory.component';
-import { BookCategoryCreateComponent } from './bookcategory/bookcategorycreate.component';
+import { BookCategoryCreateComponent } from './bookcategory/bookcategory-create.component';
 
 const routes: Routes = [
-  { path: 'index', component: BookCategoryComponent },
-  { path: 'create', component: BookCategoryCreateComponent },
+  { path: '', component: BookCategoryComponent },
+  { path: 'add', component: BookCategoryCreateComponent },
 ];
 
 @NgModule({

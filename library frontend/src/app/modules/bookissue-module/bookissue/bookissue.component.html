@@ -12,7 +12,7 @@
         <div class="bookissuesearchbox">
           <div class="col-sm-2 col-sm-offset-3">
             <div class="box-header">
-              <a routerLink="/bookissue/create" class="btn btn-inline btn-mytheme btn-md"><i
+              <a routerLink="/bookissue/add" class="btn btn-inline btn-mytheme btn-md"><i
                   class="fa fa-plus"></i> Add Book Issue</a>
             </div>
           </div>
@@ -349,13 +349,30 @@
           </table>
 
         </div>
+
+
+        <div class="loading" *ngIf="!loading">
+          <div>
+            <h5>Please wait...</h5>
+            <div class="loader"></div>
+          </div>
+        </div>
+
+
+
       </div>
+
     </div>
+
+
+
+
+
   </section>
 
-  <div id="overlay" *ngIf="loading">
-    <div class="loader"></div>
-    <br />
-    Please wait...
-  </div>
+
+
+
+
+
 </main>

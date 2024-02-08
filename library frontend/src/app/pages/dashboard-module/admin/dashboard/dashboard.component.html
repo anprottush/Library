@@ -251,97 +251,125 @@
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
 
-          <li routerLink="/dashboard" routerLinkActive="active">
-            <a [routerLink]="['/dashboard']">
+          <li routerLinkActive="active">
+            <a routerLink="/dashboard" >
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             </a>
           </li>
 
-          <li routerLink="/bookissue/index" routerLinkActive="active">
-            <a [routerLink]="['/bookissue/index']">
+          <li routerLinkActive="active">
+            <a routerLink="/bookissue">
               <i class="fa fa-bookmark"></i> <span>Book Issue</span>
             </a>
           </li>
 
-          <li routerLink="/member/index" routerLinkActive="active">
-            <a [routerLink]="['/member/index']">
+          <li routerLinkActive="active">
+            <a routerLink="/member">
               <i class="fa fa-user-plus"></i> <span>Member</span>
             </a>
           </li>
 
-          <li routerLink="/ebook/index" routerLinkActive="active">
-            <a [routerLink]="['/ebook/index']">
+          <li routerLinkActive="active">
+            <a routerLink="/ebook">
               <i class="fa fa-file-text"></i> <span>Ebook</span>
             </a>
           </li>
 
-          <li class="treeview" routerLinkActive="active" >
-            <a href="#" >
+          <!-- <li class="treeview" routerLinkActive="active" >
+            <a routerLink="#" >
               <i class="fa fa-book"></i> <span>Books</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu" style="display: none">
-              <li >
-                <a routerLink="/book/index">
+              <li routerLinkActive="active">
+                <a routerLink="/book" >
                   <i class="fa fa-book"></i>
                   Book
                 </a>
               </li>
-              <li>
-                <a routerLink="/rack/index"><i class="fa fa-folder"></i>Rack
+              <li routerLinkActive="active">
+                <a routerLink="/rack">
+                  <i class="fa fa-folder"></i>
+                  Rack
                 </a>
               </li>
-              <li >
-                <a routerLink="/bookcategory/index"><i class="fa fa-cubes"></i>Book Category</a></li>
-              <li >
-                <a routerLink="/bookbarcode/index"><i class="fa fa-barcode"></i>Book Barcode</a></li>
+              <li routerLinkActive="active">
+                <a routerLink="/bookcategory">
+                  <i class="fa fa-cubes"></i>
+                  Book Category
+                </a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/bookbarcode" >
+                  <i class="fa fa-barcode"></i>
+                  Book Barcode
+                </a>
+              </li>
             </ul>
-          </li>
+          </li> -->
 
-          <li routerLink="/requestbook/index" routerLinkActive="active">
-            <a [routerLink]="['/requestbook/index']">
+          <li routerLinkActive="active">
+            <a routerLink="/requestbook">
               <i class="fa fa-archive"></i> <span>Request Book</span>
             </a>
           </li>
 
-          <li class="treeview " routerLinkActive="active">
-            <a href="#">
+          <!-- <li class="treeview " routerLinkActive="active">
+            <a routerLink="#">
               <i class="fa fa-shopping-cart"></i> <span>Store Management</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu" style="display: none">
-              <li class=""><a routerLink="/order/index"><i class="fa fa-first-order"></i>Order</a>
+              <li routerLinkActive="active">
+                <a routerLink="/order">
+                  <i class="fa fa-first-order"></i>
+                  Order
+                </a>
               </li>
-              <li class=""><a routerLink="/storebook/index"><i class="fa fa-book"></i>Store
-                  Book</a></li>
-              <li class=""><a routerLink="/storebookcategory/index"><i
-                    class="fa fa-archive"></i>Store
-                  Book Category</a></li>
+              <li routerLinkActive="active">
+                <a routerLink="/storebook">
+                  <i class="fa fa-book"></i>
+                  Store Book
+                </a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/storebookcategory">
+                  <i class="fa fa-archive"></i>
+                  Store Book Category
+                </a>
+              </li>
             </ul>
           </li>
 
-          <li routerLink="/email/index" routerLinkActive="active">
-            <a [routerLink]="['/email/index']">
+          <li routerLinkActive="active">
+            <a routerLink="/email">
               <i class="fa fa-envelope"></i> <span>Email Send</span>
             </a>
-          </li>
+          </li> -->
 
-          <li class="treeview " routerLinkActive="active">
-            <a href="#">
+          <li class="treeview " routerLinkActive="active" >
+            <a>
               <i class="fa fa-user"></i> <span>Account</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu" style="display: none">
-              <li class=""><a routerLink="/income/index"><i class="fa fa-balance-scale"></i>Income</a>
+              <li routerLinkActive="active">
+                <a routerLink="/income">
+                  <i class="fa fa-balance-scale"></i>
+                  Income
+                </a>
               </li>
-              <li class=""><a routerLink="/expense/index"><i
-                    class="fa fa-credit-card"></i>Expense</a>
+              <li routerLinkActive="active">
+                <a routerLink="/expense">
+                  <i class="fa fa-credit-card"></i>
+                  Expense
+                </a>
               </li>
             </ul>
           </li>
@@ -356,7 +384,7 @@
 
 
 
-          <li class="treeview ">
+          <!-- <li class="treeview ">
             <a href="https://library.greensoftbd.net/#">
               <i class="fa fa-clipboard"></i> <span>Reports</span>
               <span class="pull-right-container">
@@ -425,7 +453,11 @@
               <li class=""><a href="https://library.greensoftbd.net/paymentsetting"><i
                     class="fa fa-credit-card-alt"></i>Payment Setting</a></li>
             </ul>
-          </li>
+          </li> -->
+
+
+
+
         </ul>
       </section>
     </aside>

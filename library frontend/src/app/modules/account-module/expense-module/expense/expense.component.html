@@ -9,11 +9,15 @@
   <section class="content">
     <div class="box box-mytheme">
       <div class="box-header">
-        <a routerLink="/expense/create" class="btn btn-inline btn-mytheme btn-md"><i
+        <a routerLink="/expense/add" class="btn btn-inline btn-mytheme btn-md"><i
             class="fa fa-plus"></i> Add Expense</a>
       </div>
       <div class="box-body">
         <div id="hide-table">
+
+
+
+
           <table #dataTable class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -21,98 +25,45 @@
                 <th>Name</th>
                 <th>Date</th>
                 <th>Amount</th>
-                <th>File</th>
+                <!-- <th>File</th> -->
                 <th>Note</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td data-title="#">1</td>
-                <td data-title="Name">Others</td>
-                <td data-title="Date">12 Feb 2020</td>
-                <td data-title="Amount">100,000.00</td>
-                <td data-title="File">
-                  <a href="https://library.greensoftbd.net/expense/download/5" class='btn btn-success btn-xs'
-                    data-placement='top' data-toggle='tooltip'
-                    data-original-title='ca744fe3ede10a56c58c313694f2f196a9e989cb782aa6ac88c43398ff323c938640e6e057b1c0b6f6c3e36c0afcda31ed81fca7ff3ac84aef4f4e0e2857eb48.jpg'><i
-                      class='fa fa-download'></i></a> </td>
-                <td data-title="Note"></td>
-                <td data-title="Action">
-                  <a href="https://library.greensoftbd.net/expense/edit/5" class='btn btn-warning btn-xs'
-                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
-                  <a href="https://library.greensoftbd.net/expense/delete/5"
-                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
-                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
-                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
-              </tr>
-              <tr>
-                <td data-title="#">2</td>
-                <td data-title="Name">Office Rent</td>
-                <td data-title="Date">16 Oct 2020</td>
-                <td data-title="Amount">40,000.00</td>
-                <td data-title="File">
+
+              <tr *ngFor="let element of list let i = index"  >
+                <td>{{ i+1 }}</td>
+                <td>{{ element.name }}</td>
+                <td>{{ element.date }}</td>
+                <td>{{ element.amount }}</td>
+                <!-- <td>
+
+                  <button class='btn btn-success btn-xs' type="button" (click)="downloadClick(element)">
+                    <i class='fa fa-download'></i>
+                  </button>
+
+                  <img
+                    [src]="element.file"
+                    class="profile_img" alt="">
+
+                </td> -->
+
+                <td >{{ element.note }}</td>
+
+                <td>
+
+                    <button  class='btn btn-warning btn-xs custom-btn' title="Edit" type="button" (click)="editClick(element)">              <!--   edit -->
+                      <i class='fa fa-edit'></i>
+                    </button>
+
+                    <button  class="btn btn-danger btn-xs custom-btn" title="Delete" type="button" (click)="deleteClick(element)">              <!--   delete -->
+                      <i class='fa fa-trash-o'></i>
+                    </button>
+
                 </td>
-                <td data-title="Note"></td>
-                <td data-title="Action">
-                  <a href="https://library.greensoftbd.net/expense/edit/4" class='btn btn-warning btn-xs'
-                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
-                  <a href="https://library.greensoftbd.net/expense/delete/4"
-                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
-                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
-                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
               </tr>
-              <tr>
-                <td data-title="#">3</td>
-                <td data-title="Name">Tea Bill</td>
-                <td data-title="Date">04 Sep 2020</td>
-                <td data-title="Amount">80,000.00</td>
-                <td data-title="File">
-                </td>
-                <td data-title="Note"></td>
-                <td data-title="Action">
-                  <a href="https://library.greensoftbd.net/expense/edit/3" class='btn btn-warning btn-xs'
-                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
-                  <a href="https://library.greensoftbd.net/expense/delete/3"
-                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
-                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
-                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
-              </tr>
-              <tr>
-                <td data-title="#">4</td>
-                <td data-title="Name">Car Rent</td>
-                <td data-title="Date">22 Jul 2020</td>
-                <td data-title="Amount">50,000.00</td>
-                <td data-title="File">
-                  <a href="https://library.greensoftbd.net/expense/download/2" class='btn btn-success btn-xs'
-                    data-placement='top' data-toggle='tooltip'
-                    data-original-title='2aaaa6df1a07c4fbae1ec83ebe934fd5800b527d9764a6cc97e9052f79bf2fa16110de8aac7a30ca2c2aa935f2d16376ae146df92d0dee255430b9dd130b2e05.jpg'><i
-                      class='fa fa-download'></i></a> </td>
-                <td data-title="Note"></td>
-                <td data-title="Action">
-                  <a href="https://library.greensoftbd.net/expense/edit/2" class='btn btn-warning btn-xs'
-                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
-                  <a href="https://library.greensoftbd.net/expense/delete/2"
-                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
-                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
-                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
-              </tr>
-              <tr>
-                <td data-title="#">5</td>
-                <td data-title="Name">Breakfast Bill - January</td>
-                <td data-title="Date">28 Apr 2020</td>
-                <td data-title="Amount">50,000.00</td>
-                <td data-title="File">
-                </td>
-                <td data-title="Note"></td>
-                <td data-title="Action">
-                  <a href="https://library.greensoftbd.net/expense/edit/1" class='btn btn-warning btn-xs'
-                    data-placement='top' data-toggle='tooltip' data-original-title='Edit'><i class='fa fa-edit'></i></a>
-                  <a href="https://library.greensoftbd.net/expense/delete/1"
-                    onclick="return confirm('you are about to delete a record. This cannot be undone. are you sure?')"
-                    class="btn btn-danger btn-xs" data-placement="top" data-toggle="tooltip"
-                    data-original-title="Delete"><i class='fa fa-trash-o'></i></a> </td>
-              </tr>
+
             </tbody>
             <tfoot>
               <tr>
@@ -120,13 +71,25 @@
                 <th>Name</th>
                 <th>Date</th>
                 <th>Amount</th>
-                <th>File</th>
+                <!-- <th>File</th> -->
                 <th>Note</th>
                 <th>Action</th>
               </tr>
             </tfoot>
           </table>
         </div>
+
+        <div class="loading" *ngIf="!loading">
+          <div>
+            <h5>Please wait...</h5>
+            <div class="loader"></div>
+          </div>
+        </div>
+
+
+
+
+
       </div>
     </div>
   </section>

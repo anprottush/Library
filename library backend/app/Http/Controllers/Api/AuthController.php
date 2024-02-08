@@ -93,7 +93,7 @@ class AuthController extends Controller
         $photoName = Str::random(32) . '.' . $photo->getClientOriginalExtension();
         $photo->storeAs('photos', $photoName, 'public');
         $photo->move(public_path('img'), $photoName);
-        $photoPath = storage_path('app/public/photos/' . $photoName);
+        $photoPath = url('/img/' . $photoName);
 
 
         // if ($user) {

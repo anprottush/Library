@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\DBEntity\Admin\Rack;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Str;
 
 class RackController extends Controller
 {
@@ -54,28 +56,36 @@ class RackController extends Controller
 
     public function store(Request $request)
     {
-        $rack = new Rack();
+        $data = $request->only('name','description');
 
-        $rack->name = $request->name;
-        $rack->description = $request->author;
+        $validator = Validator::make($data, [
+            'name' => ['required', 'string', 'max:100'],
+            'description' => ['required', 'string', 'max:100'],
 
-        $rack->save();
 
-        if($rack!=null) {
-            return response()->json([
-                'success'=> true,
-                'status code'=> Response::HTTP_CREATED,
-                'message'=> 'Data created successfully',
-                'payload' => $rack
-            ]);
-        }
-        else {
+        ]);
+
+        if ($validator->fails()) {
             return response()->json([
                 'success'=> false,
-                'message'=> 'Data creation failed',
-                'payload' => $rack
-            ], Response::HTTP_NO_CONTENT);
+                'status code'=> Response::HTTP_BAD_REQUEST,
+                'message'=> 'Data creation failed because some error occured. please try to solve the error',
+                'error' => $validator->errors(),
+            ], 400);
         }
+
+        $rack = Rack::create([
+            'name' => $request->name,
+            'description' => $request->description,
+
+        ]);
+
+        return response()->json([
+            'success'=> true,
+            'status code'=> Response::HTTP_CREATED,
+            'message'=> 'Data created successfully',
+            'payload' => $rack
+        ], 201);
 
     }
 

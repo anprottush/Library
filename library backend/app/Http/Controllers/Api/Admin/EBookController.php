@@ -61,17 +61,17 @@ class EBookController extends Controller
         $validator = Validator::make($data, [
             'name' => ['required', 'string', 'max:100'],
             'author' => ['required', 'string', 'max:100'],
-            'photo' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:10240'],
-            'file' => ['required', 'mimes:pdf', 'max:102400'],
-            'notes' => ['required', 'string'],
+            'photo' => ['required', 'image', 'mimes:pdf,doc,docx,xls,xlsx,pptx,jpg,jpeg,png,gif,svg', 'max:102400'],
+            'file' => ['required', 'mimes:pdf,doc,docx,xls,xlsx,pptx,jpg,jpeg,png,gif,svg', 'max:1048576'],
+            'notes' => ['nullable', 'string'],
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'success'=> false,
                 'status code'=> Response::HTTP_BAD_REQUEST,
+                'message'=> 'Data creation failed because some error occured. please try to solve the error',
                 'error' => $validator->errors(),
-                'payload' => null
             ], 400);
         }
 
@@ -79,22 +79,22 @@ class EBookController extends Controller
         $photoName = Str::random(32) . '.' . $photo->getClientOriginalExtension();
         $photo->storeAs('photos', $photoName, 'public');
         $photo->move(public_path('img'), $photoName);
-        $photoPath = storage_path('app/public/photos/' . $photoName);
+        $photoPath = url('/img/' . $photoName);
 
 
         $file = $request->file('file');
         $fileName = Str::random(32) . '.' . $file->getClientOriginalExtension();
         $file->storeAs('files', $fileName, 'public');
-        $file->move(public_path('files'), $fileName);
+        $file->move(public_path('file'), $fileName);
         $filePath = storage_path('app/public/files/' . $fileName);
 
 
         $ebook = Ebook::create([
             'name' => $request->name,
             'author' => $request->author,
-            'cover_photo' => $photoPath,
+            'photo' => $photoPath,
             'file' => $fileName,
-            'note' => $request->notes,
+            'notes' => $request->notes,
         ]);
 
         return response()->json([
@@ -111,8 +111,6 @@ class EBookController extends Controller
 
         $ebook->name = $request->name;
         $ebook->author = $request->author;
-        //$ebook->cover_photo = $request->cover_photo;
-        //$ebook->file = $request->file;
         $ebook->notes = $request->notes;
 
         $ebook->save();
@@ -137,9 +135,8 @@ class EBookController extends Controller
 
     public function delete($id)
     {
-        //User::find($id)->delete();
+
         EBook::destroy($id);
-        //return response()->json(null, 204);
         return response()->json([
             'success'=> true,
             'message'=> 'Data deleted successfully'

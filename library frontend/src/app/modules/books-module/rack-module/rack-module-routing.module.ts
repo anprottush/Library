@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RackComponent } from './rack/rack.component';
-import { RackCreateComponent } from './rack/rackcreate.component';
+import { RackCreateComponent } from './rack/rack-create.component';
 
 const routes: Routes = [
-  { path: 'index', component: RackComponent },
-  { path: 'create', component: RackCreateComponent },
+  { path: '', component: RackComponent },
+  { path: 'add', component: RackCreateComponent },
 ];
 
 @NgModule({

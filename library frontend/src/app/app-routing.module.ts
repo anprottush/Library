@@ -4,7 +4,8 @@ import { DashboardComponent } from './pages/dashboard-module/dashboard/dashboard
 import { PagesLoginComponent } from './pages/auth-module/pages-login/pages-login.component';
 import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages-register.component';
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
-
+import { ConfirmDialogComponent } from './layouts/confirm-dialog/confirm-dialog.component';
+import { AdminDashboardComponent } from './pages/dashboard-module/admin/dashboard/dashboard.component';
 const routes: Routes = [
   {
     path: 'bookissue',
@@ -119,12 +120,12 @@ const routes: Routes = [
       ),
   },
 
-   //{ path: '', component: DashboardComponent },
    { path: 'dashboard', component: DashboardComponent },
+   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'pages-login', component: PagesLoginComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
-  // { path: 'book-issue', component: BookIssueComponent },
+   //{ path: 'confirm-dialog', component: ConfirmDialogComponent },
   // { path: 'create', component: BookIssueComponent },
 ];
 
