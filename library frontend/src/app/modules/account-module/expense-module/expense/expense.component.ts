@@ -50,13 +50,14 @@ export class ExpenseComponent implements OnInit, AfterViewInit {
         this.loading = false;
         console.log(res);
         if (res.success) {
+          this.toastr.success('Success!  data retrive', res.message);
 
           setTimeout(()=>{
             this.list = res.payload.data;
             this.loading = true;
           },1000);
 
-          this.toastr.success('Success!  data retrive', res.message);
+
         } else {
           this.list = [];
           this.toastr.warning('Warning!', res.message);
@@ -64,6 +65,7 @@ export class ExpenseComponent implements OnInit, AfterViewInit {
       },
       (error: HttpErrorResponse) => {
         //this.loading = false;
+        console.error('Http Error:', error);
         this.toastr.error('Error!', 'Server not found!');
       }
     );
@@ -81,13 +83,12 @@ export class ExpenseComponent implements OnInit, AfterViewInit {
       'you are about to delete a record. This cannot be undone. are you sure?',
       () => {
 
-        console.log(deletedddata.id);
         this.baseService.delete(this.endpoint, deletedddata.id).subscribe(
           (res: ApiResponse) => {
-            //this.loading = false;
+
             if (res.success) {
               this.toastr.success('Success! data Deleted', res.message);
-
+              //this.loading = true;
               this.router.navigateByUrl('/', { skipLocationChange: true })
               .then(() => {
                 this.router.navigate(['./expense']);
@@ -99,6 +100,7 @@ export class ExpenseComponent implements OnInit, AfterViewInit {
           },
           (error: HttpErrorResponse) => {
             //this.loading = false;
+            console.error('Http Error:', error);
             this.toastr.error('Error!', 'Server not found!');
           }
         );

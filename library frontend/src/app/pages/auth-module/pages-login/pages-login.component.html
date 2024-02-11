@@ -6,7 +6,7 @@
           <div class="my-login">
             <h2 class="text-center">Login</h2>
             <hr>
-            <form class="row g-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+            <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
               <div class="form-group">
                 <label for="username_or_email" class="form-label">Username Or Email</label> <span class="text-danger">*</span>
                 <input type="text" class="form-control" placeholder="Enter email" id="username_or_email"
@@ -43,7 +43,7 @@
       <div class="row center-content">
         <div class="col-sm-6 offset-md-4">
           <div class="well text-center">
-            <strong>Login Panel</strong><br />
+            <strong>Login Panel</strong>
             <button class="btn btn-primary" id="admin" (click)="adminClick()">Admin</button>
             <button class="btn btn-danger" id="librarian">Librarian</button>
             <button class="btn btn-warning" id="member">Member</button>
@@ -51,6 +51,8 @@
           </div>
         </div>
       </div>
+
+
     </div>
   </section>
 </main>

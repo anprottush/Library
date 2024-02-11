@@ -23,8 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesLoginComponent } from './pages/auth-module/pages-login/pages-login.component';
 import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages-register.component';
 import { AdminDashboardComponent } from './pages/dashboard-module/admin/dashboard/dashboard.component';
-
-import { DashboardModuleModule } from './pages/dashboard-module/dashboard-module.module';
+import { DashboardComponent } from './pages/dashboard-module/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +37,10 @@ import { DashboardModuleModule } from './pages/dashboard-module/dashboard-module
     PagesRegisterComponent,
     UsersProfileComponent,
     ConfirmDialogComponent,
+
+
+    //DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -45,13 +48,16 @@ import { DashboardModuleModule } from './pages/dashboard-module/dashboard-module
     HttpClientModule,
     BrowserAnimationsModule,
     AuthModuleModule,
-    DashboardModuleModule,
+    //DashboardModuleModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot()
   ],
   providers: [
-{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor,
+      multi: true
+    },
     ConfirmDialogService
 ],
   bootstrap: [AppComponent]

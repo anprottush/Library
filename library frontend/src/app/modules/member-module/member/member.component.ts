@@ -47,7 +47,7 @@ export class MemberComponent implements OnInit, AfterViewInit {
 
     this.baseService.getWithPagination(this.endpoint).subscribe(
       (res: ApiResponse) => {
-        this.loading = false;
+
         console.log(res);
         if (res.success) {
 
@@ -72,7 +72,7 @@ export class MemberComponent implements OnInit, AfterViewInit {
   detailesClick() {}
 
   editClick(updateddata: any) {
-    this.router.navigate(['./bookissue/edit', updateddata.id]);
+    this.router.navigate(['./member/edit', updateddata.id]);
     this.memberService.setData(updateddata);
   }
 
@@ -87,7 +87,11 @@ export class MemberComponent implements OnInit, AfterViewInit {
             //this.loading = false;
             if (res.success) {
               this.toastr.success('Success! data Deleted', res.message);
-              //this.router.navigate(['./product/brand']);
+              this.router.navigateByUrl('/', { skipLocationChange: true })
+              .then(() => {
+                this.router.navigate(['./member']);
+              });
+
             } else {
               this.toastr.warning('Warning!', res.message);
             }

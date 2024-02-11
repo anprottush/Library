@@ -1,12 +1,30 @@
-<app-header
-*ngIf="!(_router.url === '/admin-dashboard' || _router.url === '/bookissue' || _router.url === '/member')"></app-header>
+<!-- <app-header
+*ngIf="loadingHeaderComponent()">
+</app-header>
+
 <app-mainmenu
-*ngIf="!(_router.url === '/pages-register' || _router.url === '/pages-login' || _router.url === '/admin-dashboard' || _router.url === '/bookissue' || _router.url === '/member')">
+*ngIf="loadingMainmenuComponent()">
 </app-mainmenu>
 
-<!-- <app-dashboard></app-dashboard> -->
+<app-admin-dashboard
+*ngIf="loadingDashboardComponent()">
+</app-admin-dashboard>
+
+
 <app-confirm-dialog></app-confirm-dialog>
-<!-- <router-outlet></router-outlet> -->
+
+<ng-component
+*ngIf="loadingMainComponent()">
+<router-outlet></router-outlet>
+</ng-component>
+
 
 <app-footer
-*ngIf="!(_router.url === '/admin-dashboard' || _router.url === '/bookissue' || _router.url === '/member')"></app-footer>
+*ngIf="loadingFooterComponent()">
+</app-footer> -->
+
+
+
+<app-admin-dashboard></app-admin-dashboard>
+<!-- <router-outlet></router-outlet> -->
+<app-confirm-dialog></app-confirm-dialog>

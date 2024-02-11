@@ -5,7 +5,8 @@ import { PagesLoginComponent } from './pages/auth-module/pages-login/pages-login
 import { PagesRegisterComponent } from './pages/auth-module/pages-register/pages-register.component';
 import { UsersProfileComponent } from './pages/users-profile/users-profile.component';
 import { ConfirmDialogComponent } from './layouts/confirm-dialog/confirm-dialog.component';
-import { AdminDashboardComponent } from './pages/dashboard-module/admin/dashboard/dashboard.component';
+
+import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
 const routes: Routes = [
   {
     path: 'bookissue',
@@ -121,11 +122,11 @@ const routes: Routes = [
   },
 
    { path: 'dashboard', component: DashboardComponent },
-   { path: 'admin-dashboard', component: AdminDashboardComponent },
+    //{ path: '', component: DashboardComponent },
   { path: 'pages-login', component: PagesLoginComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
-   //{ path: 'confirm-dialog', component: ConfirmDialogComponent },
+   //{ path: '**', component: PagesError404Component },
   // { path: 'create', component: BookIssueComponent },
 ];
 

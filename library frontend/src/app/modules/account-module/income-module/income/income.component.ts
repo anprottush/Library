@@ -81,7 +81,6 @@ export class IncomeComponent implements OnInit, AfterViewInit {
       'you are about to delete a record. This cannot be undone. are you sure?',
       () => {
 
-        console.log(deletedddata.id);
         this.baseService.delete(this.endpoint, deletedddata.id).subscribe(
           (res: ApiResponse) => {
             //this.loading = false;
@@ -99,6 +98,7 @@ export class IncomeComponent implements OnInit, AfterViewInit {
           },
           (error: HttpErrorResponse) => {
             //this.loading = false;
+            console.error('Http Error:', error);
             this.toastr.error('Error!', 'Server not found!');
           }
         );

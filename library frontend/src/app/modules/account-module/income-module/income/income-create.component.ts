@@ -110,7 +110,7 @@ export class IncomeCreateComponent implements OnInit {
       name: this.form.value.name,
       date: this.form.value.date,
       amount: this.form.value.amount,
-      // issue_date: this.form.value.issue_date,
+      //
       note: this.form.value.note
     };
 
