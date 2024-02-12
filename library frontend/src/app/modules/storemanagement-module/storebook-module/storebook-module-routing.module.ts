@@ -4,8 +4,8 @@ import { StoreBookComponent } from './storebook/storebook.component';
 import { StoreBookCreateComponent } from './storebook/storebook-create.component';
 
 const routes: Routes = [
-  { path: 'index', component: StoreBookComponent },
-  { path: 'create', component: StoreBookCreateComponent },
+  { path: '', component: StoreBookComponent },
+  { path: 'add', component: StoreBookCreateComponent },
   { path: 'edit/:id', component: StoreBookCreateComponent },
 ];
 

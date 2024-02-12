@@ -2,8 +2,8 @@
   <section class="content-header">
     <h1>Store Book Category</h1>
     <ol class="breadcrumb">
-      <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-      <li><a href="https://library.greensoftbd.net/bookcategory/index">Store Book Category</a></li>
+      <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+      <li><a routerLink="/bookcategory">Store Book Category</a></li>
       <li class="active">Add</li>
     </ol>
   </section>
@@ -11,45 +11,90 @@
     <div class="box box-mytheme">
       <div class="row">
         <div class="col-md-6">
-          <form role="form" method="post" enctype="multipart/form-data">
+
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
             <div class="box-body">
+
               <div class="form-group ">
                 <label for="name">Name</label> <span class="text-red">*</span>
-                <input type="text" class="form-control" id="name" name="name" value="" placeholder="Enter name">
-              </div>
-              <div class="form-group ">
-                <label for="description">Description</label> <span class="text-red">*</span>
-                <textarea name="description" value="" id="" cols="30" rows="5" class="form-control"
-                  placeholder="Enter description"></textarea>
-              </div>
-              <div class="form-group ">
-                <label for="coverphoto">Cover Photo</label>
-                <div class="input-group image-preview">
-                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                      <span class="fa fa-remove"></span>Clear </button>
-                    <div class="btn btn-success image-preview-input">
-                      <span class="fa fa-repeat"></span>
-                      <span class="image-preview-input-title">File Browse</span>
-                      <input type="file" accept="image/png, image/jpeg, image/gif" name="coverphoto" />
-                    </div>
-                  </span>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter name">
+                <div *ngIf="name!.invalid && (name!.dirty || name!.touched)" class="text-danger">
+                  <div *ngIf="name!.hasError('required')">The Name field is required.</div>
                 </div>
               </div>
+
+
+              <div class="form-group ">
+                <label for="description">Description</label> <span class="text-red">*</span>
+                <textarea id="description" cols="30" rows="5" class="form-control" placeholder="Enter description"
+                  formControlName="description"></textarea>
+                <div *ngIf="description!.invalid && (description!.dirty || description!.touched)" class="text-danger">
+                  <div *ngIf="description!.hasError('required')">The Description field is required.</div>
+                </div>
+              </div>
+
+
+              <!-- <div class="form-group ">
+                    <label for="coverphoto">Cover Photo</label>
+                    <div class="input-group image-preview">
+                        <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default image-preview-clear"
+                                style="display:none;">
+                                <span class="fa fa-remove"></span>Clear </button>
+                            <div class="btn btn-success image-preview-input">
+                                <span class="fa fa-repeat"></span>
+                                <span class="image-preview-input-title">File Browse</span>
+                                <input type="file" accept="image/png, image/jpeg, image/gif"
+                                    name="coverphoto" />
+                            </div>
+                        </span>
+                    </div>
+                </div> -->
+
+
+              <div class="form-group">
+                <label for="coverphoto">Cover Photo</label>
+                <!-- <span class="text-red">*</span> -->
+                <input type="file" class="form-control" formControlName="photo" (change)="onChange($event)"
+                  accept="image/*" required />
+                <!-- <div *ngIf="photo!.invalid && (photo!.dirty || photo!.touched)" class="text-danger">
+                          <div *ngIf="photo!.hasError('required')">The Cover Photo field is required.</div>
+                        </div> -->
+              </div>
+
+
+
+
+
+
               <div class="form-group ">
                 <label for="status">Status</label> <span class="text-red">*</span>
-                <select name="status" id="status" class="form-control">
-                  <option value="0">Please Select</option>
-                  <option value="1">Enable</option>
-                  <option value="2">Disable</option>
+                <select formControlName="status" id="status" class="form-control">
+                  <option value="" selected>Please Select</option>
+                  <option *ngFor="let status of statuslist" [value]="status">{{ status }}</option>
                 </select>
+                <div *ngIf="status!.invalid && (status!.dirty || status!.touched)" class="text-danger">
+                  <div *ngIf="status!.hasError('required')">The Status field is required.</div>
+                </div>
               </div>
+
+
+
             </div>
+
+
+
             <div class="box-footer">
-              <button type="submit" class="btn btn-mytheme">Add Store Book Category</button>
+              <button type="submit" class="btn btn-mytheme">{{ id==0 || id==null ? 'Add Store Book Category' : 'Update
+                Store Book Category' }}
+              </button>
             </div>
           </form>
+
+
+
         </div>
       </div>
     </div>

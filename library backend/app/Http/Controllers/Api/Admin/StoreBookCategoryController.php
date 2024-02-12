@@ -107,7 +107,7 @@ class StoreBookCategoryController extends Controller
 
         $storebookcategory->name = $request->name;
         $storebookcategory->description = $request->description;
-        $storebookcategory->cover_photo = $request->cover_photo;
+        //$storebookcategory->cover_photo = $request->cover_photo;
         $storebookcategory->status = $request->status;
 
         $storebookcategory->save();

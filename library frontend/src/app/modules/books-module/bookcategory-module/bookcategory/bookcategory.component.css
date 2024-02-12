@@ -196,3 +196,66 @@ iframe {
   width: 60px;
   height: 40px;
 }
+
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 800px) {
+
+  #hide-table table,
+  #hide-table thead,
+  #hide-table tbody,
+  #hide-table th,
+  #hide-table td,
+  #hide-table tr {
+      display: block;
+  }
+
+  #hide-table thead tr,
+  #hide-table tfoot tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+  #hide-table tr { border: 1px solid #ccc; }
+
+  #hide-table td {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      white-space: normal;
+      text-align:left;
+  }
+
+  #hide-table td:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align:left;
+      font-weight: 500;
+      color: #1a2229;
+  }
+
+  #hide-table td:before { content: attr(data-title); }
+}

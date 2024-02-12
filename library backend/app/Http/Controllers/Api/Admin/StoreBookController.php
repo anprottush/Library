@@ -131,7 +131,7 @@ class StoreBookController extends Controller
 
         $storebook->name = $request->name;
         $storebook->author = $request->author;
-        $storebook->quantity = $request->quanty;
+        $storebook->quantity = $request->quantity;
         $storebook->price = $request->price;
         $storebook->code_no = $request->code_no;
         $storebook->category = $request->category;

@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { StoreBookCategoryModuleRoutingModule } from './storebookcategory-module-routing.module';
 import { StoreBookCategoryComponent } from './storebookcategory/storebookcategory.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreBookCategoryCreateComponent } from './storebookcategory/storebookcategory-create.component';
 
 
 @NgModule({
   declarations: [
-    StoreBookCategoryComponent
+    StoreBookCategoryComponent,
+    StoreBookCategoryCreateComponent
   ],
   imports: [
     CommonModule,

@@ -1,8 +1,8 @@
 <section class="content-header">
     <h1>Book</h1>
     <ol class="breadcrumb">
-        <li><a href="https://library.greensoftbd.net/dashboard/index"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-        <li><a href="https://library.greensoftbd.net/book/index">Book</a></li>
+        <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+        <li><a routerLink="/book">Book</a></li>
         <li class="active">Add</li>
     </ol>
 </section>
@@ -10,39 +10,64 @@
     <div class="box box-mytheme">
         <div class="row">
             <div class="col-md-6">
-                <form role="form" method="post" enctype="multipart/form-data">
+
+
+
+                <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
                     <div class="box-body">
+
                         <div class="form-group ">
                             <label for="name">Name</label> <span class="text-red">*</span>
-                            <input type="text" class="form-control" id="name" name="name" value=""
+                            <input type="text" class="form-control" id="name" formControlName="name"
                                 placeholder="Enter name">
+                            <div *ngIf="name!.invalid && (name!.dirty || name!.touched)" class="text-danger">
+                                <div *ngIf="name!.hasError('required')">The Name field is required.</div>
+                            </div>
                         </div>
+
 
                         <div class="form-group ">
                             <label for="author">Author</label> <span class="text-red">*</span>
-                            <input type="text" class="form-control" id="author" name="author" value=""
+                            <input type="text" class="form-control" id="author" formControlName="author"
                                 placeholder="Enter Author">
+                            <div *ngIf="author!.invalid && (author!.dirty || author!.touched)" class="text-danger">
+                                <div *ngIf="author!.hasError('required')">The Author field is required.</div>
+                            </div>
                         </div>
+
 
                         <div class="form-group ">
                             <label for="quantity">Quantity</label> <span class="text-red">*</span>
-                            <input type="number" class="form-control" id="quantity" name="quantity" value=""
+                            <input type="text" class="form-control" id="quantity" formControlName="quantity"
                                 placeholder="Enter Quantity">
+                            <div *ngIf="quantity!.invalid && (quantity!.dirty || quantity!.touched)"
+                                class="text-danger">
+                                <div *ngIf="quantity!.hasError('required')">The Quantity field is required.</div>
+                            </div>
                         </div>
+
 
                         <div class="form-group ">
                             <label for="price">Price</label> <span class="text-red">*</span>
-                            <input type="text" class="form-control" id="price" name="price" value=""
+                            <input type="text" class="form-control" id="price" formControlName="price"
                                 placeholder="Enter Price">
+                            <div *ngIf="price!.invalid && (price!.dirty || price!.touched)" class="text-danger">
+                                <div *ngIf="price!.hasError('required')">The Price field is required.</div>
+                            </div>
                         </div>
+
 
                         <div class="form-group ">
                             <label for="codeno">Code No</label> <span class="text-red">*</span>
-                            <input type="text" class="form-control" id="codeno" name="codeno" value=""
+                            <input type="text" class="form-control" id="codeno" formControlName="codeno"
                                 placeholder="Enter Code No">
+                            <div *ngIf="codeno!.invalid && (codeno!.dirty || codeno!.touched)" class="text-danger">
+                                <div *ngIf="codeno!.hasError('required')">The Code No field is required.</div>
+                            </div>
                         </div>
 
-                        <div class="form-group ">
+
+                        <!-- <div class="form-group ">
                             <label for="coverphoto">Cover Photo</label> <span class="text-red">*</span>
                             <div class="input-group image-preview">
                                 <input type="text" class="form-control image-preview-filename" disabled="disabled">
@@ -58,89 +83,87 @@
                                     </div>
                                 </span>
                             </div>
+                        </div> -->
+
+                        <div class="form-group">
+                            <label for="coverphoto">Cover Photo</label> <span class="text-red">*</span>
+                            <input type="file" class="form-control" formControlName="photo" (change)="onChange($event)"
+                                accept="image/*" required />
+                            <div *ngIf="photo!.invalid && (photo!.dirty || photo!.touched)" class="text-danger">
+                                <div *ngIf="photo!.hasError('required')">The Cover Photo field is required.</div>
+                            </div>
                         </div>
+
 
                         <div class="form-group ">
                             <label for="bookcategoryID">Book Category</label> <span class="text-red">*</span>
-                            <select name="bookcategoryID" id="bookcategoryID" class="form-control">
-                                <option value="0">Please Select</option>
-                                <option value="21">Tamil</option>
-                                <option value="20">e</option>
-                                <option value="18">Hindi Sahitya</option>
-                                <option value="17">Stories and Poems</option>
-                                <option value="16">History</option>
-                                <option value="15">Magazines</option>
-                                <option value="14">Muni Sadhvi ji</option>
-                                <option value="13">Health</option>
-                                <option value="12">Yoga</option>
-                                <option value="11">Acharya Tulsi</option>
-                                <option value="10">Acharya Mahapragya</option>
-                                <option value="9">MANAGEMENT</option>
-                                <option value="8">Category 1</option>
-                                <option value="5">Science</option>
-                                <option value="4">General Knowledge</option>
-                                <option value="3">Business Book</option>
-                                <option value="2">Kids</option>
-                                <option value="1">Music And Movie</option>
+                            <select formControlName="bookcategory" id="bookcategoryID" class="form-control">
+                                <option value="" selected>Please Select</option>
+                                <option *ngFor="let bookcategory of bookcategorylist" [value]="bookcategory">{{
+                                    bookcategory }}</option>
                             </select>
+
                         </div>
+
+
 
                         <div class="form-group ">
                             <label for="isbnno">Isbn No</label>
-                            <input type="text" class="form-control" id="isbnno" name="isbnno" value=""
+                            <input type="text" class="form-control" id="isbnno" formControlName="isbnno"
                                 placeholder="Enter isbnno">
+
                         </div>
+
 
                         <div class="form-group ">
                             <label for="rackID">Rack</label>
-                            <select name="rackID" id="rackID" class="form-control">
-                                <option value="0">Please Select</option>
-                                <option value="11">Tamil</option>
-                                <option value="10">3</option>
-                                <option value="9">2</option>
-                                <option value="8">1</option>
-                                <option value="7">Central Staff</option>
-                                <option value="6">A12</option>
-                                <option value="5">E</option>
-                                <option value="4">D</option>
-                                <option value="3">C</option>
-                                <option value="2">B</option>
+                            <select formControlName="rack" id="rackID" class="form-control">
+                                <option value="" selected>Please Select</option>
+                                <option *ngFor="let rack of racklist" [value]="rack">{{ rack }}</option>
                             </select>
+
                         </div>
+
 
                         <div class="form-group ">
                             <label for="editionnumber">Edition Number</label>
-                            <input type="text" class="form-control" id="editionnumber" name="editionnumber" value=""
+                            <input type="text" class="form-control" id="editionnumber" formControlName="editionnumber"
                                 placeholder="Enter Edition Number">
                         </div>
 
+
                         <div class="form-group ">
                             <label for="editiondate">Edition Date</label>
-                            <input type="text" class="form-control datepicker" id="editiondate" name="editiondate"
-                                value="" placeholder="Enter Edition Date">
+                            <input type="date" class="form-control" id="editiondate" formControlName="editiondate"
+                                placeholder="Enter Edition Date">
                         </div>
 
                         <div class="form-group ">
                             <label for="publisher">Publisher</label>
-                            <input type="text" class="form-control" id="publisher" name="publisher" value=""
+                            <input type="text" class="form-control" id="publisher" formControlName="publisher"
                                 placeholder="Enter Publisher">
                         </div>
 
                         <div class="form-group ">
                             <label for="publisheddate">Published date</label>
-                            <input type="text" class="form-control datepicker" id="publisheddate" name="publisheddate"
-                                value="" placeholder="Enter Published Date">
+                            <input type="date" class="form-control" id="publisheddate" formControlName="publisheddate"
+                                placeholder="Enter Published Date">
                         </div>
 
                         <div class="form-group ">
                             <label for="notes">Notes</label>
-                            <textarea name="notes" id="notes" cols="30" rows="5" class="form-control"
-                                placeholder="Enter Notes"></textarea>
+                            <textarea id="notes" cols="30" rows="5" class="form-control" placeholder="Enter Notes"
+                                formControlName="notes"></textarea>
                         </div>
+
+
                     </div>
+
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-mytheme">Add Book</button>
+                        <button type="submit" class="btn btn-mytheme">{{ id==0 || id==null ? 'Add Book' : 'Update Book'
+                            }}</button>
                     </div>
+
                 </form>
             </div>
         </div>

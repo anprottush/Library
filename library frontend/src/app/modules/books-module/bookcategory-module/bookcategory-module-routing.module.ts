@@ -6,6 +6,7 @@ import { BookCategoryCreateComponent } from './bookcategory/bookcategory-create.
 const routes: Routes = [
   { path: '', component: BookCategoryComponent },
   { path: 'add', component: BookCategoryCreateComponent },
+  { path: 'edit/:id', component: BookCategoryCreateComponent },
 ];
 
 @NgModule({

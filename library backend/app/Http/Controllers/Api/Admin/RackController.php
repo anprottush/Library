@@ -94,7 +94,7 @@ class RackController extends Controller
         $rack = Rack::find($id);
 
         $rack->name = $request->name;
-        $rack->description = $request->author;
+        $rack->description = $request->description;
 
         $rack->save();
 

@@ -4,8 +4,8 @@ import { StoreBookCategoryComponent } from './storebookcategory/storebookcategor
 import { StoreBookCategoryCreateComponent } from './storebookcategory/storebookcategory-create.component';
 
 const routes: Routes = [
-  { path: 'index', component: StoreBookCategoryComponent },
-  { path: 'create', component: StoreBookCategoryCreateComponent },
+  { path: '', component: StoreBookCategoryComponent },
+  { path: 'add', component: StoreBookCategoryCreateComponent },
   { path: 'edit/:id', component: StoreBookCategoryCreateComponent },
 
 ];

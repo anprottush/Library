@@ -6,6 +6,7 @@ import { RackCreateComponent } from './rack/rack-create.component';
 const routes: Routes = [
   { path: '', component: RackComponent },
   { path: 'add', component: RackCreateComponent },
+  { path: 'edit/:id', component: RackCreateComponent },
 ];
 
 @NgModule({

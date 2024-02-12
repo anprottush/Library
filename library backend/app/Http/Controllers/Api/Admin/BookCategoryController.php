@@ -106,7 +106,7 @@ class BookCategoryController extends Controller
 
         $bookcategory->name = $request->name;
         $bookcategory->description = $request->description;
-        $bookcategory->cover_photo = $request->cover_photo;
+        //$bookcategory->cover_photo = $request->cover_photo;
         $bookcategory->status = $request->status;
 
 
